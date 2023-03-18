@@ -1,7 +1,4 @@
-// Set up API key for application use
-const apiKey ="3c02005a87mshb2ae9fa4e6ea20ap173d47jsn23043256962d"
-
-// Set genre list to an array
+// Get genre list from API
 const options = {
 	method: 'GET',
 	headers: {
@@ -11,12 +8,34 @@ const options = {
 };
 
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
-	.then(response => response.json())
-	.then(data => console.log(data))
-	.catch(err => console.error(err));
+.then(response => response.json())
+.then(data => {
+	console.log(data);
 	
-	//using an array constructor to build genre array
-	let genreArray = Array.from(data);
+	// convert data to array
+	const genreArray = Array.from(data.results);
+	console.log(genreArray);
+
+	const genreDropdownList = document.querySelector('#genre-dropdown');
+
+	for (let i = 0; i < 26; i++) {
+	const obj = genreArray[i];
+	for (const key in obj) {
+		if (obj.hasOwnProperty(key)) {
+		const genreName = obj[key];
+		console.log(genreName);
+
+		// Create and append the dropdown items from the array
+		let genreDropdownItem = document.createElement('option');
+		genreDropdownItem.textContent = genreName;
+		genreDropdownList.appendChild(genreDropdownItem);
+		};
+	};
+	};
+})
+.catch(error => {
+  console.error(error);
+});
 
 
 
