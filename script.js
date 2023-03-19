@@ -42,7 +42,7 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
 });
 
 // Create an array of years ranging from 1960 to 2021
-const yearArray = Array.from({length: 62}, (_, i) => i + 1960);
+const yearArray = Array.from({length: 62}, (_, i) => i + 1960).reverse();
 console.log(yearArray);
 
 yearArray.forEach(year => {
@@ -55,7 +55,7 @@ yearArray.forEach(year => {
 });
 
 // Function that provides a movie selection based on various selections
-let getMovie = function(selectedOption, dropdownCategory) {
+let getMovieList = function(selectedOption, dropdownCategory) {
 	console.log(selectedOption, dropdownCategory);
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${selectedOption}/`, options)
 	.then(response => response.json())
@@ -67,7 +67,7 @@ dropdownLists.forEach(dropdownList => {
 	dropdownList.addEventListener('change', (event) => {
 		const dropdownCategory = event.target.dataset.myParam;
 		const selectedOption = event.target.value;
-		getMovie(selectedOption, dropdownCategory);
+		getMovieList(selectedOption, dropdownCategory);
 	});
 });
 
