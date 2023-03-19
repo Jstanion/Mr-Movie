@@ -8,7 +8,8 @@ const options = {
 };
 
 // Global variables
-const genreDropdownList = document.querySelector('#genre-dropdown');
+const createGenreList = document.querySelector('#genre-dropdown');
+const dropdownList = document.querySelector('.dropdown-category');
 
 // Pulls genre data from API
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
@@ -31,7 +32,7 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
 		let genreDropdownItem = document.createElement('option');
 		genreDropdownItem.setAttribute('id', 'genre-choice')
 		genreDropdownItem.textContent = genreName;
-		genreDropdownList.appendChild(genreDropdownItem);
+		createGenreList.appendChild(genreDropdownItem);
 		};
 	};
 	};
@@ -40,21 +41,30 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
   console.error(error);
 });
 
-// Function that provides a movie selection based on genre selection
-let getMovieByGenre = function(selectedOption) {
 
-	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/byGen/${selectedOption}/`, options)
+// Function that provides a movie selection based on genre selection
+let getMovie = function(selectedOption, dropdownCategory) {
+	console.log(selectedOption, dropdownCategory);
+	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${selectedOption}/`, options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
 };
 
-
-genreDropdownList.addEventListener('change', function(event) {
+dropdownList.addEventListener('change', (event) => {
+	const dropdownCategory = event.target.dataset.myParam;
 	const selectedOption = event.target.value;
-	getMovieByGenre(selectedOption);
+	getMovie(selectedOption, dropdownCategory);
 });
 
 
 
-
+// dropdownList.addEventListener('change', function(event) {
+// 	const dropdownCategory = document.querySelector('#genre');
+// 	let getParam = function(param) {
+// 		console.log(param)
+// 	}
+// 	const dropdownParam = event.target.dataset.myParam;
+// 	const selectedOption = event.target.value;
+// 	getParam(dropdownParam);
+// 	getMovieByGenre(selectedOption, dropdownCategory);
