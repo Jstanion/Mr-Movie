@@ -9,7 +9,8 @@ const options = {
 
 // Global variables
 const createGenreList = document.querySelector('#genre-dropdown');
-const dropdownList = document.querySelector('.dropdown-category');
+const createYearList = document.querySelector('#year-dropdown');
+const dropdownLists = document.querySelectorAll('.dropdown-category');
 
 // Pulls genre data from API
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
@@ -30,7 +31,6 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
 
 		// Create and append the dropdown items from the array
 		let genreDropdownItem = document.createElement('option');
-		genreDropdownItem.setAttribute('id', 'genre-choice')
 		genreDropdownItem.textContent = genreName;
 		createGenreList.appendChild(genreDropdownItem);
 		};
@@ -41,8 +41,20 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
   console.error(error);
 });
 
+// Create an array of years ranging from 1960 to 2021
+const yearArray = Array.from({length: 62}, (_, i) => i + 1960);
+console.log(yearArray);
 
-// Function that provides a movie selection based on genre selection
+yearArray.forEach(year => {
+	
+	// Create and append the years array to a dropdown list
+	let yearDropdownItem = document.createElement('option');
+	yearDropdownItem.textContent = year;
+	yearDropdownItem.value = year;
+	createYearList.appendChild(yearDropdownItem);
+});
+
+// Function that provides a movie selection based on various selections
 let getMovie = function(selectedOption, dropdownCategory) {
 	console.log(selectedOption, dropdownCategory);
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${selectedOption}/`, options)
@@ -51,10 +63,12 @@ let getMovie = function(selectedOption, dropdownCategory) {
 	.catch(err => console.error(err));
 };
 
-dropdownList.addEventListener('change', (event) => {
-	const dropdownCategory = event.target.dataset.myParam;
-	const selectedOption = event.target.value;
-	getMovie(selectedOption, dropdownCategory);
+dropdownLists.forEach(dropdownList => {
+	dropdownList.addEventListener('change', (event) => {
+		const dropdownCategory = event.target.dataset.myParam;
+		const selectedOption = event.target.value;
+		getMovie(selectedOption, dropdownCategory);
+	});
 });
 
 
