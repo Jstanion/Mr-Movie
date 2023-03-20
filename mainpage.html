@@ -9,73 +9,62 @@
   <title>Document</title>
 </head>
 <body>
-    <header>
-        <!--we dont have any header titles rn h1,h2,ect-->
-        <nav>
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-                <div class="navbar-brand">
-            <!--added film instead of bulma on line 16 & 17-->
-                  <a class="navbar-item" href="./images/image.png">
-                    <img src="./images/image.png" alt="Film" width="112" height="28">
-                  </a>
+  <header>
+    <!--we dont have any header titles rn h1,h2,ect-->
+    <nav>
+        <nav class="navbar level-right" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand level-left">
+              <!--added film instead of bulma on line 16 & 17-->
+              <a class="navbar-item" href="./images/image.png">
+                <img src="./images/image.png" alt="Film" width="112" height="28">
+              </a>
             <!--dropdown nav buttons, need to be moved to right? -->
-                  <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        search by actor
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item">
-                              About
-                            </a>
-                            <a class="navbar-item">
-                              Jobs
-                            </a>
-                            <a class="navbar-item">
-                              Contact
-                            </a>
-                        </div>
-                    </a>
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link" id="genre-dropdown">
-                         search by genre
-                        </a>
-                    <div class="navbar-item has-dropdown is-hoverable">
-                         <a class="navbar-link">
-                        search by year
-                        </a>
-            <!--Sumbit button, need to align right-->
-                    <div class="navbar-item">
-                    <div class="buttons">
-                        <a class="button is-warning">
-                            <strong>Sumbit</strong>
-                        </a>
-                     </div>
-                    </div>
-                </div>
-            </nav>
+          <div id="genre" class="select mr-4 level-right">
+            <select id="genre-dropdown" class="search-element" data-my-param="byGen">
+            <option>Select Genre</option>
+            </select>
+          </div>
+          <div id="year" class="select mr-4">
+            <select id="year-dropdown" class="search-element" data-my-param="byYear">
+            <option>Select Year</option>
+            </select>
+          </div>
+          <div class="level">
+              <input class="title-search-bar input is-warning is-medium is-rounded mr-4" type="text" placeholder="Search by Title Name">
+              <button class="search-title-button button is-primary mr-4">
+                  <strong>Submit</strong>
+              </button>
+              <input class="actor-search-bar input is-warning is-medium is-rounded mr-4" type="text" placeholder="Search by Actor Name">
+              <button class="search-actor-button button is-primary mr-4">
+                  <strong>Submit</strong>
+              </button>
+          </div>
+                
         </nav>
-    </header>
-<!--<img src="./images/placeholderimg.jpeg" alt="place holder image"></img>-->
-<!--I originally had an image place holder (ln 45) and then found this hero section on bulma (ln 47), you can make decision on which one u think is better -->
-<section class="hero is-danger is-fullheight">
-    <div class="hero-body">
-      <div class="">
-        <p class="title">
-            Stuck on what to watch? Let us choose for you!
-        </p>
-        <p class="subtitle">
-          Fullheight subtitle
-        </p>
-      </div>
-    </div>
-  </section>
+    </nav>
+  </header>
+  <main>
+    <!--I originally had an image place holder (ln 45) and then found this hero section on bulma (ln 47), you can make decision on which one u think is better -->
+    <section class="hero is-danger is-fullheight">
+      <!-- <img src="./images/placeholderimg.jpeg" alt="place holder image"></img> -->
+      <div class="hero-body">
+          <div class="">
+            <p class="title">
+                Stuck on what to watch? Let us choose for you!
+            </p>
+            <p class="subtitle">
+              Fullheight subtitle
+            </p>
+          </div>
+        </div>
+    </section>
 
-<main>
     <article>               
         <p>blah blah, directions on how to use web page</p>
     </article>
 
-<!--needs carousel-->
-</main>
+  <!--needs carousel-->
+  </main>
 
   <script src="./script.js"></script>
 </body>
