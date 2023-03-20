@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <title>Document</title>
+</head>
+<body>
+    <header>
+        <!--we dont have any header titles rn h1,h2,ect-->
+        <nav>
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+            <!--added film instead of bulma on line 16 & 17-->
+                  <a class="navbar-item" href="./images/image.png">
+                    <img src="./images/image.png" alt="Film" width="112" height="28">
+                  </a>
+            <!--dropdown nav buttons, need to be moved to right? -->
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        search by actor
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item">
+                              About
+                            </a>
+                            <a class="navbar-item">
+                              Jobs
+                            </a>
+                            <a class="navbar-item">
+                              Contact
+                            </a>
+                        </div>
+                    </a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link" id="genre-dropdown">
+                         search by genre
+                        </a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                         <a class="navbar-link">
+                        search by year
+                        </a>
+            <!--Sumbit button, need to align right-->
+                    <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary">
+                            <strong>Sumbit</strong>
+                        </a>
+                     </div>
+                    </div>
+                </div>
+            </nav>
+        </nav>
+    </header>
+<!--<img src="./images/placeholderimg.jpeg" alt="place holder image"></img>-->
+<!--I originally had an image place holder (ln 45) and then found this hero section on bulma (ln 47), you can make decision on which one u think is better -->
+<section class="hero is-danger is-fullheight">
+    <div class="hero-body">
+      <div class="">
+        <p class="title">
+            Stuck on what to watch? Let us choose for you!
+        </p>
+        <p class="subtitle">
+          Fullheight subtitle
+        </p>
+      </div>
+    </div>
+  </section>
+
+<main>
+    <article>               
+        <p>blah blah, directions on how to use web page</p>
+    </article>
+
+<!--needs carousel-->
+</main>
+
+
+</body>
+</html>
