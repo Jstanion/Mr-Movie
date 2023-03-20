@@ -10,9 +10,11 @@ const options = {
 // Global variables
 const createGenreList = document.querySelector('#genre-dropdown');
 const createYearList = document.querySelector('#year-dropdown');
-const searchBar = document.querySelector('.search-bar');
+const titleSearchBar = document.querySelector('.title-search-bar');
+const actorSearchBar = document.querySelector('.actor-search-bar')
 const searchEl = document.querySelectorAll('.search-element');
-const submitButton = document.querySelector('.search-button')
+const submitTitleButton = document.querySelector('.search-title-button');
+const submitActorButton = document.querySelector('.search-actor-button');
 
 // Pulls genre data from API
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
@@ -56,8 +58,8 @@ yearArray.forEach(year => {
 	createYearList.appendChild(yearDropdownItem);
 });
 
-// Function that pulls API results from search bar
-let getMovieBySearchBar = function(searchBarEntry) {
+// Function that provides movies title name search
+let getMovieByTitle = function(searchBarEntry) {
 	console.log(searchBarEntry)
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/imdb_id/byTitle/${searchBarEntry}/`, options)
 	.then(response => response.json())
@@ -65,7 +67,7 @@ let getMovieBySearchBar = function(searchBarEntry) {
 	.catch(err => console.error(err));
 };
 
-// Function that provides a movie selection based on dropdown selections
+// Function that provides movies based on dropdown selections
 let getMovieByDropdown = function(selectedOption, dropdownCategory) {
 	console.log(selectedOption, dropdownCategory);
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${selectedOption}/`, options)
@@ -73,6 +75,14 @@ let getMovieByDropdown = function(selectedOption, dropdownCategory) {
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
 };
+
+// Function that provides movies based on actor name search
+let getMovieByActor = function(searchBarEntry) {
+	fetch(`https://moviesminidatabase.p.rapidapi.com/actor/imdb_id_byName/${searchBarEntry}/`, options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+}
 
 searchEl.forEach(searchEl => {
 	searchEl.addEventListener('change', (event) => {
@@ -83,8 +93,14 @@ searchEl.forEach(searchEl => {
 
 });
 
-submitButton.addEventListener('click', () => {
-	const searchBarEntry = searchBar.value;
+submitTitleButton.addEventListener('click', () => {
+	const searchBarEntry = titleSearchBar.value;
 	console.log(searchBarEntry)
-	getMovieBySearchBar(searchBarEntry);
+	getMovieByTitle(searchBarEntry);
+})
+
+submitActorButton.addEventListener('click', () => {
+	const searchBarEntry = actorSearchBar.value;
+	console.log(searchBarEntry)
+	getMovieByActor(searchBarEntry);
 });
