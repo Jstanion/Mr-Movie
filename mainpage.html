@@ -11,46 +11,45 @@
 <body>
   <header>
     <!--we dont have any header titles rn h1,h2,ect-->
-    <nav>
-        <nav class="navbar level-right" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand level-left">
-              <!--added film instead of bulma on line 16 & 17-->
-              <a class="navbar-item" href="./images/image.png">
-                <img src="./images/image.png" alt="Film" width="112" height="28">
-              </a>
-            <!--dropdown nav buttons, need to be moved to right? -->
-          <div id="genre" class="select mr-4 level-right">
+    <nav class="navbar is-flex is-flex-direction-row is-justify-content-space-between">
+      <div class="navbar-brand">
+          <img class="p-0" src="./images/image.png" alt="Film">
+      </div>
+      <nav class="navbar is-align-items-center level-right" role="navigation" aria-label="main navigation">
+        <!--dropdown nav buttons are aligned right-->
+        <div class="level-right">
+          <div id="genre" class="select is-warning mr-4">
             <select id="genre-dropdown" class="search-element" data-my-param="byGen">
             <option>Select Genre</option>
             </select>
           </div>
-          <div id="year" class="select mr-4">
+          <div id="year" class="select is-warning mr-4">
             <select id="year-dropdown" class="search-element" data-my-param="byYear">
             <option>Select Year</option>
             </select>
           </div>
           <div class="level">
-              <input class="title-search-bar input is-warning is-medium is-rounded mr-4" type="text" placeholder="Search by Title Name">
-              <button class="search-title-button button is-primary mr-4">
+              <input class="title-search-bar input is-warning is-medium is-rounded mr-4 has-text-centered" type="text" placeholder="Search by Title Name">
+              <button class="search-title-button button is-primary mr-4 is-warning is-rounded">
                   <strong>Submit</strong>
               </button>
-              <input class="actor-search-bar input is-warning is-medium is-rounded mr-4" type="text" placeholder="Search by Actor Name">
-              <button class="search-actor-button button is-primary mr-4">
+              <input class="actor-search-bar input is-warning is-medium is-rounded mr-4  has-text-centered" type="text" placeholder="Search by Actor Name">
+              <button class="search-actor-button button is-primary mr-4 is-warning is-rounded">
                   <strong>Submit</strong>
               </button>
           </div>
-                
-        </nav>
+        </div>
+      </nav>
     </nav>
   </header>
   <main>
     <!--I originally had an image place holder (ln 45) and then found this hero section on bulma (ln 47), you can make decision on which one u think is better -->
-    <section class="hero is-danger is-fullheight">
-      <!-- <img src="./images/placeholderimg.jpeg" alt="place holder image"></img> -->
+    <section class="main-hero-image hero is-halfheight p-5">
       <div class="hero-body">
+        <img src="./images/placeholderimg.jpeg" alt="place holder image"></img>
           <div class="">
             <p class="title">
-                Stuck on what to watch? Let us choose for you!
+                Stuck on what to watch? Let Mr. Movie choose for you!
             </p>
             <p class="subtitle">
               Fullheight subtitle
@@ -58,7 +57,21 @@
           </div>
         </div>
     </section>
+    <section class="image-carousel is-flex is-direction-row is-justify-content-center is-align-items-center p-5">
+      <button class="button is-large m-5 is-warning is-rounded">Back</button>
 
+      <div class="genre-field p-5 is-flex is-justify-content-space-around">
+        <img class="genre-images m-5" src="./images/placeholderimg.jpeg" alt="place holder image"></img>
+        <img class="genre-images m-5" src="./images/placeholderimg.jpeg" alt="place holder image"></img>
+        <img class="genre-images m-5" src="./images/placeholderimg.jpeg" alt="place holder image"></img>
+        <img class="genre-images m-5" src="./images/placeholderimg.jpeg" alt="place holder image"></img>
+        <img class="genre-images m-5" src="./images/placeholderimg.jpeg" alt="place holder image"></img>
+        <img class="genre-images m-5" src="./images/placeholderimg.jpeg" alt="place holder image"></img>
+        <img class="genre-images m-5" src="./images/placeholderimg.jpeg" alt="place holder image"></img>
+      </div>
+
+      <button class="button is-large m-5 is-warning is-rounded">Next</button>
+    </section>
     <article>               
         <p>blah blah, directions on how to use web page</p>
     </article>
