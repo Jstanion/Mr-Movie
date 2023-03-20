@@ -10,6 +10,7 @@ const options = {
 // Global variables
 const createGenreList = document.querySelector('#genre-dropdown');
 const createYearList = document.querySelector('#year-dropdown');
+const searchBar = document.querySelector('.search-bar');
 const searchEl = document.querySelectorAll('.search-element');
 
 // Pulls genre data from API
@@ -79,20 +80,9 @@ searchEl.forEach(searchEl => {
 		getMovieByDropdown(selectedOption, dropdownCategory);
 	});
 
-	searchEl.addEventListener('click', (event) => {
-		const searchBarEntry = event.target.value
-		getMovieBySearchBar();
+	searchEl.addEventListener('click', () => {
+		const searchBarEntry = searchBar.value;
+		console.log(searchBarEntry)
+		getMovieBySearchBar(searchBarEntry);
 	});
 });
-
-
-
-// dropdownList.addEventListener('change', function(event) {
-// 	const dropdownCategory = document.querySelector('#genre');
-// 	let getParam = function(param) {
-// 		console.log(param)
-// 	}
-// 	const dropdownParam = event.target.dataset.myParam;
-// 	const selectedOption = event.target.value;
-// 	getParam(dropdownParam);
-// 	getMovieByGenre(selectedOption, dropdownCategory);
