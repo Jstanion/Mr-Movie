@@ -10,7 +10,7 @@ const options = {
 // Global variables
 const createGenreList = document.querySelector('#genre-dropdown');
 const createYearList = document.querySelector('#year-dropdown');
-const dropdownLists = document.querySelectorAll('.dropdown-category');
+const searchEl = document.querySelectorAll('.search-element');
 
 // Pulls genre data from API
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
@@ -21,24 +21,24 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
 	// convert data to array
 	const genreArray = Array.from(data.results);
 	console.log(genreArray);
-
+	
 	for (let i = 0; i < 21; i++) {
-	const obj = genreArray[i];
-	for (const key in obj) {
-		if (obj.hasOwnProperty(key)) {
-		const genreName = obj[key];
-		console.log(genreName);
-
-		// Create and append the dropdown items from the array
-		let genreDropdownItem = document.createElement('option');
-		genreDropdownItem.textContent = genreName;
-		createGenreList.appendChild(genreDropdownItem);
+		const obj = genreArray[i];
+		for (const key in obj) {
+			if (obj.hasOwnProperty(key)) {
+				const genreName = obj[key];
+				console.log(genreName);
+				
+				// Create and append the dropdown items from the array
+				let genreDropdownItem = document.createElement('option');
+				genreDropdownItem.textContent = genreName;
+				createGenreList.appendChild(genreDropdownItem);
+			};
 		};
-	};
 	};
 })
 .catch(error => {
-  console.error(error);
+	console.error(error);
 });
 
 // Create an array of years ranging from 1960 to 2021
@@ -54,8 +54,17 @@ yearArray.forEach(year => {
 	createYearList.appendChild(yearDropdownItem);
 });
 
-// Function that provides a movie selection based on various selections
-let getMovieList = function(selectedOption, dropdownCategory) {
+// Function that pulls API results from search bar
+let getMovieBySearchBar = function(searchBarEntry) {
+	console.log(searchBarEntry)
+	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/imdb_id/byTitle/${searchBarEntry}/`, options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+};
+
+// Function that provides a movie selection based on dropdown selections
+let getMovieByDropdown = function(selectedOption, dropdownCategory) {
 	console.log(selectedOption, dropdownCategory);
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${selectedOption}/`, options)
 	.then(response => response.json())
@@ -63,11 +72,16 @@ let getMovieList = function(selectedOption, dropdownCategory) {
 	.catch(err => console.error(err));
 };
 
-dropdownLists.forEach(dropdownList => {
-	dropdownList.addEventListener('change', (event) => {
+searchEl.forEach(searchEl => {
+	searchEl.addEventListener('change', (event) => {
 		const dropdownCategory = event.target.dataset.myParam;
 		const selectedOption = event.target.value;
-		getMovieList(selectedOption, dropdownCategory);
+		getMovieByDropdown(selectedOption, dropdownCategory);
+	});
+
+	searchEl.addEventListener('click', (event) => {
+		const searchBarEntry = event.target.value
+		getMovieBySearchBar();
 	});
 });
 

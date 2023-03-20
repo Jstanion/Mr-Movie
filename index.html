@@ -9,16 +9,22 @@
 </head>
 <body>
     <div id="genre" class="select">
-        <select id="genre-dropdown" class="dropdown-category" data-my-param="byGen">
+        <select id="genre-dropdown" class="search-element" data-my-param="byGen">
         <option>Select Genre</option>
         </select>
     </div>
     
     <div id="year" class="select">
-        <select id="year-dropdown" class="dropdown-category" data-my-param="byYear">
+        <select id="year-dropdown" class="search-element" data-my-param="byYear">
         <option>Select Year</option>
         </select>
     </div>
-    <Script src="./script.js"></Script>
+    <div>
+        <input class="input is-warning is-medium is-rounded" type="text" placeholder="Search by Title">
+        <a class="search-element button is-primary">
+            <strong>Sumbit</strong>
+        </a>
+     </div>
+        <Script src="./script.js"></Script>
 </body>
 </html>
