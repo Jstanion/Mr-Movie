@@ -12,6 +12,7 @@ const createGenreList = document.querySelector('#genre-dropdown');
 const createYearList = document.querySelector('#year-dropdown');
 const searchBar = document.querySelector('.search-bar');
 const searchEl = document.querySelectorAll('.search-element');
+const submitButton = document.querySelector('.search-button')
 
 // Pulls genre data from API
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
@@ -80,9 +81,10 @@ searchEl.forEach(searchEl => {
 		getMovieByDropdown(selectedOption, dropdownCategory);
 	});
 
-	searchEl.addEventListener('click', () => {
-		const searchBarEntry = searchBar.value;
-		console.log(searchBarEntry)
-		getMovieBySearchBar(searchBarEntry);
-	});
+});
+
+submitButton.addEventListener('click', () => {
+	const searchBarEntry = searchBar.value;
+	console.log(searchBarEntry)
+	getMovieBySearchBar(searchBarEntry);
 });
