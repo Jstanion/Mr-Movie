@@ -1,9 +1,10 @@
 .hero-body {
-    display: flex;
+    flex-direction: column;
     justify-content: space-around;
 }
 
-.hero.is-success {
+.hero-body , #nav-head{
     background-color: #460b0b;
     color: #fff;
 }
+
