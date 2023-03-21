@@ -1,0 +1,9 @@
+.hero-body {
+    display: flex;
+    justify-content: space-around;
+}
+
+.hero.is-success {
+    background-color: #460b0b;
+    color: #fff;
+}
