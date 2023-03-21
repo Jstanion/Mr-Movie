@@ -1,4 +1,4 @@
-// Get genre list from API
+// API key and URL
 const options = {
 	method: 'GET',
 	headers: {
@@ -58,7 +58,7 @@ yearArray.forEach(year => {
 	createYearList.appendChild(yearDropdownItem);
 });
 
-// Function that provides movies title name search
+// Function that provides movies based on title name search
 let getMovieByTitle = function(searchBarEntry) {
 	console.log(searchBarEntry)
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/imdb_id/byTitle/${searchBarEntry}/`, options)
