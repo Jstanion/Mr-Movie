@@ -10,13 +10,17 @@
   <title>Mr.Movie - Movie Generator</title>
 </head>
 <body>
-  <header class="is-flex is-flex-direction-column is-justify-content-center">
-    <div class="film-banner has-text-centered">
-      <p class="is-size-1 is-size-4-touch has-text-warning">Welcome to Mr.Movie</p>
-    </div>
-    <div class="navbar is-flex is-flex-direction-row">
+  <header>
+    <nav class="navbar film-banner is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand is-flex is-align-items-center">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <p class="is-size-4 is-size-4-touch has-text-warning p-3">Mr.Movie</p>
+      </div>
       <!-- dropdown nav buttons are aligned right -->
-      <div class="is-flex is-flex-direction-row is-align-items-center">
         <div id="genre" class="select is-warning mr-4">
           <!-- dropdown that lists all genre options -->
           <select id="genre-dropdown" class="search-element" data-my-param="byGen">
@@ -41,8 +45,7 @@
                 <strong>Submit</strong>
             </button>
         </div>
-      </div>
-    </div>
+    </nav>
   </header>
   <main>
     <!--Hero image container here with image placeholder inside -->
