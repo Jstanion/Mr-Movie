@@ -1,0 +1,34 @@
+/* At some point when we combine CSS properties we should consider using CSS variables for the themed color sections  */
+
+* {
+    font-family: 'Limelight', cursive;
+}
+
+footer {
+    transform: scaleY(-1);
+}
+
+.image-carousel,
+.main-hero-image {
+    background-color: #460b0b;
+}
+
+.genre-field {
+    background-color: #27383e;
+}
+
+.genre-images {
+    height: 10rem;
+    background-color: #27383e;
+}
+
+.film-banner {
+    height: 72px;
+    background-image: url("./images/image.png");
+    background-repeat: repeat-x;
+    background-color: #27383e;
+}
+
+/* .bulma-hamburger-mixin {
+    @include hamburger(2.5rem);
+  } */

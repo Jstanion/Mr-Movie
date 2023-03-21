@@ -7,24 +7,6 @@
     font-family: 'Limelight', cursive;
 }
 
-.image-carousel,
-.main-hero-image {
-    background-color: #460b0b;
-}
-.navbar,
-.genre-images,
-.genre-field {
-    background-color: #27383e;
-}
-
-.navbar{
-    height: 4rem;
-}
-
-.genre-images {
-    height: 10rem;
-}
-
 #oops {
     font-size: 200px;
 }

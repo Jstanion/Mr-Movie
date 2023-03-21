@@ -1,4 +1,4 @@
-// Get genre list from API
+// API key and URL
 const options = {
 	method: 'GET',
 	headers: {
@@ -10,6 +10,7 @@ const options = {
 // Global variables
 const createGenreList = document.querySelector('#genre-dropdown');
 const createYearList = document.querySelector('#year-dropdown');
+const searchInput = document.getElementById('search-input');
 const titleSearchBar = document.querySelector('.title-search-bar');
 const actorSearchBar = document.querySelector('.actor-search-bar')
 const searchEl = document.querySelectorAll('.search-element');
@@ -34,7 +35,8 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
 				console.log(genreName);
 				
 				// Create and append the dropdown items from the array
-				let genreDropdownItem = document.createElement('option');
+				let genreDropdownItem = document.createElement('a');
+				genreDropdownItem.classList.add('navbar-item')
 				genreDropdownItem.textContent = genreName;
 				createGenreList.appendChild(genreDropdownItem);
 			};
@@ -52,13 +54,14 @@ console.log(yearArray);
 yearArray.forEach(year => {
 	
 	// Create and append the years array to a dropdown list
-	let yearDropdownItem = document.createElement('option');
+	let yearDropdownItem = document.createElement('a');
+	yearDropdownItem.classList.add('navbar-item')
 	yearDropdownItem.textContent = year;
 	yearDropdownItem.value = year;
 	createYearList.appendChild(yearDropdownItem);
 });
 
-// Function that provides movies title name search
+// Function that provides movies based on title name search
 let getMovieByTitle = function(searchBarEntry) {
 	console.log(searchBarEntry)
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/imdb_id/byTitle/${searchBarEntry}/`, options)
