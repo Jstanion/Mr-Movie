@@ -4,25 +4,29 @@
     font-family: 'Limelight', cursive;
 }
 
+footer {
+    transform: scaleY(-1);
+}
+
 .image-carousel,
 .main-hero-image {
     background-color: #460b0b;
 }
 
-.navbar,
-.genre-images,
 .genre-field {
     background-color: #27383e;
 }
 
 .genre-images {
     height: 10rem;
+    background-color: #27383e;
 }
 
 .film-banner {
     height: 72px;
     background-image: url("./images/image.png");
     background-repeat: repeat-x;
+    background-color: #27383e;
 }
 
 /* .bulma-hamburger-mixin {

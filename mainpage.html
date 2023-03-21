@@ -19,10 +19,8 @@
           <span aria-hidden="true"></span>
         </a>
         <p class="is-size-3 is-size-4-touch has-text-warning p-3">Mr.Movie</p>
-      </div>
-      <div class="is-flex is-hidden-touch">
         <!-- Genre Dropdown List -->
-        <div class="navbar-item has-dropdown is-active">
+        <div class="navbar-item has-dropdown is-hidden-touch">
           <a class="navbar-link has-text-warning">
             Select Genre
           </a>
@@ -31,7 +29,7 @@
           </div>
         </div>
         <!-- Year Dropdown List -->
-        <div class="navbar-item has-dropdown is-active">
+        <div class="navbar-item has-dropdown is-hidden-touch">
           <a class="navbar-link has-text-warning">
             Select Year
           </a>
@@ -39,32 +37,11 @@
           <div class="navbar-dropdown" id="year-dropdown">
           </div>
         </div>
-        <!-- Movie Search Bar -->
-        <div class="navbar-item has-dropdown is-active">
-          <a class="navbar-link has-text-warning">
-            Movie Title
-          </a>
-          <!-- This is where the genre list is appended -->
-          <div class="navbar-dropdown is-flex is-flex-direction-column is-align-items-center" id="genre-dropdown">
-            <input class="title-search-bar input is-warning is-small is-rounded has-text-centered mb-3" type="text" placeholder="Title Name">
-            <button class="search-title-button button is-small is-warning is-rounded">
-                <strong>Submit</strong>
-            </button>
-          </div>
-        </div>
-        <div class="navbar-item has-dropdown is-active">
-          <a class="navbar-link has-text-warning">
-            Actor
-          </a>
-          <!-- This is where the genre list is appended -->
-          <div class="navbar-dropdown is-flex is-flex-direction-column is-align-items-center" id="genre-dropdown">
-            <input class="actor-search-bar input is-warning is-small is-rounded has-text-centered" type="text" placeholder="Search by Actor Name">
-            <button class="search-actor-button button is-small is-warning is-rounded">
-                <strong>Submit</strong>
-            </button>
-          </div>
-        </div>
       </div>
+      <!-- Title and Actor Search Bar -->
+      <div class="navbar-item">
+        <input class="title-search-bar input is-warning is-small is-rounded has-text-centered" type="text" placeholder="Actor or Title Name">
+      </div>  
       <div class="is-hidden">
       <!-- dropdown nav buttons are aligned right -->
         <div id="genre" class="select is-warning mr-4">
@@ -86,7 +63,7 @@
                 <strong>Submit</strong>
             </button>
             <!-- search bar for actor entry -->
-            <input class="actor-search-bar input is-warning is-medium is-rounded has-text-centered" type="text" placeholder="Search by Actor Name">
+            <input class="actor-search-bar input is-warning is-medium is-rounded has-text-centered" type="text" placeholder="Search by Actor Name" aria-autocomplete="list">
             <button class="search-actor-button button is-primary is-warning is-rounded">
                 <strong>Submit</strong>
             </button>
@@ -97,8 +74,8 @@
   <main>
     <!--Hero image container here with image placeholder inside -->
     <section class="main-hero-image hero is-halfheight">
-      <div class="hero-body is-flex is-flex-direction-column">
-        <img src="./images/placeholderimg.jpeg" alt="place holder image"></img>
+      <div class="hero-body is-flex is-flex-direction-column mt-5">
+        <img class="m-5" src="./images/placeholderimg.jpeg" alt="place holder image"></img>
           <div class="">
             <p class="title has-text-warning has-text-centered pt-5">
                 Stuck on what to watch? Let Mr. Movie choose for you!
@@ -131,7 +108,8 @@
 
   <!--needs carousel-->
   </main>
-
+  <footer class="film-banner">
+  </footer>
   <script src="./script.js"></script>
 </body>
 </html>
