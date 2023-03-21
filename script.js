@@ -34,7 +34,8 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
 				console.log(genreName);
 				
 				// Create and append the dropdown items from the array
-				let genreDropdownItem = document.createElement('option');
+				let genreDropdownItem = document.createElement('a');
+				genreDropdownItem.classList.add('navbar-item')
 				genreDropdownItem.textContent = genreName;
 				createGenreList.appendChild(genreDropdownItem);
 			};
@@ -52,7 +53,8 @@ console.log(yearArray);
 yearArray.forEach(year => {
 	
 	// Create and append the years array to a dropdown list
-	let yearDropdownItem = document.createElement('option');
+	let yearDropdownItem = document.createElement('a');
+	yearDropdownItem.classList.add('navbar-item')
 	yearDropdownItem.textContent = year;
 	yearDropdownItem.value = year;
 	createYearList.appendChild(yearDropdownItem);

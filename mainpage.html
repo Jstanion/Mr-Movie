@@ -11,15 +11,61 @@
 </head>
 <body>
   <header>
-    <nav class="navbar film-banner is-flex is-flex-direction-row is-justify-content-space-between is-align-items-center" role="navigation" aria-label="main navigation">
+    <nav class="navbar film-banner is-fixed-top is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between" role="navigation" aria-label="main navigation">
       <div class="navbar-brand is-flex is-align-items-center">
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
-        <p class="is-size-4 is-size-4-touch has-text-warning p-3">Mr.Movie</p>
+        <p class="is-size-3 is-size-4-touch has-text-warning p-3">Mr.Movie</p>
       </div>
+      <div class="is-flex is-hidden-touch">
+        <!-- Genre Dropdown List -->
+        <div class="navbar-item has-dropdown is-active">
+          <a class="navbar-link has-text-warning">
+            Select Genre
+          </a>
+          <!-- This is where the genre list is appended -->
+          <div class="navbar-dropdown" id="genre-dropdown">
+          </div>
+        </div>
+        <!-- Year Dropdown List -->
+        <div class="navbar-item has-dropdown is-active">
+          <a class="navbar-link has-text-warning">
+            Select Year
+          </a>
+          <!-- This is where the genre list is appended -->
+          <div class="navbar-dropdown" id="year-dropdown">
+          </div>
+        </div>
+        <!-- Movie Search Bar -->
+        <div class="navbar-item has-dropdown is-active">
+          <a class="navbar-link has-text-warning">
+            Movie Title
+          </a>
+          <!-- This is where the genre list is appended -->
+          <div class="navbar-dropdown is-flex is-flex-direction-column is-align-items-center" id="genre-dropdown">
+            <input class="title-search-bar input is-warning is-small is-rounded has-text-centered mb-3" type="text" placeholder="Title Name">
+            <button class="search-title-button button is-small is-warning is-rounded">
+                <strong>Submit</strong>
+            </button>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-active">
+          <a class="navbar-link has-text-warning">
+            Actor
+          </a>
+          <!-- This is where the genre list is appended -->
+          <div class="navbar-dropdown is-flex is-flex-direction-column is-align-items-center" id="genre-dropdown">
+            <input class="actor-search-bar input is-warning is-small is-rounded has-text-centered" type="text" placeholder="Search by Actor Name">
+            <button class="search-actor-button button is-small is-warning is-rounded">
+                <strong>Submit</strong>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="is-hidden">
       <!-- dropdown nav buttons are aligned right -->
         <div id="genre" class="select is-warning mr-4">
           <!-- dropdown that lists all genre options -->
@@ -45,6 +91,7 @@
                 <strong>Submit</strong>
             </button>
         </div>
+      </div>
     </nav>
   </header>
   <main>
