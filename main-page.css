@@ -1,3 +1,5 @@
+/* At some point when we combine CSS properties we should consider using CSS variables for the themed color sections  */
+
 * {
     font-family: 'Limelight', cursive;
 }
@@ -6,6 +8,7 @@
 .main-hero-image {
     background-color: #460b0b;
 }
+
 .navbar,
 .genre-images,
 .genre-field {
@@ -14,6 +17,11 @@
 
 .genre-images {
     height: 10rem;
+}
+
+.film-banner {
+    background-image: url("./images/image.png");
+    background-repeat: repeat-x;
 }
 
 /* .bulma-hamburger-mixin {

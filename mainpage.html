@@ -11,11 +11,12 @@
 </head>
 <body>
   <header>
-    <div class="navbar">
-        <img id="main-icon" class="p-0" src="./images/image.png" alt="Film" width="4%">
-        <p class="is-size-3 is-size-6-touch has-text-warning m-5">Welcome to Mr.Movie</p>
+    <div class="film-banner is-flex is-flex-direction-row">
+      <p class="is-size-3 is-size-6-touch has-text-warning m-5">Welcome to Mr.Movie</p>
+    </div>
+    <div class="navbar is-flex is-flex-direction-row">
       <!-- dropdown nav buttons are aligned right -->
-      <div class="level-right">
+      <div class="is-flex is-flex-direction-row is-align-items-center">
         <div id="genre" class="select is-warning mr-4">
           <!-- dropdown that lists all genre options -->
           <select id="genre-dropdown" class="search-element" data-my-param="byGen">
@@ -28,15 +29,15 @@
           <option>Select Year</option>
           </select>
         </div>
-        <div class="level">
+        <div class="level is-flex is-justify-content-flex-end">
             <!-- search bar for title entry -->
-            <input class="title-search-bar input is-warning is-medium is-rounded mr-4 has-text-centered" type="text" placeholder="Search by Title Name">
-            <button class="search-title-button button is-primary mr-4 is-warning is-rounded">
+            <input class="title-search-bar input is-warning is-medium is-rounded has-text-centered" type="text" placeholder="Search by Title Name">
+            <button class="search-title-button button is-primary is-warning is-rounded">
                 <strong>Submit</strong>
             </button>
             <!-- search bar for actor entry -->
-            <input class="actor-search-bar input is-warning is-medium is-rounded mr-4  has-text-centered" type="text" placeholder="Search by Actor Name">
-            <button class="search-actor-button button is-primary mr-4 is-warning is-rounded">
+            <input class="actor-search-bar input is-warning is-medium is-rounded has-text-centered" type="text" placeholder="Search by Actor Name">
+            <button class="search-actor-button button is-primary is-warning is-rounded">
                 <strong>Submit</strong>
             </button>
         </div>
