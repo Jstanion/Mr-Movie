@@ -1,0 +1,18 @@
+.hero.is-fullheight .hero-body, .hero.is-fullheight-with-navbar .hero-body, .hero.is-halfheight .hero-body 
+{
+    background-color: #460b0b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Limelight', cursive;
+}
+
+#oops {
+    font-size: 200px;
+}
+
+#btn-home {
+    background-color: #27383e;
+    color:#ffdb84;
+}
