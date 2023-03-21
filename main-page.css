@@ -16,6 +16,6 @@
     height: 10rem;
 }
 
-.bulma-hamburger-mixin {
+/* .bulma-hamburger-mixin {
     @include hamburger(2.5rem);
-  }
+  } */
