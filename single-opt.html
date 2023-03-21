@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Single Option</title>
-    <link rel="stylesheet" href="./Assets/single-opt.css">
+    <link rel="stylesheet" href="./single-opt.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,46 +14,48 @@
 </head>
 
 <body class="hero is-success is-fullheight">
-    <section>
+    <section id="single-whole">
         <!-- Hero head: will stick at the top -->
-        <div class="hero-head">
-            <header class="navbar">
-                <div class="container">
-                    <div class="navbar-brand">
-                        <a class="navbar-item">
-                            <!-- Site logo -->
-                        </a>
-                    </div>
-                    <div id="navbarMenuHeroC" class="navbar-menu">
-                        <div class="navbar-end">
+        <!-- <div class="hero-head"> -->
+        <header class="navbar" id="nav-head">
+            <div class="navbar-end is-flex is-justify-content-end">
+                <span class="navbar-item is-mobile">
+                    <a class="button  is-inverted " id="home-btn">
+                        <span >Home</span>
+                    </a>
+                </span>
+            </div>
+            <!-- Commented out these elements, but will keep them hear incase they come in handy -->
+            <!-- <div class="container"> -->
+            <!-- <div class="navbar-brand"> -->
+            <!-- <a class="navbar-item"> -->
+            <!-- Site logo -->
+            <!-- </a> -->
+            <!-- </div> -->
+            <!-- <div id="navbarMenuHeroC" class="navbar-menu is-mobile"> -->
 
-                            <span class="navbar-item">
-                                <a class="button is-success is-inverted">
-                                    <span>Home</span>
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </header>
+            <!-- </div> -->
+            <!-- </div> -->
+        </header>
         </div>
         <!-- OPTIONAL This could hold the movie info ( will ask group) -->
-        <article class="message">
-            <div class="message-header">
-              <p>Movie Title</p>
-              <button class="delete" aria-label="delete"></button>
-            </div>
-            <div class="message-body">
-                This is where we can possibly have the movie info or synopsis
-            </div>
-          </article>
 
-          <!-- This will be where we put the movie poster -->
+
+        <!-- This will be where we put the movie poster -->
         <div class="hero-body">
+            <article class="message">
+                <div class="message-header">
+                    <p>Movie Title</p>
+                    <button class="delete" aria-label="delete"></button>
+                </div>
+                <div class="message-body">
+                    This is where we can possibly have the movie info or synopsis
+                </div>
+            </article>
             <figure class="image is-600x800">
-              <img src="Assets/grindhouse-movie-posters-funny_car_summer_poster_01.jpg">
+                <img src="./grindhouse-movie-posters-funny_car_summer_poster_01.jpg" id="movie-poster">
             </figure>
-          </div>
+        </div>
 
     </section>
 </body>

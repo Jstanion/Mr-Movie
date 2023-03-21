@@ -1,9 +1,18 @@
-.hero-body {
-    display: flex;
-    justify-content: space-around;
+* {
+    font-family: "limelight", cursive;
 }
 
-.hero.is-success {
+.hero-body {
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.hero-body , #nav-head{
     background-color: #460b0b;
     color: #fff;
 }
+  #home-btn {
+    background-color: #27383e;
+    color: #cb861a
+ }
