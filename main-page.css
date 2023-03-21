@@ -1,3 +1,7 @@
+* {
+    font-family: 'Limelight', cursive;
+}
+
 .image-carousel,
 .main-hero-image {
     background-color: #460b0b;
@@ -8,10 +12,10 @@
     background-color: #27383e;
 }
 
-.navbar{
-    height: 4rem;
-}
-
 .genre-images {
     height: 10rem;
 }
+
+.bulma-hamburger-mixin {
+    @include hamburger(2.5rem);
+  }
