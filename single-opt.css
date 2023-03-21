@@ -1,10 +1,18 @@
+* {
+    font-family: "limelight", cursive;
+}
+
 .hero-body {
     flex-direction: column;
     justify-content: space-around;
+    
 }
 
 .hero-body , #nav-head{
     background-color: #460b0b;
     color: #fff;
 }
-
+  #home-btn {
+    background-color: #27383e;
+    color: #cb861a
+ }
