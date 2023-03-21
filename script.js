@@ -10,6 +10,7 @@ const options = {
 // Global variables
 const createGenreList = document.querySelector('#genre-dropdown');
 const createYearList = document.querySelector('#year-dropdown');
+const searchInput = document.getElementById('search-input');
 const titleSearchBar = document.querySelector('.title-search-bar');
 const actorSearchBar = document.querySelector('.actor-search-bar')
 const searchEl = document.querySelectorAll('.search-element');
