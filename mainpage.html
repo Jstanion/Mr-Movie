@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./search-error.css">
+  <title>Mr.Movie - Movie Generator</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar is-flex is-flex-direction-row is-justify-content-space-between">
+      <div class="navbar-brand">
+        <img class="p-0" src="./images/image.png" alt="Film">
+      </div>
+      <h1 class="is-size-2 has-text-warning">Welcome to Mr.Movie</h1>
+      <nav class="navbar is-align-items-center level-right" role="navigation" aria-label="main navigation">
+        <!--dropdown nav buttons are aligned right-->
+        <div class="level-right">
+          <div id="genre" class="select is-warning mr-4">
+            <!-- dropdown that lists all genre options -->
+            <select id="genre-dropdown" class="search-element" data-my-param="byGen">
+            <option>Select Genre</option>
+            </select>
+          </div>
+          <div id="year" class="select is-warning mr-4">
+            <!-- dropdown that lists all year options -->
+            <select id="year-dropdown" class="search-element" data-my-param="byYear">
+            <option>Select Year</option>
+            </select>
+          </div>
+          <div class="level">
+              <!-- search bar for title entry -->
+              <input class="title-search-bar input is-warning is-medium is-rounded mr-4 has-text-centered" type="text" placeholder="Search by Title Name">
+              <button class="search-title-button button is-primary mr-4 is-warning is-rounded">
+                  <strong>Submit</strong>
+              </button>
+              <!-- search bar for actor entry -->
+              <input class="actor-search-bar input is-warning is-medium is-rounded mr-4  has-text-centered" type="text" placeholder="Search by Actor Name">
+              <button class="search-actor-button button is-primary mr-4 is-warning is-rounded">
+                  <strong>Submit</strong>
+              </button>
+          </div>
+        </div>
+      </nav>
+    </nav>
+  </header>
+  <main>
+    <!--Hero image container here with image placeholder inside -->
+    <section class="main-hero-image hero is-halfheight">
+      <div class="hero-body">
+        <img src="./images/placeholderimg.jpeg" alt="place holder image"></img>
+          <div class="">
+            <p class="title has-text-warning has-text-centered pt-5">
+                Stuck on what to watch? Let Mr. Movie choose for you!
+            </p>
+            <p class="subtitle has-text-warning has-text-centered">
+              We know choosing what to watch can be a stressful situation. If you're feeling lucky, <br>just click the image above and we will provide you with a randomized movie choice for your viewing pleasure!
+              <br>
+              <br>
+              OR
+              <br>
+              <br>
+              For a few options to choose from, select any of the genre options below!
+            </p>
+          </div>
+        </div>
+    </section>
+    <section class="image-carousel is-flex is-direction-row is-justify-content-center is-align-items-center p-5">
+      <!-- button displays the previous list of genre options -->
+      <button class="button is-large m-5 is-warning is-rounded">Back</button>
+
+      <div class="genre-field p-5 is-flex is-justify-content-space-around">
+        <img class="genre-images m-5" src="./images/placeholderimg.jpeg" alt="place holder image"></img>
+        <img class="genre-images m-5" src="./images/placeholderimg.jpeg" alt="place holder image"></img>
+        <img class="genre-images m-5" src="./images/placeholderimg.jpeg" alt="place holder image"></img>
+        <img class="genre-images m-5" src="./images/placeholderimg.jpeg" alt="place holder image"></img>
+        <img class="genre-images m-5" src="./images/placeholderimg.jpeg" alt="place holder image"></img>
+        <img class="genre-images m-5" src="./images/placeholderimg.jpeg" alt="place holder image"></img>
+        <img class="genre-images m-5" src="./images/placeholderimg.jpeg" alt="place holder image"></img>
+      </div>
+      <!-- button displays next list of genre options -->
+      <button class="button is-large m-5 is-warning is-rounded">Next</button>
+    </section>
+
+  <!--needs carousel-->
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
