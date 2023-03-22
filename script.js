@@ -139,7 +139,27 @@ searchInput.addEventListener('keydown', (event) => {
 
 // Start Abigail's work section
 // creating modal object that includes, titles, labels, text, button
+class mainPageModal {
+	constructor ({
+		titleText,
+		messageText,
+		watchText,
+		cancelText,
+	}){
+		this.titleText = titleText;
+		this.messageText = messageText;
+		this.watchText = watchText;
+		this.cancelText = cancelText;
+	}
+}
 
+const confirmModal = new mainPageModal ({
+	titleText: 'Congrats! We found what youre looking for',
+	messageText: 'Movie Insert',
+	confirmText: 'Watch Now',
+	cancelText: 'Search Again',
+})
+console.log(confirmModal)
 // when done we should be able to use modal with this function, once string is inputed
 document.getElementById('')
 .addEventListener('click', () =>{
