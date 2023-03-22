@@ -7,6 +7,13 @@
     font-family: 'Limelight', cursive;
 }
 
+.film-banner{
+    height: 72px;
+    background-image: url("./images/image.png");
+    background-repeat: repeat-x;
+    background-color: #27383e;
+}
+
 #oops {
     font-size: 200px;
 }
