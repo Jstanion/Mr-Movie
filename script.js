@@ -1,11 +1,25 @@
-// API key and URL
-const options = {
+// API key and URL for MoviesMiniDatabase (first API)
+const searchId = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': '3c02005a87mshb2ae9fa4e6ea20ap173d47jsn23043256962d',
 		'X-RapidAPI-Host': 'moviesminidatabase.p.rapidapi.com'
 	}
 };
+
+// API key and URL for MoviesDatabase (second API)
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '3c02005a87mshb2ae9fa4e6ea20ap173d47jsn23043256962d',
+		'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
+	}
+};
+
+fetch('https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids?idsList=tt10121392', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
 
 // Global variables
 const createGenreList = document.querySelector('#genre-dropdown');
@@ -16,7 +30,7 @@ const dropdownSelection = document.querySelectorAll('.genre-item');
 const homeButton = document.getElementById('btn-home');
 
 // Pulls genre data from API
-fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
+fetch('https://moviesminidatabase.p.rapidapi.com/genres/', searchId)
 .then(response => response.json())
 .then(data => {
 	console.log(data);
@@ -68,7 +82,7 @@ let backButton = function redirect() {
 // Function that provides movies based on title name search
 let getMovieByTitle = function(searchBarEntry) {
 	console.log(searchBarEntry)
-	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/imdb_id/byTitle/${searchBarEntry}/`, options)
+	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/imdb_id/byTitle/${searchBarEntry}/`, searchId)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
@@ -77,7 +91,7 @@ let getMovieByTitle = function(searchBarEntry) {
 // Function that provides movies based on dropdown selections
 let getMovieByDropdown = function(selectedOption, dropdownCategory) {
 	console.log(selectedOption, dropdownCategory);
-	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${selectedOption}/`, options)
+	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${selectedOption}/`, searchId)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
@@ -85,7 +99,7 @@ let getMovieByDropdown = function(selectedOption, dropdownCategory) {
 
 // Function that provides movies based on actor name search
 let getMovieByActor = function(searchBarEntry) {
-	fetch(`https://moviesminidatabase.p.rapidapi.com/actor/imdb_id_byName/${searchBarEntry}/`, options)
+	fetch(`https://moviesminidatabase.p.rapidapi.com/actor/imdb_id_byName/${searchBarEntry}/`, searchId)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
