@@ -39,7 +39,7 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
 		for (const key in obj) {
 			if (obj.hasOwnProperty(key)) {
 				const genreName = obj[key];
-				console.log(genreName);
+				// console.log(genreName);
 				
 				// Create and append the dropdown items from the array
 				let genreDropdownItem = document.createElement('a');
@@ -83,8 +83,9 @@ let getMovieByDropdown = (selectedOption, dropdownCategory) => {
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${selectedOption}/`, moviesMiniDatabase)
 	.then(response => response.json())
 	.then(response => { 
-		console.log(data); 
-		getMovieData(data.results[0].imdb_id) 
+		console.log(response); 
+		console.log(response.results[0].imdb_id); 
+		getMovieData(response.results[0].imdb_id) 
 	})
 	.catch(err => console.error(err));
 };
@@ -95,15 +96,30 @@ let getMovieByActor = (searchBarEntry) => {
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
-}
+};
 
 // Function that provides movie data based on IMDB ID
 let getMovieData = (titleId) => {
 	fetch(`https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids?idsList=${titleId}`, moviesDatabase)
 	.then(response => response.json())
-	.then(response => console.log(response))
+	.then(response => {
+		console.log(response);
+		let movieImage = response.results[0].primaryImage.url;
+		let movieTitle = response.results[0].titleText.text;
+		let caption = response.results[0].primaryImage.caption.plainText;
+		let releaseDate = response.results[0].releaseDate;
+		displayMovieInfo(movieImage, movieTitle, caption, releaseDate);
+	})
 	.catch(err => console.error(err));
-}
+};
+
+// Function that displays the movie info to the UI
+let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
+	let moviePoster = document.querySelector('#movie-image');
+	moviePoster.src = movieImage;
+	moviePoster.alt = caption;
+	console.log(movieTitle, caption, releaseDate.month, releaseDate.day, releaseDate.year);
+};
 
 // Event listener grabbing the dropdown value and selected option value
 dropdownEl.forEach(dropdownEl => {
