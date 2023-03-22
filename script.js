@@ -39,7 +39,7 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
 				let genreDropdownItem = document.createElement('a');
 				genreDropdownItem.classList.add('navbar-item')
 				genreDropdownItem.textContent = genreName;
-				// createGenreList.appendChild(genreDropdownItem);
+				createGenreList.appendChild(genreDropdownItem);
 			};
 		};
 	};
@@ -59,7 +59,7 @@ yearArray.forEach(year => {
 	yearDropdownItem.classList.add('navbar-item')
 	yearDropdownItem.textContent = year;
 	yearDropdownItem.value = year;
-	// createYearList.appendChild(yearDropdownItem);
+	createYearList.appendChild(yearDropdownItem);
 });
 
 // Function to redirect to home page
@@ -103,11 +103,14 @@ searchEl.forEach(searchEl => {
 
 });
 
-// submitTitleButton.addEventListener('click', () => {
-// 	const searchBarEntry = titleSearchBar.value;
-// 	console.log(searchBarEntry)
-// 	getMovieByTitle(searchBarEntry);
-// })
+searchInput.addEventListener('keydown', (event) => {
+	if(event.key === 'Enter') {
+		const searchBarEntry = searchInput.value;
+		console.log(searchBarEntry)
+		getMovieByTitle(searchBarEntry);
+		getMovieByActor(searchBarEntry);
+	}
+})
 
 // submitActorButton.addEventListener('click', () => {
 // 	const searchBarEntry = actorSearchBar.value;
