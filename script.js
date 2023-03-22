@@ -78,13 +78,13 @@ let getMovieByTitle = function(searchBarEntry) {
 };
 
 // Function that provides movies based on dropdown selections
-let getMovieByDropdown = function(selectedOption, dropdownCategory) {
-	console.log(selectedOption, dropdownCategory);
-	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${selectedOption}/`, options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
-};
+// let getMovieByDropdown = function(selectedOption, dropdownCategory) {
+// 	console.log(selectedOption, dropdownCategory);
+// 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${selectedOption}/`, options)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+// 	.catch(err => console.error(err));
+// };
 
 // Function that provides movies based on actor name search
 let getMovieByActor = function(searchBarEntry) {
@@ -95,10 +95,11 @@ let getMovieByActor = function(searchBarEntry) {
 }
 
 searchEl.forEach(searchEl => {
-	searchEl.addEventListener('change', (event) => {
+	searchEl.addEventListener('click', (event) => {
+		console.log('this works')
 		const dropdownCategory = event.target.dataset.myParam;
 		const selectedOption = event.target.value;
-		getMovieByDropdown(selectedOption, dropdownCategory);
+		// getMovieByDropdown(selectedOption, dropdownCategory);
 	});
 
 });
