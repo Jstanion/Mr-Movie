@@ -11,11 +11,9 @@ const options = {
 const createGenreList = document.querySelector('#genre-dropdown');
 const createYearList = document.querySelector('#year-dropdown');
 const searchInput = document.getElementById('search-input');
-const titleSearchBar = document.querySelector('.title-search-bar');
-const actorSearchBar = document.querySelector('.actor-search-bar')
-const searchEl = document.querySelectorAll('.search-element');
-const submitTitleButton = document.querySelector('.search-title-button');
-const submitActorButton = document.querySelector('.search-actor-button');
+const dropdownEl = document.querySelectorAll('.search-element');
+const dropdownSelection = document.querySelectorAll('.genre-item');
+const homeButton = document.getElementById('btn-home');
 
 // Pulls genre data from API
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
@@ -36,7 +34,7 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
 				
 				// Create and append the dropdown items from the array
 				let genreDropdownItem = document.createElement('a');
-				genreDropdownItem.classList.add('navbar-item')
+				genreDropdownItem.classList.add('navbar-item', 'genre-item')
 				genreDropdownItem.textContent = genreName;
 				createGenreList.appendChild(genreDropdownItem);
 			};
@@ -55,11 +53,17 @@ yearArray.forEach(year => {
 	
 	// Create and append the years array to a dropdown list
 	let yearDropdownItem = document.createElement('a');
-	yearDropdownItem.classList.add('navbar-item')
+	yearDropdownItem.classList.add('navbar-item', 'genre-item')
 	yearDropdownItem.textContent = year;
 	yearDropdownItem.value = year;
 	createYearList.appendChild(yearDropdownItem);
 });
+
+// Function to redirect to home page
+let backButton = function redirect() {
+	window.location.href = "file:///C:/Users/Joseph%20Stanion/bootcamp/amazing-project-1/mainpage.html";
+  }
+  
 
 // Function that provides movies based on title name search
 let getMovieByTitle = function(searchBarEntry) {
@@ -87,23 +91,75 @@ let getMovieByActor = function(searchBarEntry) {
 	.catch(err => console.error(err));
 }
 
-searchEl.forEach(searchEl => {
-	searchEl.addEventListener('change', (event) => {
+// Event listener grabbing the dropdown value and selected option value
+dropdownEl.forEach(dropdownEl => {
+	dropdownEl.addEventListener('click', (event) => {
 		const dropdownCategory = event.target.dataset.myParam;
-		const selectedOption = event.target.value;
-		getMovieByDropdown(selectedOption, dropdownCategory);
+		console.log(dropdownCategory);
+		const dropdownSelection = document.querySelectorAll('.genre-item');
+		
+		dropdownSelection.forEach(dropdownSelection => {
+			dropdownSelection.addEventListener('click', (event) => {
+				const selectedOption = event.target.textContent;
+				console.log(selectedOption);
+				getMovieByDropdown(selectedOption, dropdownCategory);	
+			});
+		});
 	});
-
 });
 
-submitTitleButton.addEventListener('click', () => {
-	const searchBarEntry = titleSearchBar.value;
-	console.log(searchBarEntry)
-	getMovieByTitle(searchBarEntry);
-})
-
-submitActorButton.addEventListener('click', () => {
-	const searchBarEntry = actorSearchBar.value;
-	console.log(searchBarEntry)
-	getMovieByActor(searchBarEntry);
+searchInput.addEventListener('keydown', (event) => {
+	if(event.key === 'Enter') {
+		const searchBarEntry = searchInput.value;
+		console.log(searchBarEntry)
+		getMovieByTitle(searchBarEntry);
+		getMovieByActor(searchBarEntry);
+	};
 });
+
+// submitActorButton.addEventListener('click', () => {
+// 	const searchBarEntry = actorSearchBar.value;
+// 	console.log(searchBarEntry)
+// 	getMovieByActor(searchBarEntry);
+// });
+
+
+
+
+
+// Start Jace's work section
+
+
+// End Jace's work section
+
+
+
+
+
+
+// Start Abigail's work section
+
+
+// End Abigail's work section
+
+
+
+
+
+
+
+// Start Michael's work section
+
+
+// End Michael's work section
+
+
+
+
+
+
+
+// Start Joey's work section
+
+
+// End Joey's work section
