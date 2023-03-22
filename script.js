@@ -138,8 +138,13 @@ searchInput.addEventListener('keydown', (event) => {
 
 
 // Start Abigail's work section
+// creating modal object that includes, titles, labels, text, button
 
-
+// when done we should be able to use modal with this function, once string is inputed
+document.getElementById('')
+.addEventListener('click', () =>{
+	console.log("click")
+});
 // End Abigail's work section
 
 
