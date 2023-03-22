@@ -5,14 +5,22 @@
 .hero-body {
     flex-direction: column;
     justify-content: space-around;
-    
-}
-
-.hero-body , #nav-head{
     background-color: #460b0b;
     color: #fff;
 }
+
+.film-banner , .navbar-end {
+    height: 72px;
+    background-image: url("./images/image.png");
+    background-repeat: repeat-x;
+    background-color: #27383e;
+}
+
   #home-btn {
     background-color: #27383e;
     color: #cb861a
  }
+
+ footer {
+    transform: scaleY(-1);
+}
