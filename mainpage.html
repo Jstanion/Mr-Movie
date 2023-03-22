@@ -20,21 +20,21 @@
         </a>
         <p class="is-size-3 is-size-4-touch has-text-warning p-3">Mr.Movie</p>
         <!-- Genre Dropdown List -->
-        <div class="navbar-item has-dropdown is-hidden-touch is-active">
+        <div class="navbar-item has-dropdown is-hidden-touch" onclick="classList.add('is-active')">
           <a class="navbar-link has-text-warning search-element" data-my-param="byGen">
             Select Genre
           </a>
           <!-- This is where the genre list is appended -->
-          <div class="navbar-dropdown" id="genre-dropdown">
+          <div class="navbar-dropdown" id="genre-dropdown" onclick="classList.add('is-hidden')">
           </div>
         </div>
         <!-- Year Dropdown List -->
-        <div class="navbar-item has-dropdown is-hidden-touch is-active">
+        <div class="navbar-item has-dropdown is-hidden-touch" onclick="classList.add('is-active')">
           <a class="navbar-link has-text-warning search-element" data-my-param="byYear">
             Select Year
           </a>
           <!-- This is where the genre list is appended -->
-          <div class="navbar-dropdown" id="year-dropdown">
+          <div class="navbar-dropdown" id="year-dropdown" onclick="classList.add('is-hidden')">
           </div>
         </div>
       </div>

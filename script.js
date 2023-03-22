@@ -98,8 +98,8 @@ dropdownEl.forEach(dropdownEl => {
 		console.log(dropdownCategory);
 		const dropdownSelection = document.querySelectorAll('.genre-item');
 		
-		dropdownSelection.forEach(dropdown => {
-			dropdown.addEventListener('click', (event) => {
+		dropdownSelection.forEach(dropdownSelection => {
+			dropdownSelection.addEventListener('click', (event) => {
 				const selectedOption = event.target.textContent;
 				console.log(selectedOption);
 				getMovieByDropdown(selectedOption, dropdownCategory);	
