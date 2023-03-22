@@ -16,6 +16,7 @@ const actorSearchBar = document.querySelector('.actor-search-bar')
 const searchEl = document.querySelectorAll('.search-element');
 const submitTitleButton = document.querySelector('.search-title-button');
 const submitActorButton = document.querySelector('.search-actor-button');
+const homeButton = document.getElementById('btn-home')
 
 // Pulls genre data from API
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
@@ -38,7 +39,7 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
 				let genreDropdownItem = document.createElement('a');
 				genreDropdownItem.classList.add('navbar-item')
 				genreDropdownItem.textContent = genreName;
-				createGenreList.appendChild(genreDropdownItem);
+				// createGenreList.appendChild(genreDropdownItem);
 			};
 		};
 	};
@@ -58,8 +59,14 @@ yearArray.forEach(year => {
 	yearDropdownItem.classList.add('navbar-item')
 	yearDropdownItem.textContent = year;
 	yearDropdownItem.value = year;
-	createYearList.appendChild(yearDropdownItem);
+	// createYearList.appendChild(yearDropdownItem);
 });
+
+// Function to redirect to home page
+let backButton = function redirect() {
+	window.location.href = "file:///C:/Users/Joseph%20Stanion/bootcamp/amazing-project-1/mainpage.html";
+  }
+  
 
 // Function that provides movies based on title name search
 let getMovieByTitle = function(searchBarEntry) {
@@ -96,14 +103,55 @@ searchEl.forEach(searchEl => {
 
 });
 
-submitTitleButton.addEventListener('click', () => {
-	const searchBarEntry = titleSearchBar.value;
-	console.log(searchBarEntry)
-	getMovieByTitle(searchBarEntry);
-})
+// submitTitleButton.addEventListener('click', () => {
+// 	const searchBarEntry = titleSearchBar.value;
+// 	console.log(searchBarEntry)
+// 	getMovieByTitle(searchBarEntry);
+// })
 
-submitActorButton.addEventListener('click', () => {
-	const searchBarEntry = actorSearchBar.value;
-	console.log(searchBarEntry)
-	getMovieByActor(searchBarEntry);
-});
+// submitActorButton.addEventListener('click', () => {
+// 	const searchBarEntry = actorSearchBar.value;
+// 	console.log(searchBarEntry)
+// 	getMovieByActor(searchBarEntry);
+// });
+
+
+
+
+
+// Start Jace's work section
+
+
+// End Jace's work section
+
+
+
+
+
+
+// Start Abigail's work section
+
+
+// End Abigail's work section
+
+
+
+
+
+
+
+// Start Michael's work section
+
+
+// End Michael's work section
+
+
+
+
+
+
+
+// Start Joey's work section
+
+
+// End Joey's work section
