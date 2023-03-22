@@ -82,8 +82,10 @@ let getMovieByDropdown = (selectedOption, dropdownCategory) => {
 	console.log(selectedOption, dropdownCategory);
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${selectedOption}/`, moviesMiniDatabase)
 	.then(response => response.json())
-	.then(response => console.log(response))
-		
+	.then(response => { 
+		console.log(data); 
+		getMovieData(data.results[0].imdb_id) 
+	})
 	.catch(err => console.error(err));
 };
 
