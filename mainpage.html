@@ -20,21 +20,21 @@
         </a>
         <p class="is-size-3 is-size-4-touch has-text-warning p-3">Mr.Movie</p>
         <!-- Genre Dropdown List -->
-        <div class="navbar-item has-dropdown is-hidden-touch">
-          <a class="navbar-link has-text-warning">
+        <div class="navbar-item has-dropdown is-hidden-touch" onclick="classList.add('is-active')">
+          <a class="navbar-link has-text-warning search-element" data-my-param="byGen">
             Select Genre
           </a>
           <!-- This is where the genre list is appended -->
-          <div class="navbar-dropdown" id="genre-dropdown">
+          <div class="navbar-dropdown" id="genre-dropdown" onclick="classList.add('is-hidden')">
           </div>
         </div>
         <!-- Year Dropdown List -->
-        <div class="navbar-item has-dropdown is-hidden-touch">
-          <a class="navbar-link has-text-warning">
+        <div class="navbar-item has-dropdown is-hidden-touch" onclick="classList.add('is-active')">
+          <a class="navbar-link has-text-warning search-element" data-my-param="byYear">
             Select Year
           </a>
           <!-- This is where the genre list is appended -->
-          <div class="navbar-dropdown" id="year-dropdown">
+          <div class="navbar-dropdown" id="year-dropdown" onclick="classList.add('is-hidden')">
           </div>
         </div>
       </div>
@@ -42,33 +42,33 @@
       <div class="navbar-item">
         <input class="title-search-bar input is-warning is-small is-rounded has-text-centered" id="search-input" type="text" placeholder="Actor or Title Name">
       </div>  
-      <div class="is-hidden">
+      <!-- <div class="is-hidden"> -->
       <!-- dropdown nav buttons are aligned right -->
-        <div id="genre" class="select is-warning mr-4">
+        <!-- <div id="genre" class="select is-warning mr-4"> -->
           <!-- dropdown that lists all genre options -->
-          <select id="genre-dropdown" class="search-element" data-my-param="byGen">
+          <!-- <select id="genre-dropdown" class="search-element" data-my-param="byGen">
           <option>Select Genre</option>
           </select>
         </div>
-        <div id="year" class="select is-warning mr-4">
+        <div id="year" class="select is-warning mr-4"> -->
           <!-- dropdown that lists all year options -->
-          <select id="year-dropdown" class="search-element" data-my-param="byYear">
+          <!-- <select id="year-dropdown" class="search-element" data-my-param="byYear">
           <option>Select Year</option>
           </select>
         </div>
-        <div class="level is-flex is-justify-content-flex-end">
+        <div class="level is-flex is-justify-content-flex-end"> -->
             <!-- search bar for title entry -->
-            <input class="title-search-bar input is-warning is-medium is-rounded has-text-centered" type="text" placeholder="Search by Title Name">
+            <!-- <input class="title-search-bar input is-warning is-medium is-rounded has-text-centered" type="text" placeholder="Search by Title Name">
             <button class="search-title-button button is-primary is-warning is-rounded">
                 <strong>Submit</strong>
-            </button>
+            </button> -->
             <!-- search bar for actor entry -->
-            <input class="actor-search-bar input is-warning is-medium is-rounded has-text-centered" type="text" placeholder="Search by Actor Name" aria-autocomplete="list">
+            <!-- <input class="actor-search-bar input is-warning is-medium is-rounded has-text-centered" type="text" placeholder="Search by Actor Name" aria-autocomplete="list">
             <button class="search-actor-button button is-primary is-warning is-rounded">
                 <strong>Submit</strong>
             </button>
         </div>
-      </div>
+      </div> -->
     </nav>
   </header>
   <main>
