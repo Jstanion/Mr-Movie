@@ -11,12 +11,9 @@ const options = {
 const createGenreList = document.querySelector('#genre-dropdown');
 const createYearList = document.querySelector('#year-dropdown');
 const searchInput = document.getElementById('search-input');
-const titleSearchBar = document.querySelector('.title-search-bar');
-const actorSearchBar = document.querySelector('.actor-search-bar')
-const searchEl = document.querySelectorAll('.search-element');
-const submitTitleButton = document.querySelector('.search-title-button');
-const submitActorButton = document.querySelector('.search-actor-button');
-const homeButton = document.getElementById('btn-home')
+const dropdownEl = document.querySelectorAll('.search-element');
+const dropdownSelection = document.querySelectorAll('.genre-item');
+const homeButton = document.getElementById('btn-home');
 
 // Pulls genre data from API
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
@@ -37,7 +34,7 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', options)
 				
 				// Create and append the dropdown items from the array
 				let genreDropdownItem = document.createElement('a');
-				genreDropdownItem.classList.add('navbar-item')
+				genreDropdownItem.classList.add('navbar-item', 'genre-item')
 				genreDropdownItem.textContent = genreName;
 				createGenreList.appendChild(genreDropdownItem);
 			};
@@ -56,7 +53,7 @@ yearArray.forEach(year => {
 	
 	// Create and append the years array to a dropdown list
 	let yearDropdownItem = document.createElement('a');
-	yearDropdownItem.classList.add('navbar-item')
+	yearDropdownItem.classList.add('navbar-item', 'genre-item')
 	yearDropdownItem.textContent = year;
 	yearDropdownItem.value = year;
 	createYearList.appendChild(yearDropdownItem);
@@ -78,13 +75,13 @@ let getMovieByTitle = function(searchBarEntry) {
 };
 
 // Function that provides movies based on dropdown selections
-// let getMovieByDropdown = function(selectedOption, dropdownCategory) {
-// 	console.log(selectedOption, dropdownCategory);
-// 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${selectedOption}/`, options)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
-// };
+let getMovieByDropdown = function(selectedOption, dropdownCategory) {
+	console.log(selectedOption, dropdownCategory);
+	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${selectedOption}/`, options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+};
 
 // Function that provides movies based on actor name search
 let getMovieByActor = function(searchBarEntry) {
@@ -94,14 +91,21 @@ let getMovieByActor = function(searchBarEntry) {
 	.catch(err => console.error(err));
 }
 
-searchEl.forEach(searchEl => {
-	searchEl.addEventListener('click', (event) => {
-		console.log('this works')
+// Event listener grabbing the dropdown value and selected option value
+dropdownEl.forEach(dropdownEl => {
+	dropdownEl.addEventListener('click', (event) => {
 		const dropdownCategory = event.target.dataset.myParam;
-		const selectedOption = event.target.value;
-		// getMovieByDropdown(selectedOption, dropdownCategory);
+		console.log(dropdownCategory);
+		const dropdownSelection = document.querySelectorAll('.genre-item');
+		
+		dropdownSelection.forEach(dropdown => {
+			dropdown.addEventListener('click', (event) => {
+				const selectedOption = event.target.textContent;
+				console.log(selectedOption);
+				getMovieByDropdown(selectedOption, dropdownCategory);	
+			});
+		});
 	});
-
 });
 
 searchInput.addEventListener('keydown', (event) => {
@@ -110,8 +114,8 @@ searchInput.addEventListener('keydown', (event) => {
 		console.log(searchBarEntry)
 		getMovieByTitle(searchBarEntry);
 		getMovieByActor(searchBarEntry);
-	}
-})
+	};
+});
 
 // submitActorButton.addEventListener('click', () => {
 // 	const searchBarEntry = actorSearchBar.value;
