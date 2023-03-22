@@ -14,7 +14,7 @@ body {
     background-color: #cb861a;
     color: white;
     position: absolute;
-    top: 1px;
+    top: 15px;
     right: 10px;
     transform: translateX(-50%);
     font-family: 'Limelight', cursive;
@@ -44,12 +44,19 @@ body {
     color: white;
     font-family: 'Limelight', cursive;
 }
-.float-left {
-    float: left;
-    margin-right: 25px;
-}
-
 .float-right {
     float: right;
-    margin-left: 25px;
+    margin-left: 5px;
+    width: 13%  ;
+    height: auto;
+    margin-top: -80px;
+}
+footer {
+    transform: scaleY(-1);
+}
+.film-banner {
+    height: 72px;
+    background-image: url("./images/image.png");
+    background-repeat: repeat-x;
+    background-color: #27383e;
 }
