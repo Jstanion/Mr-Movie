@@ -13,51 +13,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
 </head>
 
-<body class="hero is-success is-fullheight">
-    <section id="single-whole">
-        <!-- Hero head: will stick at the top -->
-        <!-- <div class="hero-head"> -->
-        <header class="navbar" id="nav-head">
-            <div class="navbar-end is-flex is-justify-content-end">
-                <span class="navbar-item is-mobile">
-                    <a class="button  is-inverted " id="home-btn">
-                        <span >Home</span>
-                    </a>
-                </span>
-            </div>
-            <!-- Commented out these elements, but will keep them hear incase they come in handy -->
-            <!-- <div class="container"> -->
-            <!-- <div class="navbar-brand"> -->
-            <!-- <a class="navbar-item"> -->
-            <!-- Site logo -->
-            <!-- </a> -->
-            <!-- </div> -->
-            <!-- <div id="navbarMenuHeroC" class="navbar-menu is-mobile"> -->
-
-            <!-- </div> -->
-            <!-- </div> -->
-        </header>
-        </div>
-        <!-- OPTIONAL This could hold the movie info ( will ask group) -->
-
-
-        <!-- This will be where we put the movie poster -->
+<body>
+    <header class="film-banner is-flex is-justify-content-end is-align-items-center p-3">
+        <button onclick="document.location='./mainpage.html'" id="home-btn" class="button">Home</button>
+    </header>
+    <section class="hero is-danger is-fullheight">
         <div class="hero-body">
-            <article class="message">
-                <div class="message-header">
-                    <p>Movie Title</p>
-                    <button class="delete" aria-label="delete"></button>
-                </div>
-                <div class="message-body">
-                    This is where we can possibly have the movie info or synopsis
-                </div>
-            </article>
-            <figure class="image is-600x800">
-                <img src="./grindhouse-movie-posters-funny_car_summer_poster_01.jpg" id="movie-poster">
-            </figure>
+            <div class="">
+                <article class="message">
+                    <div class="message-header">
+                        <p>Movie Title</p>
+                        <button class="delete" aria-label="delete"></button>
+                    </div>
+                    <div class="message-body">
+                        This is where we can possibly have the movie info or synopsis
+                    </div>
+                </article>
+                    <img src="" id="movie-poster">
+            </div>
         </div>
-
     </section>
+     <footer class="film-banner"></footer>
 </body>
 
 </html>
