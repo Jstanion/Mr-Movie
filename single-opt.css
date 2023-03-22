@@ -17,8 +17,9 @@
 }
 
   #home-btn {
-    background-color: #27383e;
-    color: #cb861a
+    background-color: #ffdb84;
+    color:white;
+    font-family:'limelight', cursive ;
  }
 
  footer {
