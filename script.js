@@ -156,24 +156,23 @@ class mainPageModal {
 const confirmModal = new mainPageModal ({
 	titleText: 'Congrats! We found what youre looking for',
 	messageText: 'Movie Insert',
-	confirmText: 'Watch Now',
+	watchText: 'Watch Now',
 	cancelText: 'Search Again',
-})
-
+});
+console.log(confirmModal);
 // creating modal that opens 
 createAndOpen() {
-// should blur out the rest of the screen so it can focus on modal
 	thisModalElem = document.createElement('div');
 	thisModalElem.classList.add('modal');
+
+	document.body.appendChild(this.ModalElem);
 }
-console.log(confirmModal)
 // when done we should be able to use modal with this function, once string is inputed
 document.getElementById('')
 .addEventListener('click', () =>{
 	console.log("click")
 });
 // End Abigail's work section
-
 
 
 
