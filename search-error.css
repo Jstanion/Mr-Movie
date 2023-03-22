@@ -7,11 +7,28 @@
     font-family: 'Limelight', cursive;
 }
 
-#oops {
-    font-size: 200px;
+.film-banner{
+    height: 72px;
+    background-image: url("./images/image.png");
+    background-repeat: repeat-x;
+    background-color: #27383e;
 }
 
-#btn-home {
-    background-color: #27383e;
-    color:#ffdb84;
+#home-btn {
+    background-color: #ffdb84;
+    color:white;
+    font-family:'limelight', cursive ;
 }
+
+#oops {
+    font-size: 200px;
+    
+}
+
+.dead-end {
+    font-size: 200px;
+    font-family: 'Creepster', cursive;
+    color: red;
+}
+
+
