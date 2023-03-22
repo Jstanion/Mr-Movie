@@ -10,7 +10,7 @@ body {
     color: white;
     font-family: 'Limelight', cursive;
 }
-#home-btn {
+#btn-home {
     background-color: #cb861a;
     color: white;
     position: absolute;
