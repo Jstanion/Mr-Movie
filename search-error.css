@@ -14,11 +14,21 @@
     background-color: #27383e;
 }
 
-#oops {
-    font-size: 200px;
+#home-btn {
+    background-color: #ffdb84;
+    color:white;
+    font-family:'limelight', cursive ;
 }
 
-#btn-home {
-    background-color: #27383e;
-    color:#ffdb84;
+#oops {
+    font-size: 200px;
+    
 }
+
+.dead-end {
+    font-size: 200px;
+    font-family: 'Creepster', cursive;
+    color: red;
+}
+
+
