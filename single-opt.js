@@ -16,7 +16,7 @@ const moviesDatabase = {
     }
 };
 
-const genreName = "Action"
+
 
 // Pulls genre data from API
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
@@ -41,14 +41,17 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
         console.error(error);
     });
 
+    const genreName = "Action"
+
 // Function that provides movie ID's based on dropdown selections
-let getMovieId = (genreName, ) => {
+let getMovieId = (genreName) => {
     fetch(`https://moviesminidatabase.p.rapidapi.com/movie/byGen/${genreName}/`, moviesMiniDatabase)
         .then(response => response.json())
         .then(response => {
             console.log(response);
             console.log(response.results[0].imdb_id);
-            getMovieData(response.results[0].imdb_id);
+            titleId = response.results[0].imdb_id;
+            getMovieData(titleId);
         })
         .catch(err => console.error(err));
 };
@@ -71,8 +74,14 @@ let getMovieData = (titleId) => {
 
 // Function that displays the movie info to the UI
 let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
+    console.log(movieTitle, caption, releaseDate.month, releaseDate.day, releaseDate.year);
 	let moviePoster = document.querySelector('#movie-image');
 	moviePoster.src = movieImage;
 	moviePoster.alt = caption;
-	console.log(movieTitle, caption, releaseDate.month, releaseDate.day, releaseDate.year);
+	let titleName = document.querySelector('#title');
+    titleName.textContent = movieTitle;
+    let captionInfo = document.querySelector('#caption');
+    captionInfo.textContent = caption;
+    let movieDate = document.querySelector('#release-date');
+    movieDate.textContent = 'Release Date: ' + releaseDate.month + '/' + releaseDate.day + '/' + releaseDate.year; 
 };
