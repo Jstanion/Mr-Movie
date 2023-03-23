@@ -29,6 +29,21 @@ footer {
     background-color: #27383e;
 }
 
+.theater-background {
+    height: 31rem;
+    width: 68rem;
+    background-image: url('./images/testsample.jpg');
+    background-size: cover;
+    position: relative;
+}
+
+#movie-image {
+    position: absolute;
+    top: -1.5rem;
+    right: 18rem;
+    width: 30rem;
+}
+
 /* .bulma-hamburger-mixin {
     @include hamburger(2.5rem);
   } */
