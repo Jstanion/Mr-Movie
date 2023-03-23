@@ -68,33 +68,58 @@ yearArray.forEach(year => {
 	createYearList.appendChild(yearDropdownItem);
 });
 
-// Function that provides movies based on title name search
+// Function that provides movie ID's based on title name search
 let getMovieByTitle = (searchBarEntry) => {
 	console.log(searchBarEntry)
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/imdb_id/byTitle/${searchBarEntry}/`, moviesMiniDatabase)
 	.then(response => response.json())
-	.then(response => console.log(response))
+	.then(response => { 
+		if(response = []) {
+			return;
+		}
+		console.log(response);
+		console.log(response.results[0].imdb_id); 
+		getMovieData(response.results[0].imdb_id) 
+
+	})
 	.catch(err => console.error(err));
 };
 
-// Function that provides movies based on dropdown selections
+// Function that provides movie ID's based on an actor ID
+let getMovieByActor = (actorId) => {
+	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/byActor/${actorId}/`, moviesMiniDatabase)
+	.then(response => response.json())
+	.then(response => {
+		console.log(response);
+		console.log(response.results[0][0].imdb_id);
+		getMovieData(response.results[0][0].imdb_id);
+	})
+	.catch(err => console.error(err));
+};
+
+// Function that provides movie ID's based on dropdown selections
 let getMovieByDropdown = (selectedOption, dropdownCategory) => {
 	console.log(selectedOption, dropdownCategory);
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${selectedOption}/`, moviesMiniDatabase)
 	.then(response => response.json())
 	.then(response => { 
 		console.log(response); 
-		console.log(response.results[0].imdb_id); 
-		getMovieData(response.results[0].imdb_id) 
+		console.log(response.results[0].imdb_id);
+		getMovieData(response.results[0].imdb_id); 
 	})
 	.catch(err => console.error(err));
 };
 
-// Function that provides movies based on actor name search
-let getMovieByActor = (searchBarEntry) => {
+// Function that provides actor ID's based on actor name search
+let getActorId = (searchBarEntry) => {
 	fetch(`https://moviesminidatabase.p.rapidapi.com/actor/imdb_id_byName/${searchBarEntry}/`, moviesMiniDatabase)
 	.then(response => response.json())
-	.then(response => console.log(response))
+	.then(response => { 
+		console.log(response); 
+		console.log(response.results[0].imdb_id);
+		let actorId = response.results[0].imdb_id
+		getMovieByActor(actorId) 
+	})
 	.catch(err => console.error(err));
 };
 
@@ -138,12 +163,14 @@ dropdownEl.forEach(dropdownEl => {
 	});
 });
 
+// Event listener for the search bar
 searchInput.addEventListener('keydown', (event) => {
 	if(event.key === 'Enter') {
+		// Sets the text entry to a string value in a variable
 		const searchBarEntry = searchInput.value;
 		console.log(searchBarEntry)
 		getMovieByTitle(searchBarEntry);
-		getMovieByActor(searchBarEntry);
+		getActorId(searchBarEntry);
 	};
 });
 
