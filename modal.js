@@ -13,8 +13,35 @@ class mainPageModal {
 
 // creating modal that opens 
 createAndOpen();{
-	thisModalElem = document.createElement('div');
-	thisModalElem.classList.add('modal');
+	this.ModalElem = document.createElement('div');
+	this.ModalElem.classList.add('modal');
+    setTimeout(() => {
+        this.ModalElem.classList.add('open');
+    }, 10);
+
+    const modalContentElem = document.createElement('div');
+    modalContentElem.classList.add('content');
+
+    this.ModalElem.appendChild(modalContentElem);
+
+    //heading
+    const titleTextElem = document.createElement('p');
+    titleTextElem.classList.add('titleText');
+    titleTextElem.textContent = this.titleText;
+
+    modalContentElem.appendChild(titleTextElem);
+
+    //message
+    const messageTextElem = document.createElement('p');
+    messageTextElem.classList.add('messageText');
+    messageTextElem.textContent = this.message.Text;
+
+    modalContentElem.appendChild(messageTextElem);
+
+    //home button
+    const homeButtonTextElem = document.createElement('button');
+    homeButtonTextElem.classList.add('homeButtonText');
+    homeButtonTextElem.textContent = this.homeText;
 
 	document.body.appendChild(this.ModalElem);
 }
