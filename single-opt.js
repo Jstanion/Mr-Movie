@@ -16,6 +16,8 @@ const moviesDatabase = {
     }
 };
 
+const genreName = "Action"
+
 // Pulls genre data from API
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
     .then(response => response.json())
@@ -40,7 +42,7 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
     });
 
 // Function that provides movie ID's based on dropdown selections
-let getRandomGenre = (genreName, ) => {
+let getMovieId = (genreName, ) => {
     fetch(`https://moviesminidatabase.p.rapidapi.com/movie/byGen/${genreName}/`, moviesMiniDatabase)
         .then(response => response.json())
         .then(response => {
@@ -50,6 +52,7 @@ let getRandomGenre = (genreName, ) => {
         })
         .catch(err => console.error(err));
 };
+getMovieId(genreName)
 
 // Function that provides movie data based on IMDB ID
 let getMovieData = (titleId) => {
@@ -64,4 +67,12 @@ let getMovieData = (titleId) => {
             displayMovieInfo(movieImage, movieTitle, caption, releaseDate);
         })
         .catch(err => console.error(err));
+};
+
+// Function that displays the movie info to the UI
+let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
+	let moviePoster = document.querySelector('#movie-image');
+	moviePoster.src = movieImage;
+	moviePoster.alt = caption;
+	console.log(movieTitle, caption, releaseDate.month, releaseDate.day, releaseDate.year);
 };
