@@ -77,15 +77,43 @@ let getMovieByTitle = (searchBarEntry) => {
 	.catch(err => console.error(err));
 };
 
-// Function that provides movies based on dropdown selections
+// Function that provides actor ID's based on actor name search
+let getActorId = (searchBarEntry) => {
+	fetch(`https://moviesminidatabase.p.rapidapi.com/actor/imdb_id_byName/${searchBarEntry}/`, moviesMiniDatabase)
+	.then(response => response.json())
+	.then(response => {
+		console.log(response); 
+		console.log(response.results[0].imdb_id);
+		let actorId = response.results[0].imdb_id
+		getMovieByActor(actorId) 
+	})
+	.catch(err => console.error(err));
+};
+
+// Function that provides movie ID's based on an actor ID
+let getMovieByActor = (actorId) => {
+	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/byActor/${actorId}/`, moviesMiniDatabase)
+	.then(response => response.json())
+	.then(response => {
+		console.log(response);
+		console.log(response.results[0][0].imdb_id);
+		getMovieData(response.results[0][0].imdb_id);
+	})
+	.catch(err => console.error(err));
+};
+
+// Function that provides movie ID's based on dropdown selections
 let getMovieByDropdown = (selectedOption, dropdownCategory) => {
 	console.log(selectedOption, dropdownCategory);
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${selectedOption}/`, moviesMiniDatabase)
 	.then(response => response.json())
 	.then(response => { 
-		console.log(response); 
-		console.log(response.results[0].imdb_id); 
-		getMovieData(response.results[0].imdb_id) 
+		console.log(response);
+		const myArray = response.results;
+		const randomIndex = Math.floor(Math.random() * myArray.length);
+		const randomId = myArray[randomIndex].imdb_id;
+		console.log(randomId);
+		getMovieData(randomId); 
 	})
 	.catch(err => console.error(err));
 };
