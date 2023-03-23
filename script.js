@@ -95,8 +95,10 @@ let getMovieByActor = (actorId) => {
 	.then(response => response.json())
 	.then(response => {
 		console.log(response);
-		console.log(response.results[0][0].imdb_id);
-		getMovieData(response.results[0][0].imdb_id);
+		const myArray = response.results;
+		const randomIndex = Math.floor(Math.random() * myArray.length);
+		const randomId = myArray[randomIndex][0].imdb_id;
+		getMovieData(randomId);
 	})
 	.catch(err => console.error(err));
 };
@@ -118,8 +120,8 @@ let getMovieByDropdown = (selectedOption, dropdownCategory) => {
 };
 
 // Function that provides movie data based on IMDB ID
-let getMovieData = (titleId) => {
-	fetch(`https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids?idsList=${titleId}`, moviesDatabase)
+let getMovieData = (randomId) => {
+	fetch(`https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids?idsList=${randomId}`, moviesDatabase)
 	.then(response => response.json())
 	.then(response => {
 		console.log(response);
