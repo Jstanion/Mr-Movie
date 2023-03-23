@@ -139,20 +139,22 @@ searchInput.addEventListener('keydown', (event) => {
 
 // Start Abigail's work section
 
+
 const confirmModal = new mainPageModal ({
 	titleText: 'Congrats! We found what you are looking for!',
 	messageText: 'Movie Insert',
 	homeText: 'Home',
 });
 
-// when done we should be able to use modal with this function, once string is inputed
-document.getElementById('search-input')
+//when done we should be able to use modal with this function, once string is inputed
+//let yearDropdown =
+document.getElementById('year-dropdown')
 .addEventListener('click', () =>{
 	console.log('modal button click');
 	confirmModal
 	.open()
 //taking further action
-	.then(value => console.log('User clicked Home: ', value));
+.then(value => console.log('User clicked Home: ', value));
 });
 
 console.log(confirmModal);

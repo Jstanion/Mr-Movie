@@ -1,3 +1,4 @@
+
 // creating modal object that includes, titles, labels, text, button: properties we run through modal
 class mainPageModal {
 	constructor ({

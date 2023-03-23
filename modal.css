@@ -1,4 +1,7 @@
+
 .modal {
+    position: fixed;
+    z-index: 99999;
     background-color: red;
     height: 20rem;
     width: 40rem;
@@ -7,7 +10,6 @@
     align-items: center;
     opacity: 0;
     transition: opacity 0.4s;
-    border:
 }
 
 .modal.open{
