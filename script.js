@@ -147,12 +147,6 @@ searchInput.addEventListener('keydown', (event) => {
 	};
 });
 
-// submitActorButton.addEventListener('click', () => {
-// 	const searchBarEntry = actorSearchBar.value;
-// 	console.log(searchBarEntry)
-// 	getMovieByActor(searchBarEntry);
-// });
-
 
 
 
