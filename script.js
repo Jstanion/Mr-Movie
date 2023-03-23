@@ -161,17 +161,19 @@ const confirmModal = new mainPageModal ({
 });
 console.log(confirmModal);
 // creating modal that opens 
-createAndOpen() {
+createAndOpen();{
 	thisModalElem = document.createElement('div');
 	thisModalElem.classList.add('modal');
 
 	document.body.appendChild(this.ModalElem);
 }
 // when done we should be able to use modal with this function, once string is inputed
-document.getElementById('')
+document.getElementById('openModal')
 .addEventListener('click', () =>{
 	console.log("click")
+	confirmModal.createAndOpen();
 });
+
 // End Abigail's work section
 
 

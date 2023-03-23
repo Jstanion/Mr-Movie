@@ -1,0 +1,44 @@
+.modal {
+    background-color: #27383e;
+    height: 20rem;
+    width: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.modal.open{
+    opacity: 1;
+}
+
+.modal.content{
+    background-color: white;
+    border-radius: 6px;
+    text-align: center;
+    padding: 4rem;
+    box-shadow: 0 0 64px 12px rgba(255,225,225,0.2);
+}
+
+.modal .titleText{
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.modal .messageText {
+    margin: 2rem 0;
+}
+
+.modal .content button{
+    width: 40%;
+    padding: 0.75rem;
+    margin: 0 5px;
+    color: white;
+    border: 0;
+    border-radius: 6px;
+}
+
+.modal .content button.confirmButtonText{
+background-color: rgb(28,144,28);
+}
