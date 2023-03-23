@@ -10,18 +10,18 @@
   <title>Mr.Movie - Movie Generator</title>
 </head>
 <body>
-  <header>
-    <nav class="navbar film-banner is-fixed-top is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand is-flex is-align-items-center">
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+  <header class="columns">
+    <nav class=" column navbar film-banner is-fixed-top is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between" role="navigation" aria-label="main navigation">
+      <div class="column is-half is-narrow-mobile navbar-brand is-flex is-align-items-center is-justify-content-space-evenly">
+        <a role="button" class=" navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
-        <p class="is-size-3 is-size-4-touch has-text-warning p-3">Mr.Movie</p>
+        <p class="columnis-one-third is-size-3 is-size-4-touch has-text-warning p-3">Mr.Movie</p>
         <!-- Genre Dropdown List -->
         <div class="navbar-item has-dropdown is-hidden-touch" onclick="classList.add('is-active')">
-          <a class="navbar-link has-text-warning search-element" data-my-param="byGen">
+          <a class="column navbar-link has-text-warning search-element" data-my-param="byGen">
             Select Genre
           </a>
           <!-- This is where the genre list is appended -->
@@ -30,7 +30,7 @@
         </div>
         <!-- Year Dropdown List -->
         <div class="navbar-item has-dropdown is-hidden-touch" onclick="classList.add('is-active')">
-          <a class="navbar-link has-text-warning search-element" data-my-param="byYear">
+          <a class="column navbar-link has-text-warning search-element" data-my-param="byYear">
             Select Year
           </a>
           <!-- This is where the genre list is appended -->
@@ -39,7 +39,7 @@
         </div>
       </div>
       <!-- Title and Actor Search Bar -->
-      <div class="navbar-item">
+      <div class=" column is-one-quarter is-narrow-mobile navbar-item">
         <input class="title-search-bar input is-warning is-small is-rounded has-text-centered" id="search-input" type="text" placeholder="Actor or Title Name">
       </div>  
     </nav>
