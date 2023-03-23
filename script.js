@@ -74,9 +74,6 @@ let getMovieByTitle = (searchBarEntry) => {
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/imdb_id/byTitle/${searchBarEntry}/`, moviesMiniDatabase)
 	.then(response => response.json())
 	.then(response => { 
-		if(response = []) {
-			return;
-		}
 		console.log(response);
 		console.log(response.results[0].imdb_id); 
 		getMovieData(response.results[0].imdb_id) 
