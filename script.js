@@ -139,6 +139,20 @@ searchInput.addEventListener('keydown', (event) => {
 
 // Start Abigail's work section
 
+const confirmModal = new mainPageModal ({
+	titleText: 'Congrats! We found what you are looking for!',
+	messageText: 'Movie Insert',
+	homeText: 'Home',
+});
+
+// when done we should be able to use modal with this function, once string is inputed
+document.getElementById('search-input')
+.addEventListener('click', () =>{
+	console.log('modal button click')
+	confirmModal.createAndOpen();
+});
+
+console.log(confirmModal);
 
 // End Abigail's work section
 
