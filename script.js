@@ -28,18 +28,15 @@ const homeButton = document.getElementById('btn-home');
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
 .then(response => response.json())
 .then(data => {
-	console.log(data);
 	
 	// convert data to array
 	const genreArray = Array.from(data.results);
-	console.log(genreArray);
 	
 	for (let i = 0; i < 21; i++) {
 		const obj = genreArray[i];
 		for (const key in obj) {
 			if (obj.hasOwnProperty(key)) {
 				const genreName = obj[key];
-				// console.log(genreName);
 				
 				// Create and append the dropdown items from the array
 				let genreDropdownItem = document.createElement('a');
@@ -56,7 +53,6 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
 
 // Create an array of years ranging from 1960 to 2021
 const yearArray = Array.from({length: 62}, (_, i) => i + 1960).reverse();
-console.log(yearArray);
 
 yearArray.forEach(year => {
 	
@@ -70,14 +66,25 @@ yearArray.forEach(year => {
 
 // Function that provides movie ID's based on title name search
 let getMovieByTitle = (searchBarEntry) => {
-	console.log(searchBarEntry)
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/imdb_id/byTitle/${searchBarEntry}/`, moviesMiniDatabase)
 	.then(response => response.json())
-	.then(response => { 
+	.then(response => {
 		console.log(response);
 		console.log(response.results[0].imdb_id); 
-		getMovieData(response.results[0].imdb_id) 
+		getMovieData(response.results[0].imdb_id);
+	})
+	.catch(err => console.error(err));
+};
 
+// Function that provides actor ID's based on actor name search
+let getActorId = (searchBarEntry) => {
+	fetch(`https://moviesminidatabase.p.rapidapi.com/actor/imdb_id_byName/${searchBarEntry}/`, moviesMiniDatabase)
+	.then(response => response.json())
+	.then(response => { 
+		console.log(response); 
+		console.log(response.results[0].imdb_id);
+		let actorId = response.results[0].imdb_id
+		getMovieByActor(actorId) 
 	})
 	.catch(err => console.error(err));
 };
@@ -103,19 +110,6 @@ let getMovieByDropdown = (selectedOption, dropdownCategory) => {
 		console.log(response); 
 		console.log(response.results[0].imdb_id);
 		getMovieData(response.results[0].imdb_id); 
-	})
-	.catch(err => console.error(err));
-};
-
-// Function that provides actor ID's based on actor name search
-let getActorId = (searchBarEntry) => {
-	fetch(`https://moviesminidatabase.p.rapidapi.com/actor/imdb_id_byName/${searchBarEntry}/`, moviesMiniDatabase)
-	.then(response => response.json())
-	.then(response => { 
-		console.log(response); 
-		console.log(response.results[0].imdb_id);
-		let actorId = response.results[0].imdb_id
-		getMovieByActor(actorId) 
 	})
 	.catch(err => console.error(err));
 };
@@ -147,13 +141,11 @@ let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
 dropdownEl.forEach(dropdownEl => {
 	dropdownEl.addEventListener('click', (event) => {
 		const dropdownCategory = event.target.dataset.myParam;
-		console.log(dropdownCategory);
 		const dropdownSelection = document.querySelectorAll('.genre-item');
 		
 		dropdownSelection.forEach(dropdownSelection => {
 			dropdownSelection.addEventListener('click', (event) => {
 				const selectedOption = event.target.textContent;
-				console.log(selectedOption);
 				getMovieByDropdown(selectedOption, dropdownCategory);	
 			});
 		});
@@ -165,7 +157,6 @@ searchInput.addEventListener('keydown', (event) => {
 	if(event.key === 'Enter') {
 		// Sets the text entry to a string value in a variable
 		const searchBarEntry = searchInput.value;
-		console.log(searchBarEntry)
 		getMovieByTitle(searchBarEntry);
 		getActorId(searchBarEntry);
 	};
