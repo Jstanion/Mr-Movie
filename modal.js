@@ -9,20 +9,19 @@ class mainPageModal {
 		this.messageText = messageText;
 		this.homeText = homeText;
 	}
-}
 
 // creating modal that opens 
-createAndOpen();{
-	this.ModalElem = document.createElement('div');
-	this.ModalElem.classList.add('modal');
+createAndOpen(onConfirm){
+	this.modalElem = document.createElement('div');
+	this.modalElem.classList.add('modal');
     setTimeout(() => {
-        this.ModalElem.classList.add('open');
+        this.modalElem.classList.add('open');
     }, 10);
 
     const modalContentElem = document.createElement('div');
     modalContentElem.classList.add('content');
 
-    this.ModalElem.appendChild(modalContentElem);
+    this.modalElem.appendChild(modalContentElem);
 
     //heading
     const titleTextElem = document.createElement('p');
@@ -34,7 +33,7 @@ createAndOpen();{
     //message
     const messageTextElem = document.createElement('p');
     messageTextElem.classList.add('messageText');
-    messageTextElem.textContent = this.message.Text;
+    messageTextElem.textContent = this.messageText;
 
     modalContentElem.appendChild(messageTextElem);
 
@@ -43,5 +42,25 @@ createAndOpen();{
     homeButtonTextElem.classList.add('homeButtonText');
     homeButtonTextElem.textContent = this.homeText;
 
-	document.body.appendChild(this.ModalElem);
+    homeButtonTextElem.addEventListener('click', () => {
+        onConfirm('Success');
+        this.close();
+    });
+
+    modalContentElem.appendChild(homeButtonTextElem);
+
+	document.body.appendChild(this.modalElem);
+}
+
+open(){
+    return new Promise((resolve, reject)=>{
+        this.createAndOpen(resolve, reject);
+    });
+}
+
+close(){
+    this.modalElem.classList.remove('open');
+    setTimeout(()=>{
+        document.body.removeChild(this.modalElem); }, 400);
+    }
 }

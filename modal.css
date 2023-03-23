@@ -1,5 +1,5 @@
 .modal {
-    background-color: #27383e;
+    background-color: red;
     height: 20rem;
     width: 40rem;
     display: flex;
@@ -7,6 +7,7 @@
     align-items: center;
     opacity: 0;
     transition: opacity 0.4s;
+    border:
 }
 
 .modal.open{

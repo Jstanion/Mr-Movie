@@ -148,8 +148,11 @@ const confirmModal = new mainPageModal ({
 // when done we should be able to use modal with this function, once string is inputed
 document.getElementById('search-input')
 .addEventListener('click', () =>{
-	console.log('modal button click')
-	confirmModal.createAndOpen();
+	console.log('modal button click');
+	confirmModal
+	.open()
+//taking further action
+	.then(value => console.log('User clicked Home: ', value));
 });
 
 console.log(confirmModal);
