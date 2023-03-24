@@ -22,26 +22,25 @@ const moviesDatabase = {
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
     .then(response => response.json())
     .then(data => {
-	
-	// convert data to array
         const genreArray = Array.from(data.results);
-
+	// convert data to array
         for (let i = 0; i < 21; i++) {
             const obj = genreArray[i];
             for (const key in obj) {
                 if (obj.hasOwnProperty(key)) {
-                    const genreName = obj[key];
-                    console.log(genreName)
-
+                    let genreName = obj[key];
                 };
             };
         };
+        const randomGenreObject = genreArray[Math.floor(Math.random() * genreArray.length)];
+        console.log(randomGenreObject.genre) 
+        const genreToUse = randomGenreObject.genre
+        getMovieId(genreToUse);
     })
     .catch(error => {
         console.error(error);
-    });
-
-    const genreName = "Action"
+    })
+   
 
 // Function that provides movie ID's based on dropdown selections
 let getMovieId = (genreName) => {
@@ -54,8 +53,9 @@ let getMovieId = (genreName) => {
             getMovieData(titleId);
         })
         .catch(err => console.error(err));
+        
 };
-getMovieId(genreName)
+
 
 // Function that provides movie data based on IMDB ID
 let getMovieData = (titleId) => {
