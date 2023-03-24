@@ -85,7 +85,7 @@ let getActorId = (searchBarEntry) => {
 	fetch(`https://moviesminidatabase.p.rapidapi.com/actor/imdb_id_byName/${searchBarEntry}/`, moviesMiniDatabase)
 	.then(response => response.json())
 	.then(response => { 
-		if(!response.results[0]) {
+		if(!response.results[0] || response.results[0].imdb_id.includes('title')) {
 			return;
 		} else {
 		console.log(response); 
