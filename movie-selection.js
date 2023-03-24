@@ -45,9 +45,11 @@ let getMovieData = (randomId) => {
 // Function that displays the movie info to the UI
 let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
 	console.log(movieTitle, caption, releaseDate.month, releaseDate.day, releaseDate.year);
-	let moviePoster = document.querySelector('#movie-image');
-	moviePoster.src = movieImage;
-	moviePoster.alt = caption;
+	let moviePoster = document.querySelectorAll('.movie-image');
+	moviePoster.forEach(moviePoster =>{
+		moviePoster.src = movieImage;
+		moviePoster.alt = caption;
+	})
     let titleName = document.querySelector('.title')
     titleName.textContent = movieTitle
     let movieCaption = document.querySelector('.subtitle')
