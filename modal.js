@@ -16,7 +16,7 @@ createAndOpen(onHome){
 	this.modalElem = document.createElement('div');
 	this.modalElem.classList.add('home-modal');
     setTimeout(() => {
-        this.modalElem.classList.add('open');
+        this.modalElem.classList.add('year-dropdown');
     }, 10);
 
     const modalContentElem = document.createElement('div');

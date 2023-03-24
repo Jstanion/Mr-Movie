@@ -1,6 +1,6 @@
 
 .home-modal {
-    background-color: red;
+    background-color: #27383e;
     position: absolute;
     top: 7rem;
     bottom: 0;
@@ -14,7 +14,7 @@
     transition: opacity 0.4s;
 }
 
-.home-modal.open{
+.home-modal.year-dropdown{
     opacity: 1;
     display: block;
 }
