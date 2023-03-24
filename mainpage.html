@@ -12,20 +12,18 @@
   <title>Mr.Movie - Movie Generator</title>
 </head>
 <body>
-  <header class="columns">
-    <nav class=" column navbar film-banner is-fixed-top is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between" role="navigation" aria-label="main navigation">
-      <div class="column is-half is-narrow-mobile navbar-brand is-flex is-align-items-center is-justify-content-space-evenly">
-        <a role="button" class=" navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+  <header class="">
+    <nav class="column film-banner is-fixed-top is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between" role="navigation" aria-label="main navigation">
+      <div class="column is-two-thirds is-narrow-touch navbar-brand is-flex is-align-items-center is-justify-content-space-evenly">
+        <a role="button" class=" m-0 navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
-        <p class="is-size-3 is-size-4-touch has-text-warning p-3">Mr.Movie</p>
-        <!-- Genre Dropdown List -->
-        <p class="columnis-one-third is-size-3 is-size-4-touch has-text-warning p-3">Mr.Movie</p>
+        <p class="is-size-2-desktop is-size-3-touch has-text-warning p-3">Mr.Movie</p>
         <!-- Genre Dropdown List -->
         <div class="navbar-item has-dropdown is-hidden-touch" onclick="classList.add('is-active')">
-          <a class="column navbar-link has-text-warning search-element" data-my-param="byGen">
+          <a class="navbar-link has-text-warning is-size-4 search-element" data-my-param="byGen">
             Select Genre
           </a>
           <!-- This is where the genre list is appended -->
@@ -34,7 +32,7 @@
         </div>
         <!-- Year Dropdown List -->
         <div class="navbar-item has-dropdown is-hidden-touch" onclick="classList.add('is-active')">
-          <a class="column navbar-link has-text-warning search-element" data-my-param="byYear">
+          <a class="navbar-link has-text-warning is-size-4 search-element" data-my-param="byYear">
             Select Year
           </a>
           <!-- This is where the genre list is appended -->
@@ -52,20 +50,24 @@
   <main>
     <!--Hero image container here with image placeholder inside -->
     <section class="main-hero-image hero is-halfheight">
-      <div class="hero-body is-flex is-flex-direction-column mt-5">
-        <img id="movie-image" class="m-5" src="./images/placeholderimg.jpeg" alt="place holder image"></img>
+      <div class="hero-body is-flex is-flex-direction-column">
+        <p class="title has-text-warning has-text-centered m-5">
+            Choosing is hard! <br>So let Mr. Movie do it for you...
+        </p>
+        <p class="subtitle has-text-warning has-text-centered m-5">
+          If you're feeling lucky, click the image below for your movie choice of the night!
+        </p>
+        <div class="theater-background">
+        <a href="./single-opt.html" class="is-flex is-justify-content-center is-align-items-center">
+          <img id="movie-image" class="" src="https://media4.giphy.com/media/l0K4opSGYAE8Dcgb6/giphy.gif?cid=6104955evrp1h48r4naktxxeycculkqcqqafec1dnlupa9yf&rid=giphy.gif&ct=g" alt="image of a closed curtain">
+        </a>
+        </div>
           <div class="">
-            <p class="title has-text-warning has-text-centered pt-5">
-                Stuck on what to watch? Let Mr. Movie choose for you!
-            </p>
-            <p class="subtitle has-text-warning has-text-centered">
-              We know choosing what to watch can be a stressful situation. If you're feeling lucky, <br>just click the image above and we will provide you with a randomized movie choice for your viewing pleasure!
-              <br>
-              <br>
+            <p class="subtitle has-text-warning has-text-centered m-5">
               OR
               <br>
               <br>
-              For a few options to choose from, select any of the genre options below!
+              For a few options to choose from, select one of the genres below!
             </p>
           </div>
         </div>

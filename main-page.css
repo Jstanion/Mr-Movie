@@ -29,6 +29,22 @@ footer {
     background-color: #27383e;
 }
 
+.theater-background {
+    height: 32.5rem;
+    width: 90%;
+    background-image: url('./images/testsample.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 0 8px 8px black inset;
+}
+
+#movie-image {
+    position: absolute;
+    top: 0;
+    height: 52%;
+}
+
 .dropdown-menu {
     max-height: 70vh;
     overflow:scroll; 
@@ -38,3 +54,8 @@ footer {
     @include hamburger(2.5rem);
   } */
 
+@media screen and (max-width: 768px) {
+    #movie-image {
+        width: 77%;
+    }
+}
