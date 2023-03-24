@@ -20,7 +20,7 @@ createAndOpen(onHome){
     }, 10);
 
     const modalContentElem = document.createElement('div');
-    modalContentElem.classList.add('content');
+    modalContentElem.classList.add('my-content');
 
     this.modalElem.appendChild(modalContentElem);
 

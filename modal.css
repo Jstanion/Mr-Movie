@@ -1,41 +1,41 @@
 
 .home-modal {
-    background-color: #27383e;
     position: absolute;
-    top: 6rem;
+    top: 8rem;
     bottom: 5rem;
-    left: 3rem;
-    right: 3rem;
-    display: none;
-    justify-content: center;
-    align-items: center;
+    left: 5rem;
+    right: 5rem;
     transition: opacity 0.4s;
-    border: .5rem solid white;
 }
 
 .home-modal.year-dropdown{
     opacity: 1;
     display: block;
 }
-
-.home-modal.content{
-    background-color: white;
+ 
+.my-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    background-color: #27383e;
     border-radius: 6px;
     text-align: center;
     padding: 4rem;
     box-shadow: 0 0 64px 12px white;
 }
 
-.home-modal .titleText{
+.home-modal,
+.titleText{
     font-weight: 900;
     font-size: 2rem;
+    color: white;
 }
 
 .home-modal .messageText {
     margin: 2rem 0;
 }
 
-.home-modal .content button{
+.home-modal .my-content button{
     width: 40%;
     padding: 0.75rem;
     margin: 0 5px;
@@ -44,6 +44,6 @@
     border-radius: 6px;
 }
 
-.home-modal .content button.homeButtonText{
+.home-modal .my-content button.homeButtonText{
 background-color: hsl(48, 100%, 67%);
 }
