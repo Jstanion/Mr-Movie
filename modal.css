@@ -8,7 +8,7 @@
     transition: opacity 0.4s;
 }
 
-.home-modal.year-dropdown.genre-dropdown{
+.home-modal.year-dropdown.genre-dropdown.search-input{
     opacity: 1;
     display: block;
 }

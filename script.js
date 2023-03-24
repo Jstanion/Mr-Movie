@@ -164,6 +164,10 @@ searchInput.addEventListener('keydown', (event) => {
 		const searchBarEntry = searchInput.value;
 		getMovieByTitle(searchBarEntry);
 		getActorId(searchBarEntry);
+		console.log('modal button click');
+		confirmModal
+		.open()
+		.then(value => console.log('User clicked Home: ', value));
 	};
 });
 
@@ -227,17 +231,30 @@ document.getElementById('year-dropdown')
 
 console.log(confirmModal);
 
-// new modal
+// new modal genre-dropdown
+
 document.getElementById('genre-dropdown')
 .addEventListener('click', () =>{
 	console.log('modal button click');
 	confirmModal
 	.open()
-//taking further action
 .then(value => console.log('User clicked Home: ', value));
 });
 
 console.log(confirmModal);
+
+//new modal search-input
+
+//document.getElementById('search-input')
+//.addEventListener('click', () =>{
+	//console.log('modal button click');
+	//confirmModal
+	//.open()
+// .then(value => console.log('User clicked Home: ', value));
+// });
+
+// console.log(confirmModal);
+
 
 // End Abigail's work section
 
