@@ -42,6 +42,23 @@ let getMovieData = (randomId) => {
 	})
 	.catch(err => console.error(err));
 }
+// Function that displays the movie info to the UI
+let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
+	console.log(movieTitle, caption, releaseDate.month, releaseDate.day, releaseDate.year);
+	let moviePoster = document.querySelector('#movie-image');
+	moviePoster.src = movieImage;
+	moviePoster.alt = caption;
+    let titleName = document.querySelector('.title')
+    titleName.textContent = movieTitle
+    let movieCaption = document.querySelector('.subtitle')
+    movieCaption.textContent = caption
+    let movieReleaseDate = document.querySelector('.release-date')
+    movieReleaseDate.textContent = 'Release Date: ' + releaseDate.month + '/' + releaseDate.day + '/' + releaseDate.year
+};
+
+
+
+
 // Pulls genre data from API
 
 // const practiceButton = document.querySelector("#practice-button");
