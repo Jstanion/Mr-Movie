@@ -28,18 +28,15 @@ const homeButton = document.getElementById('btn-home');
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
 .then(response => response.json())
 .then(data => {
-	console.log(data);
 	
 	// convert data to array
 	const genreArray = Array.from(data.results);
-	console.log(genreArray);
 	
 	for (let i = 0; i < 21; i++) {
 		const obj = genreArray[i];
 		for (const key in obj) {
 			if (obj.hasOwnProperty(key)) {
 				const genreName = obj[key];
-				// console.log(genreName);
 				
 				// Create and append the dropdown items from the array
 				let genreDropdownItem = document.createElement('a');
@@ -56,7 +53,6 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
 
 // Create an array of years ranging from 1960 to 2021
 const yearArray = Array.from({length: 62}, (_, i) => i + 1960).reverse();
-console.log(yearArray);
 
 yearArray.forEach(year => {
 	
@@ -68,39 +64,64 @@ yearArray.forEach(year => {
 	createYearList.appendChild(yearDropdownItem);
 });
 
-// Function that provides movies based on title name search
+// Function that provides movie ID's based on title name search
 let getMovieByTitle = (searchBarEntry) => {
-	console.log(searchBarEntry)
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/imdb_id/byTitle/${searchBarEntry}/`, moviesMiniDatabase)
 	.then(response => response.json())
-	.then(response => console.log(response))
+	.then(response => {
+		console.log(response);
+		console.log(response.results[0].imdb_id); 
+		getMovieData(response.results[0].imdb_id);
+	})
 	.catch(err => console.error(err));
 };
 
-// Function that provides movies based on dropdown selections
+// Function that provides actor ID's based on actor name search
+let getActorId = (searchBarEntry) => {
+	fetch(`https://moviesminidatabase.p.rapidapi.com/actor/imdb_id_byName/${searchBarEntry}/`, moviesMiniDatabase)
+	.then(response => response.json())
+	.then(response => { 
+		console.log(response); 
+		console.log(response.results[0].imdb_id);
+		let actorId = response.results[0].imdb_id
+		getMovieByActor(actorId) 
+	})
+	.catch(err => console.error(err));
+};
+
+// Function that provides movie ID's based on an actor ID
+let getMovieByActor = (actorId) => {
+	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/byActor/${actorId}/`, moviesMiniDatabase)
+	.then(response => response.json())
+	.then(response => {
+		console.log(response);
+		const myArray = response.results;
+		const randomIndex = Math.floor(Math.random() * myArray.length);
+		const randomId = myArray[randomIndex][0].imdb_id;
+		getMovieData(randomId);
+	})
+	.catch(err => console.error(err));
+};
+
+// Function that provides movie ID's based on dropdown selections
 let getMovieByDropdown = (selectedOption, dropdownCategory) => {
 	console.log(selectedOption, dropdownCategory);
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${selectedOption}/`, moviesMiniDatabase)
 	.then(response => response.json())
 	.then(response => { 
-		console.log(response); 
-		console.log(response.results[0].imdb_id); 
-		getMovieData(response.results[0].imdb_id) 
+		console.log(response);
+		const myArray = response.results;
+		const randomIndex = Math.floor(Math.random() * myArray.length);
+		const randomId = myArray[randomIndex].imdb_id;
+		console.log(randomId);
+		getMovieData(randomId); 
 	})
 	.catch(err => console.error(err));
 };
 
-// Function that provides movies based on actor name search
-let getMovieByActor = (searchBarEntry) => {
-	fetch(`https://moviesminidatabase.p.rapidapi.com/actor/imdb_id_byName/${searchBarEntry}/`, moviesMiniDatabase)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
-};
-
 // Function that provides movie data based on IMDB ID
-let getMovieData = (titleId) => {
-	fetch(`https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids?idsList=${titleId}`, moviesDatabase)
+let getMovieData = (randomId) => {
+	fetch(`https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids?idsList=${randomId}`, moviesDatabase)
 	.then(response => response.json())
 	.then(response => {
 		console.log(response);
@@ -125,33 +146,26 @@ let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
 dropdownEl.forEach(dropdownEl => {
 	dropdownEl.addEventListener('click', (event) => {
 		const dropdownCategory = event.target.dataset.myParam;
-		console.log(dropdownCategory);
 		const dropdownSelection = document.querySelectorAll('.genre-item');
 		
 		dropdownSelection.forEach(dropdownSelection => {
 			dropdownSelection.addEventListener('click', (event) => {
 				const selectedOption = event.target.textContent;
-				console.log(selectedOption);
 				getMovieByDropdown(selectedOption, dropdownCategory);	
 			});
 		});
 	});
 });
 
+// Event listener for the search bar
 searchInput.addEventListener('keydown', (event) => {
 	if(event.key === 'Enter') {
+		// Sets the text entry to a string value in a variable
 		const searchBarEntry = searchInput.value;
-		console.log(searchBarEntry)
 		getMovieByTitle(searchBarEntry);
-		getMovieByActor(searchBarEntry);
+		getActorId(searchBarEntry);
 	};
 });
-
-// submitActorButton.addEventListener('click', () => {
-// 	const searchBarEntry = actorSearchBar.value;
-// 	console.log(searchBarEntry)
-// 	getMovieByActor(searchBarEntry);
-// });
 
 
 
@@ -159,7 +173,31 @@ searchInput.addEventListener('keydown', (event) => {
 
 // Start Jace's work section
 
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': '7b91725223mshb07bf7162834af7p11e9eajsn13d5d2d4fcee',
+// 		'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
+// 	}
+// };
 
+// fetch('https://moviesdatabase.p.rapidapi.com/titles/utils/genres', options)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+// 	.catch(err => console.error(err));
+
+// function showMovieRecommendations() {
+// 	// Get the selected option value
+// 	const selectedOption = document.getElementById("movie-dropdown").value;
+  
+// 	// Construct the URL of the new page with the parameter
+// 	const url = "file:///C:/Users/jacel/documents/amazing-project-1/movie-selection.html" + encodeURIComponent(selectedOption);
+  
+// 	// Open the new page
+// 	window.open(url, "_blank");
+//   }
+  
+	
 // End Jace's work section
 
 
