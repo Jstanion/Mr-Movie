@@ -12,9 +12,9 @@ class mainPageModal {
 	}
 
 // creating modal that opens 
-createAndOpen(onConfirm){
+createAndOpen(onHome){
 	this.modalElem = document.createElement('div');
-	this.modalElem.classList.add('modal');
+	this.modalElem.classList.add('home-modal');
     setTimeout(() => {
         this.modalElem.classList.add('open');
     }, 10);
@@ -44,7 +44,7 @@ createAndOpen(onConfirm){
     homeButtonTextElem.textContent = this.homeText;
 
     homeButtonTextElem.addEventListener('click', () => {
-        onConfirm('Success');
+        onHome('Success');
         this.close();
     });
 
@@ -54,7 +54,9 @@ createAndOpen(onConfirm){
 }
 
 open(){
+    console.log('It is open');
     return new Promise((resolve, reject)=>{
+        console.log(this)
         this.createAndOpen(resolve, reject);
     });
 }

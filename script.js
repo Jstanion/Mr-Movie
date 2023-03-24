@@ -148,7 +148,7 @@ const confirmModal = new mainPageModal ({
 
 //when done we should be able to use modal with this function, once string is inputed
 //let yearDropdown =
-document.getElementById('year-dropdown')
+document.getElementById('open')
 .addEventListener('click', () =>{
 	console.log('modal button click');
 	confirmModal

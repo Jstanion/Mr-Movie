@@ -1,39 +1,42 @@
 
-.modal {
-    position: fixed;
-    z-index: 99999;
+.home-modal {
     background-color: red;
+    position: absolute;
+    top: 7rem;
+    bottom: 0;
+    left: 7rem;
+    right: 3rem;
     height: 20rem;
     width: 40rem;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
-    opacity: 0;
     transition: opacity 0.4s;
 }
 
-.modal.open{
+.home-modal.open{
     opacity: 1;
+    display: block;
 }
 
-.modal.content{
+.home-modal.content{
     background-color: white;
     border-radius: 6px;
     text-align: center;
     padding: 4rem;
-    box-shadow: 0 0 64px 12px rgba(255,225,225,0.2);
+    box-shadow: 0 0 64px 12px white;
 }
 
-.modal .titleText{
+.home-modal .titleText{
     font-weight: 900;
     font-size: 2rem;
 }
 
-.modal .messageText {
+.home-modal .messageText {
     margin: 2rem 0;
 }
 
-.modal .content button{
+.home-modal .content button{
     width: 40%;
     padding: 0.75rem;
     margin: 0 5px;
@@ -42,6 +45,6 @@
     border-radius: 6px;
 }
 
-.modal .content button.homeButtonText{
+.home-modal .content button.homeButtonText{
 background-color: rgb(28,144,28);
 }

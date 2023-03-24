@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./main-page.css">
-    <script src="modal.js" defer></script>
+    <script src="./modal.js" defer></script>
   <title>Mr.Movie - Movie Generator</title>
 </head>
 <body>
@@ -36,10 +36,11 @@
             Select Year
           </a>
           <!-- This is where the genre list is appended -->
-          <div class="navbar-dropdown" id="year-dropdown" onclick="classList.add('is-hidden')">
+          <div class="navbar-dropdown" id="year-dropdown" onclick="classList.add ('is-hidden')">
           </div>
         </div>
       </div>
+      <button id="open">search</button>
       <!-- Title and Actor Search Bar -->
       <div class="navbar-item">
         <input class="title-search-bar input is-warning is-small is-rounded has-text-centered" id="search-input" type="text" placeholder="Actor or Title Name">
