@@ -151,7 +151,12 @@ dropdownEl.forEach(dropdownEl => {
 		dropdownSelection.forEach(dropdownSelection => {
 			dropdownSelection.addEventListener('click', (event) => {
 				const selectedOption = event.target.textContent;
-				getMovieByDropdown(selectedOption, dropdownCategory);	
+				getMovieByDropdown(selectedOption, dropdownCategory);
+				console.log('modal button click');
+				confirmModal
+				.open()
+			//taking further action
+			.then(value => console.log('User clicked Home: ', value));	
 			});
 		});
 	});
@@ -164,6 +169,10 @@ searchInput.addEventListener('keydown', (event) => {
 		const searchBarEntry = searchInput.value;
 		getMovieByTitle(searchBarEntry);
 		getActorId(searchBarEntry);
+		console.log('modal button click');
+		confirmModal
+		.open()
+		.then(value => console.log('User clicked Home: ', value));
 	};
 });
 
@@ -213,19 +222,6 @@ const confirmModal = new mainPageModal ({
 	messageText: 'Movie Insert',
 	homeText: 'Home',
 });
-
-//when done we should be able to use modal with this function, once string is inputed
-//let yearDropdown =
-document.getElementById('year-dropdown')
-.addEventListener('click', () =>{
-	console.log('modal button click');
-	confirmModal
-	.open()
-//taking further action
-.then(value => console.log('User clicked Home: ', value));
-});
-
-console.log(confirmModal);
 
 // End Abigail's work section
 
