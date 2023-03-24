@@ -30,20 +30,27 @@ footer {
 }
 
 .theater-background {
-    height: 31rem;
-    width: 68rem;
+    height: 32.5rem;
+    width: 90%;
     background-image: url('./images/testsample.jpg');
     background-size: cover;
+    background-position: center;
     position: relative;
     box-shadow: 0 0 8px 8px black inset;
 }
 
 #movie-image {
     position: absolute;
-    right: 18rem;
-    width: 30rem;
+    top: 0;
+    height: 52%;
 }
 
 /* .bulma-hamburger-mixin {
     @include hamburger(2.5rem);
   } */
+
+@media screen and (max-width: 768px) {
+    #movie-image {
+        width: 77%;
+    }
+}
