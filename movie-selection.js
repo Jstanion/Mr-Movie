@@ -23,6 +23,8 @@ let getMovieByGenre = (searchGenre) => {
 	.then(response => {
         console.log(response);
         console.log(response.results[0].imdb_id);
+        let randomId = response.results[0].imdb_id
+        getMovieData(randomId)
     })
 	.catch(err => console.error(err));
 }
