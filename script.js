@@ -69,9 +69,13 @@ let getMovieByTitle = (searchBarEntry) => {
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/imdb_id/byTitle/${searchBarEntry}/`, moviesMiniDatabase)
 	.then(response => response.json())
 	.then(response => {
+		if(!response.results[0]) {
+			return;
+		} else {
 		console.log(response);
 		console.log(response.results[0].imdb_id); 
 		getMovieData(response.results[0].imdb_id);
+		}
 	})
 	.catch(err => console.error(err));
 };
@@ -81,10 +85,14 @@ let getActorId = (searchBarEntry) => {
 	fetch(`https://moviesminidatabase.p.rapidapi.com/actor/imdb_id_byName/${searchBarEntry}/`, moviesMiniDatabase)
 	.then(response => response.json())
 	.then(response => { 
+		if(!response.results[0]) {
+			return;
+		} else {
 		console.log(response); 
 		console.log(response.results[0].imdb_id);
 		let actorId = response.results[0].imdb_id
-		getMovieByActor(actorId) 
+		getMovieByActor(actorId)
+		}
 	})
 	.catch(err => console.error(err));
 };
