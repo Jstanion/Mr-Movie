@@ -23,6 +23,7 @@ const searchInput = document.getElementById('search-input');
 const dropdownEl = document.querySelectorAll('.search-element');
 const dropdownSelection = document.querySelectorAll('.genre-item');
 const homeButton = document.getElementById('btn-home');
+const burgerButton = document.querySelector('.navbar-burger');
 
 // Pulls genre data from API
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
@@ -175,6 +176,14 @@ searchInput.addEventListener('keydown', (event) => {
 		.then(value => console.log('User clicked Home: ', value));
 	};
 });
+
+burgerButton.addEventListener('click', (event) => {
+	const navbarMenu = burgerButton.dataset.navMenu;
+	const navMenu = document.getElementById('navMenu');
+
+	burgerButton.classList.toggle('is-active');
+	navMenu.classList.toggle('is-active');
+})
 
 
 

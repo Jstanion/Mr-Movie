@@ -12,11 +12,11 @@
   <title>Mr.Movie - Movie Generator</title>
 </head>
 <body>
-  <header class="">
+  <header>
     <nav class="navbar column film-banner is-fixed-top is-flex is-flex-direction-row is-align-items-center" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
+      <div class="navbar-brand is-flex is-align-items-center">
         <a class="navbar-item is-size-2-desktop is-size-3-touch has-text-warning p-3" href="./mainpage.html" >Mr.Movie</a>
-        <a role="button" class=" m-0 navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a role="button" class="navbar-burger has-text-warning" aria-label="menu" aria-expanded="false" data-target="navMenu">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -24,7 +24,7 @@
       </div>
 
         <!-- Genre Dropdown List -->
-      <div class="navbar-menu">
+      <div class="navbar-menu" id="navMenu">
         <div class="navbar-start">
           <div class="navbar-item has-dropdown is-hidden-touch" onclick="classList.add('is-active')">
             <a class="navbar-link has-text-warning is-size-4 search-element" data-my-param="byGen">
