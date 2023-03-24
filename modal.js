@@ -17,12 +17,16 @@ createAndOpen(onHome){
 	this.modalElem.classList.add('home-modal');
     setTimeout(() => {
         this.modalElem.classList.add('year-dropdown');
+        //newmodal
+        this.modalElem.classList.add('genre-dropdown')
     }, 10);
 
     const modalContentElem = document.createElement('div');
     modalContentElem.classList.add('my-content');
 
     this.modalElem.appendChild(modalContentElem);
+
+    
 
     //heading
     const titleTextElem = document.createElement('p');
@@ -69,3 +73,5 @@ close(){
         document.body.removeChild(this.modalElem); }, 400);
     }
 }
+
+//new modal

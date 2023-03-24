@@ -227,6 +227,18 @@ document.getElementById('year-dropdown')
 
 console.log(confirmModal);
 
+// new modal
+document.getElementById('genre-dropdown')
+.addEventListener('click', () =>{
+	console.log('modal button click');
+	confirmModal
+	.open()
+//taking further action
+.then(value => console.log('User clicked Home: ', value));
+});
+
+console.log(confirmModal);
+
 // End Abigail's work section
 
 
