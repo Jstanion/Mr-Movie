@@ -17,25 +17,48 @@ const moviesDatabase = {
 	}
 };
 
-// Pulls genre data from API
-fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
-.then(response => response.json())
-.then(data => {
-	const genreArray = Array.from(data.results)
-    for (let i = 0; i < 21; i++) {
-        const obj = genreArray[i];
-        for (const key in obj) {
-            if (obj.hasOwnProperty(key)){
-                let genreName = obj[key];
-            };
-        };
-    };
-});
+let getMovieByGenre = (searchGenre) => {
+    fetch('https://moviesminidatabase.p.rapidapi.com/movie/byGen/Horror/', moviesMiniDatabase)
+	.then(response => response.json())
+	.then(response => {
+        console.log(response);
+        console.log(response.results[0].imdb_id);
+    })
+	.catch(err => console.error(err));
+}
 
-const practiceButton = document.getElementById("practice-button");
-practiceButton.addEventListener("click", function() {
-    // Your code to execute when the button is clicked goes here
-});
+let getMovieData = (randomId) => {
+	fetch(`https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids?idsList=${randomId}`, moviesDatabase)
+	.then(response => response.json())
+	.then(response => {
+		console.log(response);
+		let movieImage = response.results[0].primaryImage.url;
+		let movieTitle = response.results[0].titleText.text;
+		let caption = response.results[0].primaryImage.caption.plainText;
+		let releaseDate = response.results[0].releaseDate;
+		displayMovieInfo(movieImage, movieTitle, caption, releaseDate);
+	})
+	.catch(err => console.error(err));
+}
+// Pulls genre data from API
+
+// const practiceButton = document.querySelector("#practice-button");
+// practiceButton.addEventListener("click", function() {
+    
+    // });
+    
+    getMovieByGenre()
+
+
+
+
+
+
+
+
+
+
+
 
 
 // const options = {
@@ -76,7 +99,7 @@ practiceButton.addEventListener("click", function() {
 //     console.error(error);
 //   });
 
-fetch()
+
 
 
 // End Jace's work section
