@@ -47,7 +47,8 @@ let getMovieId = (genreName) => {
     fetch(`https://moviesminidatabase.p.rapidapi.com/movie/byGen/${genreName}/`, moviesMiniDatabase)
         .then(response => response.json())
         .then(response => {
-            console.log(response);
+            const randomMovieObject = response.results[Math.floor(Math.random() * response.results.length)]; 
+            console.log('getmovie', response);
             console.log(response.results[0].imdb_id);
             titleId = response.results[0].imdb_id;
             getMovieData(titleId);
