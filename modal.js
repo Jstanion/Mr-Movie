@@ -41,6 +41,8 @@ createAndOpen(onHome){
     //home button
     const homeButtonTextElem = document.createElement('button');
     homeButtonTextElem.classList.add('homeButtonText');
+    //refresh homepage
+    homeButtonTextElem.setAttribute("onclick", "document.location='./mainpage.html'")
     homeButtonTextElem.textContent = this.homeText;
 
     homeButtonTextElem.addEventListener('click', () => {
