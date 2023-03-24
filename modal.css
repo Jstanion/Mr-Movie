@@ -2,16 +2,15 @@
 .home-modal {
     background-color: #27383e;
     position: absolute;
-    top: 7rem;
-    bottom: 0;
-    left: 7rem;
+    top: 6rem;
+    bottom: 5rem;
+    left: 3rem;
     right: 3rem;
-    height: 20rem;
-    width: 40rem;
     display: none;
     justify-content: center;
     align-items: center;
     transition: opacity 0.4s;
+    border: .5rem solid white;
 }
 
 .home-modal.year-dropdown{
@@ -46,5 +45,5 @@
 }
 
 .home-modal .content button.homeButtonText{
-background-color: rgb(28,144,28);
+background-color: hsl(48, 100%, 67%);
 }
