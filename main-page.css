@@ -35,11 +35,11 @@ footer {
     background-image: url('./images/testsample.jpg');
     background-size: cover;
     position: relative;
+    box-shadow: 0 0 8px 8px black inset;
 }
 
 #movie-image {
     position: absolute;
-    top: -1.5rem;
     right: 18rem;
     width: 30rem;
 }
