@@ -173,7 +173,31 @@ searchInput.addEventListener('keydown', (event) => {
 
 // Start Jace's work section
 
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': '7b91725223mshb07bf7162834af7p11e9eajsn13d5d2d4fcee',
+// 		'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
+// 	}
+// };
 
+// fetch('https://moviesdatabase.p.rapidapi.com/titles/utils/genres', options)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+// 	.catch(err => console.error(err));
+
+// function showMovieRecommendations() {
+// 	// Get the selected option value
+// 	const selectedOption = document.getElementById("movie-dropdown").value;
+  
+// 	// Construct the URL of the new page with the parameter
+// 	const url = "file:///C:/Users/jacel/documents/amazing-project-1/movie-selection.html" + encodeURIComponent(selectedOption);
+  
+// 	// Open the new page
+// 	window.open(url, "_blank");
+//   }
+  
+	
 // End Jace's work section
 
 
