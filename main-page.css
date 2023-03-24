@@ -29,6 +29,11 @@ footer {
     background-color: #27383e;
 }
 
+.dropdown-menu {
+    max-height: 70vh;
+    overflow:scroll; 
+ }
+
 /* .bulma-hamburger-mixin {
     @include hamburger(2.5rem);
   } */
