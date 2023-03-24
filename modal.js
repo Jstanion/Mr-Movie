@@ -17,12 +17,18 @@ createAndOpen(onHome){
 	this.modalElem.classList.add('home-modal');
     setTimeout(() => {
         this.modalElem.classList.add('year-dropdown');
+        //new modal
+        this.modalElem.classList.add('genre-dropdown');
+        // new modal search input
+        this.modalElem.classList.add('search-input');
     }, 10);
 
     const modalContentElem = document.createElement('div');
-    modalContentElem.classList.add('content');
+    modalContentElem.classList.add('my-content');
 
     this.modalElem.appendChild(modalContentElem);
+
+    
 
     //heading
     const titleTextElem = document.createElement('p');
@@ -41,6 +47,8 @@ createAndOpen(onHome){
     //home button
     const homeButtonTextElem = document.createElement('button');
     homeButtonTextElem.classList.add('homeButtonText');
+    //refresh homepage
+    homeButtonTextElem.setAttribute("onclick", "document.location='./mainpage.html'")
     homeButtonTextElem.textContent = this.homeText;
 
     homeButtonTextElem.addEventListener('click', () => {
