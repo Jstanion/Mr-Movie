@@ -21,9 +21,11 @@ let getMovieByGenre = (searchGenre) => {
     fetch('https://moviesminidatabase.p.rapidapi.com/movie/byGen/Horror/', moviesMiniDatabase)
 	.then(response => response.json())
 	.then(response => {
-        console.log(response);
-        console.log(response.results[0].imdb_id);
-        let randomId = response.results[0].imdb_id
+		console.log(response);
+		const myArray = response.results;
+		const randomIndex = Math.floor(Math.random() * myArray.length);
+		const randomId = myArray[randomIndex].imdb_id;
+        console.log(randomId)
         getMovieData(randomId)
     })
 	.catch(err => console.error(err));
