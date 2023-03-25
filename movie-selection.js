@@ -23,13 +23,21 @@ let getMovieByGenre = (searchGenre) => {
 	.then(response => {
 		console.log(response);
 		const myArray = response.results;
-		const randomIndex = Math.floor(Math.random() * myArray.length);
-		const randomId = myArray[randomIndex].imdb_id;
-        console.log(randomId)
-        getMovieData(randomId)
+		const randomIndex1 = Math.floor(Math.random() * myArray.length);
+		const randomIndex2 = Math.floor(Math.random() * myArray.length);
+		const randomIndex3 = Math.floor(Math.random() * myArray.length);
+		const randomId1 = myArray[randomIndex1].imdb_id;
+		const randomId2 = myArray[randomIndex2].imdb_id;
+		const randomId3 = myArray[randomIndex3].imdb_id;
+        console.log(randomId1, randomId2, randomId3)
+        getMovieData(randomId1)
+		getMovieData(randomId2)
+		getMovieData(randomId3)
     })
 	.catch(err => console.error(err));
 }
+
+
 
 let getMovieData = (randomId) => {
 	fetch(`https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids?idsList=${randomId}`, moviesDatabase)
