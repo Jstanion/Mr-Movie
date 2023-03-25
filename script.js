@@ -85,15 +85,42 @@ let getMovieByTitle = (searchBarEntry) => {
 let getActorId = (searchBarEntry) => {
 	fetch(`https://moviesminidatabase.p.rapidapi.com/actor/imdb_id_byName/${searchBarEntry}/`, moviesMiniDatabase)
 	.then(response => response.json())
-	.then(response => { 
-		if(!response.results[0] || response.results[0].imdb_id.includes('title')) {
-			return;
-		} else {
-		console.log(response); 
-		console.log(response.results[0].imdb_id);
-		let actorId = response.results[0].imdb_id
-		getMovieByActor(actorId)
-		}
+	.then(response => {
+		console.log(response)
+		const actorArray = response.results.slice(0,20);
+		actorArray.sort((a, b) => a.name.localeCompare(b.name));
+		console.log(actorArray)
+		
+		// Creates and appends each object in a modal
+		// for(let i = 0; i <= 19; i++) {
+		// const actorName = document.createElement('a');
+		// actorName.classList.add('is-size-5', 'has-text-warning')
+		// actorName.textContent = actorArray[i].name
+		// actorName.value = actorArray[i].name
+		// const resultsModal = document.querySelector('.my-content')
+		// resultsModal.appendChild(actorName)
+		// console.log(actorName)
+		// }
+
+		// extra code
+		// for(let i = 0; i <= 98; i++) {
+		// console.log(actorArray[i].name)
+		// }
+			// actorArray[i].name;
+		// const filteredActorArray = []
+
+		// for(let i = 0; i <= 5; i++) {
+		// 	filteredActorArray.push(actorArray[i])
+		// }
+		// console.log (filteredActorArray);
+		// if(!response.results[0] || response.results[0].imdb_id.includes('title')) {
+		// 	return;
+		// } else {
+		// console.log(response); 
+		// console.log(response.results[0].imdb_id);
+		// let actorId = response.results[0].imdb_id
+		// getMovieByActor(actorId)
+		// }
 	})
 	.catch(err => console.error(err));
 };
@@ -104,9 +131,10 @@ let getMovieByActor = (actorId) => {
 	.then(response => response.json())
 	.then(response => {
 		console.log(response);
-		const myArray = response.results;
+		
+	
 		const randomIndex = Math.floor(Math.random() * myArray.length);
-		const randomId = myArray[randomIndex][0].imdb_id;
+		const randomId = myArray.results[randomIndex][0].imdb_id;
 		getMovieData(randomId);
 	})
 	.catch(err => console.error(err));
