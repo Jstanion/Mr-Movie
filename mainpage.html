@@ -26,22 +26,22 @@
         <!-- Genre Dropdown List -->
       <div class="navbar-menu" id="navMenu">
         <div class="navbar-start">
-          <div class="navbar-item has-dropdown is-hidden-touch" onclick="classList.add('is-active')">
+          <div class="navbar-item has-dropdown" onclick="classList.toggle('is-active')">
             <a class="navbar-link has-text-warning is-size-4 search-element" data-my-param="byGen">
             Select Genre
             </a>
 
             <!-- This is where the genre list is appended -->
-            <div class="navbar-dropdown dropdown-menu" id="genre-dropdown" onclick="classList.add('is-hidden')">
+            <div class="navbar-dropdown dropdown-menu" id="genre-dropdown">
             </div>
           </div>
           <!-- Year Dropdown List -->
-          <div class="navbar-item has-dropdown is-hidden-touch" onclick="classList.add('is-active')">
+          <div class="navbar-item has-dropdown" onclick="classList.toggle('is-active')">
             <a class="navbar-link has-text-warning is-size-4 search-element" data-my-param="byYear">
               Select Year
             </a>
             <!-- This is where the genre list is appended -->
-            <div class="navbar-dropdown dropdown-menu" id="year-dropdown" onclick="classList.add('is-hidden')">
+            <div class="navbar-dropdown dropdown-menu" id="year-dropdown" >
             </div>
           </div>
         </div>

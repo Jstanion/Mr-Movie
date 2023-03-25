@@ -185,12 +185,17 @@ searchInput.addEventListener('keydown', (event) => {
 	};
 });
 
-burgerButton.addEventListener('click', (event) => {
-	const navbarMenu = burgerButton.dataset.navMenu;
-	const navMenu = document.getElementById('navMenu');
 
-	burgerButton.classList.toggle('is-active');
-	navMenu.classList.toggle('is-active');
+
+burgerButton.addEventListener('click', () => {
+	
+	
+	// const target = burgerButton.dataset.navMenu;
+	// const navbarMenu = document.getElementById('navMenu');
+
+	// burgerButton.classList.toggle('is-active');
+	// navMenu.classList.toggle('is-active');
+
 })
 
 
