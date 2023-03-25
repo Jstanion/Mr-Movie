@@ -23,7 +23,7 @@ const searchInput = document.getElementById('search-input');
 const dropdownEl = document.querySelectorAll('.search-element');
 const dropdownSelection = document.querySelectorAll('.genre-item');
 const homeButton = document.getElementById('btn-home');
-const burgerButton = document.querySelector('.navbar-burger');
+const navbarBurger = document.querySelector('.navbar-burger');
 
 // Pulls genre data from API
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
@@ -185,18 +185,18 @@ searchInput.addEventListener('keydown', (event) => {
 	};
 });
 
+const navbarDropdown = document.querySelectorAll('.navbar-toggle');
+navbarDropdown.forEach(navbarDropdown => {
+	navbarDropdown.addEventListener('click', () => {
+		navbarDropdown.classList.toggle('is-active');
+	});
+});
 
-
-burgerButton.addEventListener('click', () => {
-	
-	
-	// const target = burgerButton.dataset.navMenu;
-	// const navbarMenu = document.getElementById('navMenu');
-
-	// burgerButton.classList.toggle('is-active');
-	// navMenu.classList.toggle('is-active');
-
-})
+navbarBurger.addEventListener('click', () => {
+	navbarBurger.classList.toggle('is-active');
+	const navbarMenu = document.querySelector('.navbar-menu');
+	navbarMenu.classList.toggle('is-active');
+});
 
 
 
