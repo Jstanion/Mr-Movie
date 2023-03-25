@@ -50,10 +50,6 @@ footer {
     overflow:scroll; 
  }
 
-/* .bulma-hamburger-mixin {
-    @include hamburger(2.5rem);
-  } */
-
 @media screen and (max-width: 768px) {
     #movie-image {
         width: 77%;

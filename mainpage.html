@@ -11,20 +11,15 @@
     <script src="./modal.js" defer></script>
   <title>Mr.Movie - Movie Generator</title>
 </head>
-<body>
-  <header class="has-navbar-fixed-top">
+<body class='has-navbar-fixed-top'>
+  <header>
     <nav class="navbar is-transparent film-banner is-fixed-top is-flex is-flex-direction-row is-align-items-center" role="navigation" aria-label="main navigation">
       <div class="navbar-brand is-flex is-align-items-center">
         <a class="navbar-item is-size-2-desktop is-size-3-touch has-text-warning p-3" href="./mainpage.html" >Mr.Movie</a>
-        <a role="button" class="navbar-burger has-text-warning" aria-label="menu" aria-expanded="false" data-target="navMenu">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
       </div>
 
         <!-- Genre Dropdown List -->
-      <div class="navbar-menu" id="navMenu">
+      <div class="navbar-menu">
         <div class="navbar-start">
           <div class="navbar-item has-dropdown navbar-toggle">
             <a class="navbar-link has-text-warning is-size-4 is-size-7-mobile search-element" data-my-param="byGen">
@@ -32,7 +27,7 @@
             </a>
 
             <!-- This is where the genre list is appended -->
-            <div class="navbar-dropdown dropdown-menu" id="genre-dropdown">
+            <div class="navbar-dropdown is-boxed" id="genre-dropdown">
             </div>
           </div>
           <!-- Year Dropdown List -->
@@ -41,7 +36,7 @@
               Select Year
             </a>
             <!-- This is where the genre list is appended -->
-            <div class="navbar-dropdown dropdown-menu" id="year-dropdown" >
+            <div class="navbar-dropdown is-boxed" id="year-dropdown" >
             </div>
           </div>
         </div>
