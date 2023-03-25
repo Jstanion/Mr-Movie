@@ -50,12 +50,51 @@ footer {
     overflow:scroll; 
  }
 
-/* .bulma-hamburger-mixin {
-    @include hamburger(2.5rem);
-  } */
-
 @media screen and (max-width: 768px) {
     #movie-image {
         width: 77%;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 600px) {
+    #search-input {
+        height: 1.5rem;
+    }
+
+    .navbar-menu {
+        background-color: initial;
+        flex-direction: column-reverse;
+    }
+
+    .search-bar {
+        padding-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .navbar,.navbar-end,.navbar-menu,.navbar-start {
+        align-items:stretch;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .navbar.is-fixed-top .navbar-menu, .navbar.is-fixed-top-touch .navbar-menu {
+        overflow: visible;
+    }
+
+    .navbar-menu {
+        background-color: initial;
+    }
+
+    .navbar-link:hover {
+        background-color: rgba(10,10,10,.1);
+    }
+    
+    .display-toggle {
+        display: block;
+    }
+    .dropdown-menu {
+        background-color: white;
     }
 }
