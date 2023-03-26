@@ -3,11 +3,11 @@
 class mainPageModal {
 	constructor ({
 		titleText,
-		messageText,
+        movieDataContainer,
 		homeText,
 	}){
 		this.titleText = titleText;
-		this.messageText = messageText;
+		this.movieDataContainer = movieDataContainer;
 		this.homeText = homeText;
 	}
 
@@ -37,12 +37,10 @@ createAndOpen(onHome){
 
     modalContentElem.appendChild(titleTextElem);
 
-    //message
-    const messageTextElem = document.createElement('p');
-    messageTextElem.classList.add('messageText');
-    messageTextElem.textContent = this.messageText;
-
-    modalContentElem.appendChild(messageTextElem);
+    const movieDataElem = document.createElement('p');
+    movieDataElem.classList.add('data-container');
+    
+    modalContentElem.appendChild(movieDataElem);
 
     //home button
     const homeButtonTextElem = document.createElement('button');

@@ -145,10 +145,10 @@ let getMovieData = (randomId) => {
 
 // Function that displays the movie info to the UI
 let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
-	const resultModal = document.querySelector(".my-content")
+	const resultModal = document.querySelector(".data-container");
 	const moviePoster = document.createElement("img");
 	moviePoster.classList.add('movie-image');
-	moviePoster.setAttribute("id", "movie-image"), ("src", ""), ("alt", "");
+	moviePoster.setAttribute("src", ""), ("alt", "");
 	moviePoster.src = movieImage;
 	moviePoster.alt = caption;
 	resultModal.appendChild(moviePoster);
@@ -230,7 +230,7 @@ yearDropdownEl.addEventListener('click', () => {
 
 const confirmModal = new mainPageModal ({
 	titleText: 'Congrats! We found what you are looking for!',
-	messageText: 'Movie Insert',
+	movieDataContainer: 'movie insert',
 	homeText: 'Home',
 });
 
