@@ -32,7 +32,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     justify-content: space-evenly;
-    
+    align-items: center;
 }
 
 .movie-frame {
@@ -50,6 +50,7 @@ footer {
 .movie-image {
     width: 68.5%;
     height: 71%;  
+    margin: 1.7rem;
 }
 
 .movie-info-section {
@@ -63,10 +64,31 @@ footer {
 }
 
 #main-section {
-    background-color: #;
     height: fit-content;
     width: 100%;
 }
+
+@media screen and (min-width: 375px) and (max-width: 1041px) {
+    main{
+        padding-top: 20%;
+        padding-bottom: 50%;
+    }
+    .movie-data-container {
+        height: 30rem;
+        width: 15rem;
+    }
+    .movie-frame {
+        width: 15rem;
+        height: 17.5rem;
+    }
+    .movie-info-section {
+        width: 13rem;
+        height: 10rem;
+    }
+}
+
+
+
 
 
 /* #home-btn {
