@@ -151,9 +151,17 @@ let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
 	moviePoster.setAttribute("id", "movie-image"), ("src", ""), ("alt", "");
 	moviePoster.src = movieImage;
 	moviePoster.alt = caption;
-	resultModal.appendChild(moviePoster)
+	resultModal.appendChild(moviePoster);
 
-	const titleName = document.createElement("")
+	const titleName = document.createElement("p");
+	titleName.textContent = movieTitle;
+	resultModal.appendChild(titleName);
+
+	const movieCaption = document.createElement("p");
+	movieCaption.classList.add("is-size-5");
+	movieCaption.textContent = caption;
+	resultModal.appendChild(movieCaption);
+
 	console.log(movieTitle, caption, releaseDate.month, releaseDate.day, releaseDate.year);
 };
 
