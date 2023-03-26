@@ -81,12 +81,12 @@ let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
 	movieSection.appendChild(marqueeInfo)
 
     let titleName = document.createElement('p')
-	titleName.classList.add('text-styling', 'is-size-4')
+	titleName.classList.add('text-styling', 'is-size-4', 'is-size-5-touch')
     titleName.textContent = movieTitle
 	marqueeInfo.appendChild(titleName)
 
     let movieCaption = document.createElement('p')
-    movieCaption.classList.add('text-styling', 'is-size-6')
+    movieCaption.classList.add('text-styling', 'is-size-6', 'is-size-7-touch')
 	movieCaption.textContent = caption
 	marqueeInfo.appendChild(movieCaption)
 };

@@ -77,6 +77,28 @@ footer {
     width:100%;
 }
 
+@media screen and (min-width: 375px) and (max-width: 1041px) {
+    main {
+        padding-top: 20%;
+        padding-bottom: 50%;
+    }
+
+    .movie-data-container {
+        height: 30rem;
+        width: 15rem;
+    }
+
+    .movie-frame {
+        width: 13rem;
+        height: 17.5rem;
+    }
+
+    .marquee-section {
+        width: 13rem;
+        height: 10rem;
+    }
+}
+
 /* .header {
     padding: 10px;
     display: flex;
