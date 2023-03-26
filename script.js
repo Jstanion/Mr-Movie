@@ -1,3 +1,4 @@
+
 // API key and URL for MoviesMiniDatabase (first API)
 const moviesMiniDatabase = {
 	method: 'GET',
@@ -235,6 +236,9 @@ const confirmModal = new mainPageModal ({
 	homeText: 'Home',
 });
 
+// carousel work
+
+  
 
 // export {movieImage, getMovieData};
 // export {movieTitle, getMovieData};
