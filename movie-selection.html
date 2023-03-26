@@ -9,39 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
     <title>Search Results</title>
 </head>
-<body>
-  
-    <header class="film-banner is-flex is-flex-direction-row is-justified-content-center header">
-      <button onclick="document.location='./mainpage.html'" id="home-btn" class="button">Home</button>
-    </header>
-    <section id="movie-option-1" class="section is-medium">
-      <!-- <div>
-      <h1 class="title">Movie Title</h1>
-      <h2 class="subtitle"></h2>
-          <p class="release-date"></p>
+<body class="has-navbar-fixed-top">
+  <header>
+    <nav class="navbar film-banner is-fixed-top is-flex is-align-items-center" style="background-color: #27383e;" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand is-flex is-align-items-center">
+        <a class="navbar-item is-size-3-desktop is-size-6-touch has-text-warning p-3" href="./mainpage.html" >Mr.Movie</a>
       </div>
-        <img id="movie-image" class="movie-image" src="./images/placeholderimg.jpeg" alt="image or poster of movie option">
-      </section>
-      <section id="movie-option-2" class="section is-medium">
-      <div>
-        <h1 id="title-selection-2" class="title">Movie Title</h1>
-        <h2 id="subtitle-selection-2" class="subtitle">
-          Movie description
-        </h2>
-      </div>
-        <img id="movie-image-2" class="movie-image" src="./images/placeholderimg.jpeg" alt="image or poster of movie option">
-      </section>
-      <section id="movie-option-3" class="section is-medium">
-      <div>
-        <h1 class="title">Movie Title</h1>
-        <h2 class="subtitle">
-          Movie description
-        </h2>
-      </div>
-        <img id="movie-image-3" class="movie-image" src="./images/placeholderimg.jpeg" alt="image or poster of movie option"> -->
-      </section>
-      <footer class="film-banner">
-      </footer>
+    </nav>
+  </header>
+  <main class="is-flex is-align-items-center is-justify-content-center is-justify-content-space-evenly">
+    <section id="main-section" class="is-flex is-flex-wrap-wrap is-flex-direction-row is-align-items-center is-justify-content-center is-justify-content-space-evenly">
+      <img class="screen-load-gif m-0" id="page-load-gif" src="https://media3.giphy.com/media/KDKEMEQvCFsUpbckhT/giphy-downsized.gif?cid=6104955e45ud8bw4k5ndpf8c2x465cddq89ry2y0arqu6tjz&rid=giphy-downsized.gif&ct=g" alt="feature presentation gif">
+    </section>
+  </main>
+  <footer class="film-banner">
+  </footer>
   <script src="./movie-selection.js"></script>
 </body>
 </html>

@@ -173,9 +173,24 @@ let getMovieData = (randomId) => {
 
 // Function that displays the movie info to the UI
 let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
-	let moviePoster = document.querySelector('#movie-image');
+	const resultModal = document.querySelector(".data-container");
+	const textContainer = document.querySelector(".container-dos");
+	const moviePoster = document.createElement("img");
+	moviePoster.classList.add('movie-image');
+	moviePoster.setAttribute("id", "modal-image"), ("src", ""), ("alt", "");
 	moviePoster.src = movieImage;
 	moviePoster.alt = caption;
+	resultModal.appendChild(moviePoster);
+
+	const titleName = document.createElement("p");
+	titleName.textContent = movieTitle;
+	textContainer.appendChild(titleName);
+
+	const movieCaption = document.createElement("p");
+	movieCaption.classList.add("is-size-5");
+	movieCaption.textContent = caption;
+	textContainer.appendChild(movieCaption);
+
 	console.log(movieTitle, caption, releaseDate.month, releaseDate.day, releaseDate.year);
 };
 
@@ -244,9 +259,16 @@ yearDropdownEl.addEventListener('click', () => {
 
 const confirmModal = new mainPageModal ({
 	titleText: 'Congrats! We found what you are looking for!',
-	messageText: 'Movie Insert',
+	movieDataContainer: 'movie insert',
 	homeText: 'Home',
 });
+
+
+// export {movieImage, getMovieData};
+// export {movieTitle, getMovieData};
+// export {caption, getMovieData};
+// export {releaseDate, getMovieData};
+
 
 // End Abigail's work section
 
