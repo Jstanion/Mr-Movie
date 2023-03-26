@@ -45,6 +45,7 @@ footer {
     justify-content: center;
     align-items: center ;
     position: relative;
+    box-shadow: 0 0 25px 15px black inset, 0 0 20px 2px #ffe08a;
 }
 
 .movie-image {
@@ -61,11 +62,20 @@ footer {
     flex-direction: column;
     justify-content: space-evenly;
     text-align: center;
+    box-shadow: 0 0 20px 2px #ffe08a;
+    border: solid 2px #cb861a;
 }
+
+.navbar,
+.text-styling {
+    font-family: 'Limelight', cursive;
+}
+
 
 #main-section {
     height: fit-content;
     width: 100%;
+    background-color: #460b0b;
 }
 
 @media screen and (min-width: 375px) and (max-width: 1041px) {
