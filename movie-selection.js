@@ -55,6 +55,11 @@ let getMovieData = (randomId) => {
 // Function that creates and appends movie info to the page
 let displayMovieInfo = (movieImage, movieTitle, caption) => {
 	console.log(movieTitle, caption);
+
+	// hides initial page content
+	let featurePresentationLoad = document.querySelector('.screen-load-gif');
+	featurePresentationLoad.style.display = "none";
+
 	let mainSection = document.getElementById('main-section');
 	let movieSection = document.createElement('section');
 	movieSection.classList.add('movie-data-container');
