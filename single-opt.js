@@ -22,19 +22,16 @@ const moviesDatabase = {
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
     .then(response => response.json())
     .then(data => {
+        // convert data to array
         const genreArray = Array.from(data.results);
-	// convert data to array
+        const filteredArray = [];
         for (let i = 0; i < 21; i++) {
-            const obj = genreArray[i];
-            for (const key in obj) {
-                if (obj.hasOwnProperty(key)) {
-                    let genreName = obj[key];
-                };
-            };
+            filteredArray.push(genreArray[i]);
         };
-        const randomGenreObject = genreArray[Math.floor(Math.random() * genreArray.length)];
-        console.log(randomGenreObject.genre) 
-        const genreToUse = randomGenreObject.genre
+        const randomIndex = Math.floor(Math.random() * filteredArray.length);
+        const randomGenreObject = filteredArray[randomIndex].genre;
+        console.log(randomGenreObject);
+        const genreToUse = randomGenreObject
         getMovieId(genreToUse);
     })
     .catch(error => {
@@ -48,9 +45,8 @@ let getMovieId = (genreName) => {
         .then(response => response.json())
         .then(response => {
             const randomMovieObject = response.results[Math.floor(Math.random() * response.results.length)]; 
-            console.log('getmovie', response);
-            console.log(response.results[0].imdb_id);
-            titleId = response.results[0].imdb_id;
+            console.log('getmovie', randomMovieObject);
+            titleId = randomMovieObject.imdb_id;
             getMovieData(titleId);
         })
         .catch(err => console.error(err));
