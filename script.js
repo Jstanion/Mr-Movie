@@ -86,10 +86,18 @@ let getActorId = (searchBarEntry) => {
 	fetch(`https://moviesminidatabase.p.rapidapi.com/actor/imdb_id_byName/${searchBarEntry}/`, moviesMiniDatabase)
 	.then(response => response.json())
 	.then(response => {
-		console.log(response)
-		const actorArray = response.results.slice(0,20);
-		actorArray.sort((a, b) => a.name.localeCompare(b.name));
-		console.log(actorArray)
+		if(!response.results[0] || response.results[0].imdb_id.includes('title')) {
+				return;
+			} else {
+			console.log(response); 
+			console.log(response.results[0].imdb_id);
+			let actorId = response.results[0].imdb_id
+			getMovieByActor(actorId)
+			}
+		// console.log(response)
+		// const actorArray = response.results.slice(0,20);
+		// actorArray.sort((a, b) => a.name.localeCompare(b.name));
+		// console.log(actorArray)
 		
 		// Creates and appends each object in a modal
 		// for(let i = 0; i <= 19; i++) {
@@ -131,10 +139,10 @@ let getMovieByActor = (actorId) => {
 	.then(response => response.json())
 	.then(response => {
 		console.log(response);
-		
-	
+		const myArray = response.results
 		const randomIndex = Math.floor(Math.random() * myArray.length);
-		const randomId = myArray.results[randomIndex][0].imdb_id;
+		const randomId = myArray[randomIndex][0].imdb_id;
+		console.log(randomId)
 		getMovieData(randomId);
 	})
 	.catch(err => console.error(err));
@@ -217,6 +225,8 @@ dropdownEl.forEach(dropdownEl => {
 // Event listener for the search bar
 searchInput.addEventListener('keydown', (event) => {
 	if(event.key === 'Enter') {
+
+		
 		// Sets the text entry to a string value in a variable
 		const searchBarEntry = searchInput.value;
 		getMovieByTitle(searchBarEntry);
