@@ -71,6 +71,11 @@ footer {
     font-family: 'Limelight', cursive;
 }
 
+#page-load-gif {
+    margin: 12%;
+    box-shadow: 0 0 50px 8px #ffe08a;
+}
+
 
 #main-section {
     height: fit-content;
@@ -94,6 +99,9 @@ footer {
     .movie-info-section {
         width: 13rem;
         height: 10rem;
+    }
+    .movie-image {
+        height: 81%;
     }
 }
 
