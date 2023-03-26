@@ -45,6 +45,11 @@ footer {
     height: 52%;
 }
 
+#modal-image {
+    height: 15rem;
+    width: auto;
+}
+
 .dropdown-menu {
     max-height: 70vh;
     overflow:scroll; 
