@@ -54,25 +54,25 @@ body {
     font-family: 'Limelight', cursive;
 }
 #movie-image {
-    float: right;
-    margin-left: 15px;
-    width: 10%;
-    height: auto;
-    margin-top: -145px;
+    position: absolute;
+    top: 102px;
+    left: 1600px;
+    width: 200px;
+    height: 275px;  
 }
 #movie-image-2 {
-    float: left;
+    position: absolute;
     margin-left: 15px;
     width: 10%;
-    height: auto;
+    height: 275px;
     margin-top: -35px;
 }
 #movie-image-3 {
-    float: right;
-    margin-left: 15px;
-    width: 10%;
-    height: auto;
-    margin-top: -100px;
+    position: absolute;
+    top: 745px;
+    left: 1600px;
+    width: 200px;
+    height: 275px;  
 }
 footer {
     transform: scaleY(-1);

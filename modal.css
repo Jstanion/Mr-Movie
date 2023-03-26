@@ -47,3 +47,20 @@
 .home-modal .my-content button.homeButtonText{
 background-color: hsl(48, 100%, 67%);
 }
+
+.data-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 25rem;
+}
+
+.container-dos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
