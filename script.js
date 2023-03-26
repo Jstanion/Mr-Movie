@@ -23,6 +23,7 @@ const searchInput = document.getElementById('search-input');
 const dropdownEl = document.querySelectorAll('.search-element');
 const dropdownSelection = document.querySelectorAll('.genre-item');
 const homeButton = document.getElementById('btn-home');
+const navbarBurger = document.querySelector('.navbar-burger');
 
 // Pulls genre data from API
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
@@ -144,9 +145,24 @@ let getMovieData = (randomId) => {
 
 // Function that displays the movie info to the UI
 let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
-	let moviePoster = document.querySelector('#movie-image');
+	const resultModal = document.querySelector(".data-container");
+	const textContainer = document.querySelector(".container-dos");
+	const moviePoster = document.createElement("img");
+	moviePoster.classList.add('movie-image');
+	moviePoster.setAttribute("id", "modal-image"), ("src", ""), ("alt", "");
 	moviePoster.src = movieImage;
 	moviePoster.alt = caption;
+	resultModal.appendChild(moviePoster);
+
+	const titleName = document.createElement("p");
+	titleName.textContent = movieTitle;
+	textContainer.appendChild(titleName);
+
+	const movieCaption = document.createElement("p");
+	movieCaption.classList.add("is-size-5");
+	movieCaption.textContent = caption;
+	textContainer.appendChild(movieCaption);
+
 	console.log(movieTitle, caption, releaseDate.month, releaseDate.day, releaseDate.year);
 };
 
@@ -184,36 +200,24 @@ searchInput.addEventListener('keydown', (event) => {
 	};
 });
 
+const genreDropdownEl = document.querySelector('.has-dropdown.genre')
+const genreMenu = genreDropdownEl.querySelector('.dropdown-menu')
+genreDropdownEl.addEventListener('click', () => {
+	genreDropdownEl.classList.toggle('is-active')
+	genreMenu.classList.toggle('display-toggle')
+})
 
-
+const yearDropdownEl = document.querySelector('.has-dropdown.year')
+const yearMenu = yearDropdownEl.querySelector('.dropdown-menu')
+yearDropdownEl.addEventListener('click', () => {
+	yearDropdownEl.classList.toggle('is-active')
+	yearMenu.classList.toggle('display-toggle')
+})
 
 
 // Start Jace's work section
 
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': '7b91725223mshb07bf7162834af7p11e9eajsn13d5d2d4fcee',
-// 		'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
-// 	}
-// };
 
-// fetch('https://moviesdatabase.p.rapidapi.com/titles/utils/genres', options)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
-
-// function showMovieRecommendations() {
-// 	// Get the selected option value
-// 	const selectedOption = document.getElementById("movie-dropdown").value;
-  
-// 	// Construct the URL of the new page with the parameter
-// 	const url = "file:///C:/Users/jacel/documents/amazing-project-1/movie-selection.html" + encodeURIComponent(selectedOption);
-  
-// 	// Open the new page
-// 	window.open(url, "_blank");
-//   }
-  
 	
 // End Jace's work section
 
@@ -227,9 +231,16 @@ searchInput.addEventListener('keydown', (event) => {
 
 const confirmModal = new mainPageModal ({
 	titleText: 'Congrats! We found what you are looking for!',
-	messageText: 'Movie Insert',
+	movieDataContainer: 'movie insert',
 	homeText: 'Home',
 });
+
+
+// export {movieImage, getMovieData};
+// export {movieTitle, getMovieData};
+// export {caption, getMovieData};
+// export {releaseDate, getMovieData};
+
 
 // End Abigail's work section
 

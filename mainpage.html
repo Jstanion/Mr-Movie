@@ -11,42 +11,46 @@
     <script src="./modal.js" defer></script>
   <title>Mr.Movie - Movie Generator</title>
 </head>
-<body>
-  <header class="">
-    <nav class="column film-banner is-fixed-top is-flex is-flex-direction-row is-align-items-center is-justify-content-space-between" role="navigation" aria-label="main navigation">
-      <div class="column is-two-thirds is-narrow-touch navbar-brand is-flex is-align-items-center is-justify-content-space-evenly">
-        <a role="button" class=" m-0 navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-        <p class="is-size-2-desktop is-size-3-touch has-text-warning p-3">Mr.Movie</p>
-        <!-- Genre Dropdown List -->
-        <div class="navbar-item has-dropdown is-hidden-touch" onclick="classList.add('is-active')">
-          <a class="navbar-link has-text-warning is-size-4 search-element" data-my-param="byGen">
-            Select Genre
-          </a>
-          <!-- This is where the genre list is appended -->
-          <div class="navbar-dropdown dropdown-menu" id="genre-dropdown" onclick="classList.add('is-hidden')">
-          </div>
-        </div>
-        <!-- Year Dropdown List -->
-        <div class="navbar-item has-dropdown is-hidden-touch" onclick="classList.add('is-active')">
-          <a class="navbar-link has-text-warning is-size-4 search-element" data-my-param="byYear">
-            Select Year
-          </a>
-          <!-- This is where the genre list is appended -->
-          <div class="navbar-dropdown dropdown-menu" id="year-dropdown" onclick="classList.add('is-hidden')">
-          </div>
-        </div>
+<body class="has-navbar-fixed-top">
+  <header >
+    <nav class="navbar is-transparent film-banner is-fixed-top is-flex is-flex-direction-row is-align-items-center" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand is-flex is-align-items-center">
+        <a class="navbar-item is-size-3-desktop is-size-6-touch has-text-warning p-3" href="./mainpage.html" >Mr.Movie</a>
       </div>
-      <!--<button id="open">search</button>-->
-      <!-- Title and Actor Search Bar -->
-      <div class=" column is-one-quarter is-narrow-mobile navbar-item">
-        <input class="title-search-bar input is-warning is-small is-rounded has-text-centered" id="search-input" type="text" placeholder="Actor or Title Name">
-      </div>  
+
+      <div class="navbar-menu is-transparent" id="navMenu">
+        <div class="navbar-start is-flex is-align-items-center is-justify-content-space-between">
+          <!-- Genre Dropdown List -->
+          <div class="navbar-item has-dropdown genre">
+            <a class="navbar-link has-text-warning is-size-5 is-size-7-touch search-element" data-my-param="byGen">
+            Select Genre
+            </a>
+
+            <!-- This is where the genre list is appended -->
+            <div class="navbar-dropdown is-boxed dropdown-menu" id="genre-dropdown">
+            </div>
+          </div>
+          <!-- Year Dropdown List -->
+          <div class="navbar-item has-dropdown year">
+            <a class="navbar-link has-text-warning is-size-5 is-size-7-touch search-element" data-my-param="byYear">
+              Select Year
+            </a>
+            <!-- This is where the genre list is appended -->
+            <div class="navbar-dropdown is-boxed dropdown-menu" id="year-dropdown" >
+            </div>
+          </div>
+        </div>
+        
+        <!-- Title and Actor Search Bar -->
+        <div class="navbar-end">
+          <div class="navbar-item search-bar is-one-quarter is-narrow-mobile">
+            <input class="title-search-bar input is-warning is-normal is-rounded has-text-centered" id="search-input" type="text" placeholder="Actor or Title Name">
+          </div> 
+        </div> 
+      </div>
     </nav>
   </header>
+  
   <main>
     <!--Hero image container here with image placeholder inside -->
     <section class="main-hero-image hero is-halfheight">
