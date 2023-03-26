@@ -1,6 +1,23 @@
 body {
     background-color: #460b0b 
 }
+
+.movie-frame {
+    background-image: url(./images/poster-frame.jpg);
+    width: 26rem;
+    height: 35rem;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+
+.movie-image {
+    width: 68.5%;
+    height: 71%;  
+}
+
 .header {
     padding: 10px;
     display: flex;
@@ -52,13 +69,6 @@ body {
     background-color: #cb861a;
     color: white;
     font-family: 'Limelight', cursive;
-}
-#movie-image {
-    position: absolute;
-    top: 102px;
-    left: 1600px;
-    width: 200px;
-    height: 275px;  
 }
 #movie-image-2 {
     position: absolute;
