@@ -18,6 +18,8 @@ const moviesDatabase = {
 };
 
 let getMovieByGenre = (searchGenre) => {
+
+	// Grabs movie data by selected genre
     fetch('https://moviesminidatabase.p.rapidapi.com/movie/byGen/Horror/', moviesMiniDatabase)
 	.then(response => response.json())
 	.then(response => {
@@ -37,8 +39,6 @@ let getMovieByGenre = (searchGenre) => {
 	.catch(err => console.error(err));
 }
 
-
-
 let getMovieData = (randomId) => {
 	fetch(`https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids?idsList=${randomId}`, moviesDatabase)
 	.then(response => response.json())
@@ -55,6 +55,10 @@ let getMovieData = (randomId) => {
 // Function that displays the movie info to the UI
 let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
 	console.log(movieTitle, caption, releaseDate.month, releaseDate.day, releaseDate.year);
+
+	// Hides initial page content
+	let featurePresentationLoad = document.querySelector('.screen-load-gif');
+	featurePresentationLoad.style.display = 'none';
 
 	let mainSection = document.getElementById('main-section')
 	let movieSection = document.createElement('section')
@@ -82,11 +86,12 @@ let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
 	marqueeInfo.appendChild(titleName)
 
     let movieCaption = document.createElement('p')
-    movieCaption.classList.add('text-styling', 'is-size-5')
+    movieCaption.classList.add('text-styling', 'is-size-6')
 	movieCaption.textContent = caption
 	marqueeInfo.appendChild(movieCaption)
 };
 
+getMovieByGenre()
 
 
 
@@ -97,7 +102,6 @@ let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
     
     // });
     
-    getMovieByGenre()
 
 
 

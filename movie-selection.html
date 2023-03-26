@@ -9,13 +9,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
     <title>Search Results</title>
 </head>
-<body>
-    <header class="film-banner is-flex is-align-items-center">
-      <button onclick="document.location='./mainpage.html'" id="home-btn" class="button is-warning mx-2">Home</button>
+<body class="has-navbar-fixed-top">
+    <header>
+      <nav class="navbar film-banner is-fixed-top is-flex is-align-items-center" style="background-color: #27383e" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand is-flex is-align-items-center">
+          <a class="navbar-item is-size-3-desktop is-size-6-touch has-text-warning p-3" href="./mainpage.html" >Mr.Movie</a>
+        </div>
+        <div class="navbar-menu is-transparent" id="navMenu">
+          <div class="navbar-start is-flex is-align-items-center is-justify-content-space-between">
+        <!-- <button onclick="document.location='./mainpage.html'" id="home-btn" class="button is-warning mx-2">Home</button> -->
+          </div>
+        </div>
+    </nav>
     </header>
-    <main>
-      <section class="fill-viewheight">
+    <main class="is-flex is-justify-content-center is-align-items-center is-justify-content-space-evenly">
         <section id="main-section" class="is-flex is-flex-wrap-wrap is-flex-direction-row is-align-items-center is-justify-content-center is-justify-content-space-evenly">
+          <img id="page-load-gif" class="screen-load-gif" src="https://media3.giphy.com/media/KDKEMEQvCFsUpbckhT/giphy-downsized.gif?cid=6104955e45ud8bw4k5ndpf8c2x465cddq89ry2y0arqu6tjz&rid=giphy-downsized.gif&ct=g" alt="image of a closed curtain">
+
     <!-- <section id="movie-option-1" class="section is-medium"> -->
       <!-- <div>
       <h1 class="title">Movie Title</h1>
@@ -42,7 +52,6 @@
       </div>
         <img id="movie-image-3" class="movie-image" src="./images/placeholderimg.jpeg" alt="image or poster of movie option"> -->
       <!-- </section> -->
-          </section>
         </section>
       </main>
       <footer class="film-banner">

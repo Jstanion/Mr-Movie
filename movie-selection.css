@@ -1,29 +1,11 @@
-.fill-viewheight {
+main {
     background-color: #460b0b;
-    height: 100vh;
+    padding-top: 1%;
+    padding-bottom: 5%;
 }
-main,
-#main-section {
-    background-color: #460b0b;
-    height: fit-content;
-}
-.header {
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #27383e;
-    color: white;
-    font-family: 'Limelight', cursive;
-}
-#home-btn {
-    /* background-color: #cb861a; */
-    color: white;
-    /* position: absolute;
-    top: 15px;
-    right: 10px;
-    transform: translateX(-50%); */
-    font-family: 'Limelight', cursive;
+
+footer {
+    transform: scaleY(-1);
 }
 
 .movie-data-container {
@@ -41,13 +23,14 @@ main,
     background-size: cover;
     background-position: center;
     position: relative;
-    box-shadow: 0 0 25px 15px black inset, 0 0 8px 8px #460b0b;
+    box-shadow: 0 0 25px 15px black inset, 0 0 20px 2px #ffe08a;
     width: 26rem;
     height: 35rem;
     display: flex;
     justify-content: center;
     align-items: center;
-} 
+}
+
 .movie-image {
     height: 71%;
     width: 68.5%;
@@ -62,14 +45,61 @@ main,
     flex-direction: column;
     justify-content: space-evenly;
     text-align: center;
+    box-shadow: 0 0 20px 2px #ffe08a;
+    border: solid 2px #cb861a
 }
 
 .text-styling {
     font-family: 'Limelight', cursive;
 }
 
+.navbar {
+    font-family: 'Limelight', cursive;
+}
 
-#movie-option-1 {
+
+.film-banner {
+    height: 72px;
+    background-image: url("./images/image.png");
+    background-repeat: repeat-x;
+    background-color: #27383e;
+}
+
+#page-load-gif {
+    margin: 12%;
+    box-shadow: 0 0 50px 8px #ffe08a;
+
+}
+
+#main-section {
+    background-color: #460b0b;
+    height: fit-content;
+    width:100%;
+}
+
+/* .header {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #27383e;
+    color: white;
+    font-family: 'Limelight', cursive;
+} */
+
+/* #home-btn {
+    background-color: #cb861a;
+    color: white;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    transform: translateX(-50%);
+    font-family: 'Limelight', cursive;
+} */
+
+
+
+/* #movie-option-1 {
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 50px;
@@ -107,14 +137,5 @@ main,
     top: 745px;
     left: 1600px;
     width: 200px;
-    height: 275px;  
-}
-footer {
-    transform: scaleY(-1);
-}
-.film-banner {
-    height: 72px;
-    background-image: url("./images/image.png");
-    background-repeat: repeat-x;
-    background-color: #27383e;
-}
+    height: 275px;
+} */
