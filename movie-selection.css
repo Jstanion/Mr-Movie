@@ -1,8 +1,8 @@
-main {
+.fill-viewheight {
     background-color: #460b0b;
     height: 100vh;
 }
-
+main,
 #main-section {
     background-color: #460b0b;
     height: fit-content;
@@ -56,7 +56,7 @@ main {
 
 .marquee-section {
     width: 26rem;
-    height: 10rem;
+    height: 12rem;
     background-color: #ffe08a;
     display: flex;
     flex-direction: column;
