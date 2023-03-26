@@ -39,7 +39,10 @@ createAndOpen(onHome){
 
     const movieDataElem = document.createElement('p');
     movieDataElem.classList.add('data-container');
+    const movieInfoElem = document.createElement('p');
+    movieInfoElem.classList.add('container-dos');
     
+    movieDataElem.appendChild(movieInfoElem);
     modalContentElem.appendChild(movieDataElem);
 
     //home button

@@ -146,21 +146,22 @@ let getMovieData = (randomId) => {
 // Function that displays the movie info to the UI
 let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
 	const resultModal = document.querySelector(".data-container");
+	const textContainer = document.querySelector(".container-dos");
 	const moviePoster = document.createElement("img");
 	moviePoster.classList.add('movie-image');
-	moviePoster.setAttribute("src", ""), ("alt", "");
+	moviePoster.setAttribute("id", "modal-image"), ("src", ""), ("alt", "");
 	moviePoster.src = movieImage;
 	moviePoster.alt = caption;
 	resultModal.appendChild(moviePoster);
 
 	const titleName = document.createElement("p");
 	titleName.textContent = movieTitle;
-	resultModal.appendChild(titleName);
+	textContainer.appendChild(titleName);
 
 	const movieCaption = document.createElement("p");
 	movieCaption.classList.add("is-size-5");
 	movieCaption.textContent = caption;
-	resultModal.appendChild(movieCaption);
+	textContainer.appendChild(movieCaption);
 
 	console.log(movieTitle, caption, releaseDate.month, releaseDate.day, releaseDate.year);
 };
