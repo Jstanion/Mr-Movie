@@ -23,6 +23,12 @@ const searchInput = document.getElementById('search-input');
 const dropdownEl = document.querySelectorAll('.search-element');
 const dropdownSelection = document.querySelectorAll('.genre-item');
 const homeButton = document.getElementById('btn-home');
+//not sure if we still need these here joey/ -abs
+let movieTitle;
+let movieImage;
+let caption;
+let releaseDate;
+
 
 // Pulls genre data from API
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
@@ -222,6 +228,13 @@ const confirmModal = new mainPageModal ({
 	messageText: 'Movie Insert',
 	homeText: 'Home',
 });
+
+
+// export {movieImage, getMovieData};
+// export {movieTitle, getMovieData};
+// export {caption, getMovieData};
+// export {releaseDate, getMovieData};
+
 
 // End Abigail's work section
 

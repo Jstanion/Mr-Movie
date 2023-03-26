@@ -75,3 +75,36 @@ close(){
         document.body.removeChild(this.modalElem); }, 400);
     }
 }
+
+// creating function for api to be called into modal
+
+// function fetchDataApi() {
+//         fetch('apiurl')
+//     .then (response => response.json())
+//     .then(data => {
+//         // Display API data in modal
+//         const apiDataDiv = document.querySelector('#apiData');
+//         apiDataDiv.innerHTML = `<p>${data.title}</p><p>${data.body}</p>`;
+//       });
+
+//       // Trigger function on modal open
+// const modal = document.querySelector('#myModal');
+// const btn = document.querySelector('#myBtn');
+// const span = document.querySelector('.close');
+
+// btn.onclick = function() {
+//   modal.style.display = 'block';
+//   fetchDataFromAPI();
+// }
+
+// span.onclick = function() {
+//   modal.style.display = 'none';
+// }
+
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = 'none';
+//   }
+// }
+//   }
+
