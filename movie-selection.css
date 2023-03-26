@@ -1,5 +1,11 @@
-body {
-    background-color: #460b0b 
+main {
+    background-color: #460b0b;
+    height: 100vh;
+}
+
+#main-section {
+    background-color: #460b0b;
+    height: fit-content;
 }
 .header {
     padding: 10px;
@@ -11,14 +17,58 @@ body {
     font-family: 'Limelight', cursive;
 }
 #home-btn {
-    background-color: #cb861a;
+    /* background-color: #cb861a; */
     color: white;
-    position: absolute;
+    /* position: absolute;
     top: 15px;
     right: 10px;
-    transform: translateX(-50%);
+    transform: translateX(-50%); */
     font-family: 'Limelight', cursive;
 }
+
+.movie-data-container {
+    height: 50rem;
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.movie-frame {
+    background-image: url(./images/poster-frame.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 0 25px 15px black inset, 0 0 8px 8px #460b0b;
+    width: 26rem;
+    height: 35rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.movie-image {
+    height: 71%;
+    width: 68.5%;
+    margin: 1.7rem;
+}
+
+.marquee-section {
+    width: 26rem;
+    height: 10rem;
+    background-color: #ffe08a;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.text-styling {
+    font-family: 'Limelight', cursive;
+}
+
+
 #movie-option-1 {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -28,14 +78,6 @@ body {
     color: white;
     font-family: 'Limelight', cursive;
 }
-#movie-option-2 {
-    margin-bottom: 20px;
-    padding: 50px;
-    height: 300px;
-    background-color: #cb861a;
-    color: white;
-    font-family: 'Limelight', cursive;
-} 
 #title-selection-2 {
     float: right;
     margin-bottom: 0px;
@@ -59,13 +101,6 @@ body {
     left: 1600px;
     width: 200px;
     height: 275px;  
-}
-#movie-image-2 {
-    position: absolute;
-    margin-left: 15px;
-    width: 10%;
-    height: 275px;
-    margin-top: -35px;
 }
 #movie-image-3 {
     position: absolute;

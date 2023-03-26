@@ -55,17 +55,35 @@ let getMovieData = (randomId) => {
 // Function that displays the movie info to the UI
 let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
 	console.log(movieTitle, caption, releaseDate.month, releaseDate.day, releaseDate.year);
-	let moviePoster = document.querySelectorAll('.movie-image');
-	moviePoster.forEach(moviePoster =>{
-		moviePoster.src = movieImage;
-		moviePoster.alt = caption;
-	})
-    let titleName = document.querySelector('.title')
+
+	let mainSection = document.getElementById('main-section')
+	let movieSection = document.createElement('section')
+	movieSection.classList.add('movie-data-container')
+	mainSection.appendChild(movieSection)
+
+	let movieFrame = document.createElement('section')
+	movieFrame.classList.add('movie-frame')
+	movieSection.appendChild(movieFrame)
+
+	let moviePoster = document.createElement('img');
+	moviePoster.setAttribute('class', 'movie-image'), ('src', ''), ('alt', '')
+	moviePoster.src = movieImage;
+	moviePoster.alt = caption;
+	movieFrame.appendChild(moviePoster)
+
+	let marqueeInfo = document.createElement('section')
+	marqueeInfo.classList.add('marquee-section')
+	movieSection.appendChild(marqueeInfo)
+
+    let titleName = document.createElement('p')
+	titleName.classList.add('text-styling', 'is-size-4')
     titleName.textContent = movieTitle
-    let movieCaption = document.querySelector('.subtitle')
-    movieCaption.textContent = caption
-    let movieReleaseDate = document.querySelector('.release-date')
-    movieReleaseDate.textContent = 'Release Date: ' + releaseDate.month + '/' + releaseDate.day + '/' + releaseDate.year
+	marqueeInfo.appendChild(titleName)
+
+    let movieCaption = document.createElement('p')
+    movieCaption.classList.add('text-styling', 'is-size-5')
+	movieCaption.textContent = caption
+	marqueeInfo.appendChild(movieCaption)
 };
 
 
