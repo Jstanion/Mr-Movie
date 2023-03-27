@@ -99,3 +99,10 @@ footer {
     }
 }
 
+@media screen and (min-width: 1042px) and (max-width: 1386px) {
+    main {
+        padding-top: 5%;
+        padding-bottom: 18%;
+    }
+}
+
