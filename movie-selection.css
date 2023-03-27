@@ -1,7 +1,7 @@
 main {
     background-color: #460b0b;
     padding-top: 1%;
-    padding-bottom: 5%;
+    padding-bottom: 9%;
 }
 
 footer {
@@ -57,7 +57,6 @@ footer {
     font-family: 'Limelight', cursive;
 }
 
-
 .film-banner {
     height: 72px;
     background-image: url("./images/image.png");
@@ -77,10 +76,11 @@ footer {
     width:100%;
 }
 
-@media screen and (min-width: 375px) and (max-width: 1041px) {
+
+@media screen and (min-width: 375px) and (max-width: 700px) {
     main {
         padding-top: 20%;
-        padding-bottom: 50%;
+        padding-bottom: 60%;
     }
 
     .movie-data-container {
@@ -96,6 +96,20 @@ footer {
     .marquee-section {
         width: 13rem;
         height: 10rem;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1041px) {
+    main {
+        padding-top: 20%;
+        padding-bottom: 30%;
+    }
+}
+
+@media screen and (min-width: 1042px) and (max-width: 1445px) {
+    main {
+        padding-top: 5%;
+        padding-bottom: 19%;
     }
 }
 

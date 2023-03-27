@@ -45,7 +45,7 @@ let getMovieId = (genreName) => {
         .then(response => response.json())
         .then(response => {
             const randomMovieObject = response.results[Math.floor(Math.random() * response.results.length)]; 
-            console.log('getmovie', randomMovieObject);
+            console.log(randomMovieObject);
             titleId = randomMovieObject.imdb_id;
             getMovieData(titleId);
         })
@@ -63,22 +63,46 @@ let getMovieData = (titleId) => {
             let movieImage = response.results[0].primaryImage.url;
             let movieTitle = response.results[0].titleText.text;
             let caption = response.results[0].primaryImage.caption.plainText;
-            let releaseDate = response.results[0].releaseDate;
-            displayMovieInfo(movieImage, movieTitle, caption, releaseDate);
+            displayMovieInfo(movieImage, movieTitle, caption);
         })
         .catch(err => console.error(err));
 };
 
 // Function that displays the movie info to the UI
-let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
-    console.log(movieTitle, caption, releaseDate.month, releaseDate.day, releaseDate.year);
-	let moviePoster = document.querySelector('#movie-image');
+let displayMovieInfo = (movieImage, movieTitle, caption) => {
+    console.log(movieTitle, caption);
+
+    // Hides initial page content
+	let featurePresentationLoad = document.querySelector('.screen-load-gif');
+	featurePresentationLoad.style.display = 'none';
+
+    let mainSection = document.getElementById('main-section')
+	let movieSection = document.createElement('section')
+	movieSection.classList.add('movie-data-container')
+	mainSection.appendChild(movieSection)
+
+    let movieFrame = document.createElement('section')
+	movieFrame.classList.add('movie-frame', 'mb-5')
+	movieSection.appendChild(movieFrame)
+
+    let moviePoster = document.createElement('img');
+	moviePoster.classList.add('movie-image')
+	moviePoster.setAttribute('class', 'movie-image')
 	moviePoster.src = movieImage;
 	moviePoster.alt = caption;
-	let titleName = document.querySelector('#title');
+	movieFrame.appendChild(moviePoster)
+
+    let marqueeInfo = document.createElement('section')
+	marqueeInfo.classList.add('marquee-section', 'mt-5')
+	movieSection.appendChild(marqueeInfo)
+
+    let titleName = document.createElement('p')
+	titleName.classList.add('text-styling', 'is-size-4', 'is-size-5-touch')
     titleName.textContent = movieTitle;
-    let captionInfo = document.querySelector('#caption');
+	marqueeInfo.appendChild(titleName)
+
+    let captionInfo = document.createElement('p')
+    captionInfo.classList.add('text-styling', 'is-size-6', 'is-size-7-touch')
     captionInfo.textContent = caption;
-    let movieDate = document.querySelector('#release-date');
-    movieDate.textContent = 'Release Date: ' + releaseDate.month + '/' + releaseDate.day + '/' + releaseDate.year; 
+	marqueeInfo.appendChild(captionInfo)
 };
