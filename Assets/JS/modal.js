@@ -13,6 +13,12 @@ class mainPageModal {
 
 // creating modal that opens 
 createAndOpen(onHome){
+    // if (document.querySelector('.data-container')) {
+    //     console.log('works')
+    //     let previousContent = document.querySelector('.data-container');
+    //     previousContent.remove();
+    // };
+
 	this.modalElem = document.createElement('div');
 	this.modalElem.classList.add('home-modal');
     setTimeout(() => {
@@ -28,9 +34,8 @@ createAndOpen(onHome){
 
     this.modalElem.appendChild(modalContentElem);
 
-    
-
     //heading
+    modalContentElem.innerHTML = '';
     const titleTextElem = document.createElement('p');
     titleTextElem.classList.add('titleText');
     titleTextElem.textContent = this.titleText;
@@ -52,6 +57,7 @@ createAndOpen(onHome){
     homeButtonTextElem.setAttribute("onclick", "document.location='./index.html'");
     homeButtonTextElem.textContent = this.homeText;
 
+    console.log('class', this)
     homeButtonTextElem.addEventListener('click', () => {
         onHome('Success');
         this.close();
@@ -60,15 +66,16 @@ createAndOpen(onHome){
     const body = document.querySelector('.hero-body');
     window.onclick = function(event) {
         console.log('clicked')
-        if (event.target == body) {
+        console.log('Eleement clicked', event.target.className)
+        if (event.target == body || event.target.className == 'theater-background') {
           location.reload();
         }
-      }
+    };
 
     modalContentElem.appendChild(homeButtonTextElem);
 
 	document.body.appendChild(this.modalElem);
-}
+};
 
 open(){
     console.log('It is open');
