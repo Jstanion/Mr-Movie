@@ -32,9 +32,12 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
         const genreToUse = randomGenreObject;
         getMovieId(genreToUse);
     })
-    .catch(err => console.error(err));
+    .catch(err => {
+		console.error(err)
+		window.location.href = './search-error.html';
+	});
    
-// Function that provides movie ID's based on dropdown selections
+// Function that provides a random movie ID based on genre
 let getMovieId = (genreName) => {
     fetch(`https://moviesminidatabase.p.rapidapi.com/movie/byGen/${genreName}/`, moviesMiniDatabase)
         .then(response => response.json())
@@ -44,7 +47,10 @@ let getMovieId = (genreName) => {
             titleId = randomMovieObject.imdb_id;
             getMovieData(titleId);
         })
-        .catch(err => console.error(err));   
+        .catch(err => {
+            console.error(err)
+            window.location.href = './search-error.html';
+        });   
 };
 
 // Function that provides movie data based on IMDB ID
@@ -58,7 +64,10 @@ let getMovieData = (titleId) => {
             let caption = response.results[0].primaryImage.caption.plainText;
             displayMovieInfo(movieImage, movieTitle, caption);
         })
-        .catch(err => console.error(err));
+        .catch(err => {
+            console.error(err)
+            window.location.href = './search-error.html';
+        });
 };
 
 // Function that displays the movie info to the UI
