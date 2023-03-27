@@ -1,9 +1,9 @@
 .home-modal {
     position: absolute;
     top: 8rem;
-    bottom: 5rem;
-    left: 5rem;
-    right: 5rem;
+    /* bottom: 5rem; */
+    left: 20%;
+    right: 20%;
     transition: opacity 0.4s;
 }
 
@@ -20,8 +20,9 @@
     border-radius: 6px;
     text-align: center;
     padding: 4rem;
-    /* box-shadow: 0 0 64px 12px white; */
+    box-shadow: 0 0 64px 12px white;
 }
+
 
 .home-modal,
 .titleText{
@@ -44,7 +45,7 @@
 }
 
 .home-modal .my-content button.homeButtonText{
-background-color: hsl(48, 100%, 67%);
+    background-color: hsl(48, 100%, 67%);
 }
 
 .data-container {
@@ -62,4 +63,9 @@ background-color: hsl(48, 100%, 67%);
     justify-content: center;
     align-items: center;
     justify-content: space-evenly;
+}
+
+.container-dos p,
+#modal-image {
+    margin: 1rem;
 }
