@@ -16,13 +16,11 @@ const moviesDatabase = {
     }
 };
 
-
-
 // Pulls genre data from API
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
     .then(response => response.json())
     .then(data => {
-        // convert data to array
+        // Creates an array from selected API dataset
         const genreArray = Array.from(data.results);
         const filteredArray = [];
         for (let i = 0; i < 21; i++) {
@@ -31,14 +29,11 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
         const randomIndex = Math.floor(Math.random() * filteredArray.length);
         const randomGenreObject = filteredArray[randomIndex].genre;
         console.log(randomGenreObject);
-        const genreToUse = randomGenreObject
+        const genreToUse = randomGenreObject;
         getMovieId(genreToUse);
     })
-    .catch(error => {
-        console.error(error);
-    })
+    .catch(err => console.error(err));
    
-
 // Function that provides movie ID's based on dropdown selections
 let getMovieId = (genreName) => {
     fetch(`https://moviesminidatabase.p.rapidapi.com/movie/byGen/${genreName}/`, moviesMiniDatabase)
@@ -49,10 +44,8 @@ let getMovieId = (genreName) => {
             titleId = randomMovieObject.imdb_id;
             getMovieData(titleId);
         })
-        .catch(err => console.error(err));
-        
+        .catch(err => console.error(err));   
 };
-
 
 // Function that provides movie data based on IMDB ID
 let getMovieData = (titleId) => {
@@ -76,33 +69,33 @@ let displayMovieInfo = (movieImage, movieTitle, caption) => {
 	let featurePresentationLoad = document.querySelector('.screen-load-gif');
 	featurePresentationLoad.style.display = 'none';
 
-    let mainSection = document.getElementById('main-section')
-	let movieSection = document.createElement('section')
-	movieSection.classList.add('movie-data-container')
-	mainSection.appendChild(movieSection)
+    let mainSection = document.getElementById('main-section');
+	let movieSection = document.createElement('section');
+	movieSection.classList.add('movie-data-container');
+	mainSection.appendChild(movieSection);
 
-    let movieFrame = document.createElement('section')
-	movieFrame.classList.add('movie-frame', 'mb-5')
-	movieSection.appendChild(movieFrame)
+    let movieFrame = document.createElement('section');
+	movieFrame.classList.add('movie-frame', 'mb-5');
+	movieSection.appendChild(movieFrame);
 
     let moviePoster = document.createElement('img');
-	moviePoster.classList.add('movie-image')
-	moviePoster.setAttribute('class', 'movie-image')
+	moviePoster.classList.add('movie-image');
+	moviePoster.setAttribute('class', 'movie-image');
 	moviePoster.src = movieImage;
 	moviePoster.alt = caption;
-	movieFrame.appendChild(moviePoster)
+	movieFrame.appendChild(moviePoster);
 
-    let marqueeInfo = document.createElement('section')
-	marqueeInfo.classList.add('marquee-section', 'mt-5')
-	movieSection.appendChild(marqueeInfo)
+    let marqueeInfo = document.createElement('section');
+	marqueeInfo.classList.add('marquee-section', 'mt-5', 'p-1');
+	movieSection.appendChild(marqueeInfo);
 
-    let titleName = document.createElement('p')
-	titleName.classList.add('text-styling', 'is-size-4', 'is-size-5-touch')
+    let titleName = document.createElement('p');
+	titleName.classList.add('text-styling', 'is-size-4', 'is-size-5-touch');
     titleName.textContent = movieTitle;
-	marqueeInfo.appendChild(titleName)
+	marqueeInfo.appendChild(titleName);
 
-    let captionInfo = document.createElement('p')
-    captionInfo.classList.add('text-styling', 'is-size-6', 'is-size-7-touch')
+    let captionInfo = document.createElement('p');
+    captionInfo.classList.add('text-styling', 'is-size-6', 'is-size-7-touch');
     captionInfo.textContent = caption;
-	marqueeInfo.appendChild(captionInfo)
+	marqueeInfo.appendChild(captionInfo);
 };

@@ -1,10 +1,8 @@
-/* At some point when we combine CSS properties we should consider using CSS variables for the themed color sections  */
-
 * {
     font-family: 'Limelight', cursive;
 }
 
-main{
+main {
     background-color: #460b0b;
 }
 

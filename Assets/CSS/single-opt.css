@@ -5,8 +5,7 @@
 main {
     background-color: #460b0b;
     padding-top: 1%;
-    padding-bottom: 5%;
-
+    padding-bottom: 6%;
 }
 
 footer {
@@ -50,7 +49,7 @@ footer {
 
 .marquee-section {
     width: 26rem;
-    height: 12rem;
+    height: fit-content;
     background-color: #ffe08a;
     display: flex;
     flex-direction: column;
