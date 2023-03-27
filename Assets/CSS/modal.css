@@ -1,7 +1,7 @@
 .home-modal {
     position: absolute;
     top: 8rem;
-    width: fit-content;
+    height: fit-content;
     left: 20%;
     right: 20%;
     transition: opacity 0.4s;
@@ -15,7 +15,8 @@
 .my-content{
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
+    height: fit-content;
     background-color: #27383e;
     border-radius: 6px;
     text-align: center;
@@ -53,7 +54,7 @@
     justify-content: center;
     align-items: center;
     justify-content: space-evenly;
-    height: 25rem;
+    height: 20rem; overflow: auto;
 }
 
 .container-dos {
@@ -67,4 +68,11 @@
 .container-dos p,
 #modal-image {
     margin: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .home-modal {
+        left: 5%;
+        right: 5%;
+    }
 }

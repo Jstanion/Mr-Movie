@@ -70,7 +70,6 @@ for(let i = 0; i <= 20; i++){
 		swiperContainer.appendChild(sliderLi);
 		// Add anchor tag to button
 		const anchorEl = document.createElement('a');
-		anchorEl.setAttribute("href",'./movie-selection.html');
 		sliderLi.appendChild(anchorEl);
 		// Add img file to button
 		const popcornImg = document.createElement("img");
@@ -270,7 +269,15 @@ const carouselButtons = document.querySelectorAll('.popcorn-slide');
 console.log(carouselButtons);
 carouselButtons.forEach(button => {
 	button.addEventListener('click', function(button) {
+		const popcornSound = document.getElementById('popcorn-shake');
 		const buttonValue = button.target.alt;
+		popcornSound.play();
+		delayRedirect();
 		localStorage.setItem('storedGenre', buttonValue);
 	});
 });
+
+const delayRedirect = function() {
+	setTimeout(function() {
+	window.location.href ='./movie-selection.html';
+	}, 2000);};
