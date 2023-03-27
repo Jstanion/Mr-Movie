@@ -22,7 +22,7 @@ console.log(searchGenre);
 
 let getMovieByGenre = () => {
 
-	// Grabs movie data by selected genre
+	// Generates 3 random indices to pass through the displayMovieInfo function
     fetch(`https://moviesminidatabase.p.rapidapi.com/movie/byGen/${searchGenre}/`, moviesMiniDatabase)
 	.then(response => response.json())
 	.then(response => {
@@ -39,10 +39,13 @@ let getMovieByGenre = () => {
 		getMovieData(randomId2);
 		getMovieData(randomId3);
     })
-	.catch(err => console.error(err));
+	.catch(err => {
+		console.error(err)
+		window.location.href = './search-error.html';
+	});
 };
 
-// Function generates 3 random indices to pass through the displayMovieInfo function
+// Function grabs movie data by selected genre
 let getMovieData = (randomId) => {
 	fetch(`https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids?idsList=${randomId}`, moviesDatabase)
 	.then(response => response.json())
@@ -54,7 +57,10 @@ let getMovieData = (randomId) => {
 		let releaseDate = response.results[0].releaseDate;
 		displayMovieInfo(movieImage, movieTitle, caption, releaseDate);
 	})
-	.catch(err => console.error(err));
+	.catch(err => {
+		console.error(err)
+		window.location.href = './search-error.html';
+	});
 };
 
 // Function that displays the movie info to the UI

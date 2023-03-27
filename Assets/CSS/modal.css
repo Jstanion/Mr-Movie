@@ -20,7 +20,7 @@
     border-radius: 6px;
     text-align: center;
     padding: 4rem;
-    box-shadow: 0 0 64px 12px white;
+    /* box-shadow: 0 0 64px 12px white; */
 }
 
 .home-modal,
