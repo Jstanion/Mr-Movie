@@ -236,18 +236,19 @@ const confirmModal = new mainPageModal ({
 });
 
 // carousel work
-let createSlide = function(){
-
-const swiperContainer = document.querySelector(".slider-container");
-const sliderLi = document.createElement("li");
-const popcornImg = document.createElement("img");
-popcornImg.setAttribute("class", "popcorn-slide"), ("src", ""), ("alt", "popcorn bucket image");
-popcornImg.src = "./images/NicePng_popcorn-png_169469.png"
-swiperContainer.appendChild(sliderLi);
-sliderLi.appendChild(popcornImg);
-
+for(let i = 0; i <= 20; i++){
+	let createSlide = function(){
+		const swiperContainer = document.querySelector(".slider-container");
+		const sliderLi = document.createElement("li");
+		const popcornImg = document.createElement("img");
+		popcornImg.setAttribute("class", "popcorn-slide"), ("src", ""), ("alt", "popcorn bucket image");
+		popcornImg.src = "./images/NicePng_popcorn-png_169469.png"
+		swiperContainer.appendChild(sliderLi);
+		sliderLi.appendChild(popcornImg);
+	}
+	createSlide();
 }
-createSlide();
+
 
 // End Abigail's work section
 
