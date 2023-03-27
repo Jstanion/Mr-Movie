@@ -9,7 +9,7 @@ class mainPageModal {
 		this.titleText = titleText;
 		this.movieDataContainer = movieDataContainer;
 		this.homeText = homeText;
-	}
+	};
 
 // creating modal that opens 
 createAndOpen(onHome){
@@ -49,7 +49,7 @@ createAndOpen(onHome){
     const homeButtonTextElem = document.createElement('button');
     homeButtonTextElem.classList.add('homeButtonText');
     //refresh homepage
-    homeButtonTextElem.setAttribute("onclick", "document.location='./mainpage.html'")
+    homeButtonTextElem.setAttribute("onclick", "document.location='./index.html'");
     homeButtonTextElem.textContent = this.homeText;
 
     homeButtonTextElem.addEventListener('click', () => {
@@ -76,44 +76,11 @@ open(){
         console.log(this)
         this.createAndOpen(resolve, reject);
     });
-}
+};
 
 close(){
     this.modalElem.classList.remove('open');
     setTimeout(()=>{
         document.body.removeChild(this.modalElem); }, 400);
-    }
-}
-
-// creating function for api to be called into modal
-
-// function fetchDataApi() {
-//         fetch('apiurl')
-//     .then (response => response.json())
-//     .then(data => {
-//         // Display API data in modal
-//         const apiDataDiv = document.querySelector('#apiData');
-//         apiDataDiv.innerHTML = `<p>${data.title}</p><p>${data.body}</p>`;
-//       });
-
-//       // Trigger function on modal open
-// const modal = document.querySelector('#myModal');
-// const btn = document.querySelector('#myBtn');
-// const span = document.querySelector('.close');
-
-// btn.onclick = function() {
-//   modal.style.display = 'block';
-//   fetchDataFromAPI();
-// }
-
-// span.onclick = function() {
-//   modal.style.display = 'none';
-// }
-
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = 'none';
-//   }
-// }
-//   }
-
+    };
+};

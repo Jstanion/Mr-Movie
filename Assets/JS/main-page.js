@@ -23,27 +23,21 @@ const createYearList = document.querySelector('#year-dropdown');
 const searchInput = document.getElementById('search-input');
 const dropdownEl = document.querySelectorAll('.search-element');
 const dropdownSelection = document.querySelectorAll('.genre-item');
-const homeButton = document.getElementById('btn-home');
-const navbarBurger = document.querySelector('.navbar-burger');
 
 // Pulls genre data from API
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
 .then(response => response.json())
 .then(data => {
-	
+	// Create an array of selected data
 	const genreArray = Array.from(data.results);
     const filteredArray = [];
     for (let i = 0; i < 21; i++) {
-        filteredArray.push(genreArray[i])
+        filteredArray.push(genreArray[i]);
         // Create and append the dropdown items from the array
         let genreDropdownItem = document.createElement('a');
-        genreDropdownItem.classList.add('navbar-item', 'genre-item')
+        genreDropdownItem.classList.add('navbar-item', 'genre-item');
         genreDropdownItem.textContent = filteredArray[i].genre;
         createGenreList.appendChild(genreDropdownItem);
-		// add genre names to slide buckets
-		const genreName = document.getElementsByTagName(".genre-list-item");
-			genreName.textContent = filteredArray[i].genre;
-		
 	};
 })
 .catch(error => {
@@ -63,6 +57,36 @@ yearArray.forEach(year => {
 	createYearList.appendChild(yearDropdownItem);
 });
 
+// Array set to alphabetize genres for easier navigation using carousel
+let slideGenres = ['Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime', 'Docoumentary', 'Drama', 'Family', 'Fantasy', 'History', 'Horror', 'Musical', 'Music', 'Mystery', 'Romance', 'Sci-Fi', 'Sport', 'Thriller', 'War', 'Western'];
+
+// Function to create and append carousel buttons and genre titles
+// NOTE: I know we could have used this array for the genre movie title function but we wanted to show that we can pull a specific set of data from an API and create a usable array from that data.
+for(let i = 0; i <= 20; i++){
+	let createSlide = function() {
+		const swiperContainer = document.querySelector(".slider-container");
+		// Create slider list items
+		const sliderLi = document.createElement("li");
+		swiperContainer.appendChild(sliderLi);
+		// Add anchor tag to button
+		const anchorEl = document.createElement('a');
+		anchorEl.setAttribute("href",'./movie-selection.html');
+		sliderLi.appendChild(anchorEl);
+		// Add img file to button
+		const popcornImg = document.createElement("img");
+		popcornImg.classList.add("popcorn-slide");
+		popcornImg.src = "./Assets/images/popcorn.png";
+		popcornImg.alt = slideGenres[i];
+		anchorEl.appendChild(popcornImg);
+		// Create genre title element
+		const genreName = document.createElement('p');
+		genreName.classList.add("genre-list-item");
+		genreName.textContent = slideGenres[i];
+		sliderLi.appendChild(genreName);
+	};
+	createSlide();
+};
+
 // Function that provides movie ID's based on title name search
 let getMovieByTitle = (searchBarEntry) => {
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/imdb_id/byTitle/${searchBarEntry}/`, moviesMiniDatabase)
@@ -70,13 +94,13 @@ let getMovieByTitle = (searchBarEntry) => {
 	.then(response => {
 		if(!response.results[0]) {
 		// added redirect to 404 page
-			window.location.href = "./search-error.html"
+			// window.location.href = "./search-error.html"
 			return;
 		} else {
 		console.log(response);
 		console.log(response.results[0].imdb_id); 
 		getMovieData(response.results[0].imdb_id);
-		}
+		};
 	})
 	.catch(err => console.error(err));
 };
@@ -88,14 +112,14 @@ let getActorId = (searchBarEntry) => {
 	.then(response => {
 		if(!response.results[0] || response.results[0].imdb_id.includes('title')) {
 		// added redirect to 404 page ln 90
-			window.location.href = "./search-error.html"
+			// window.location.href = "./search-error.html"
 			return;
 		} else {
 		console.log(response); 
 		console.log(response.results[0].imdb_id);
-		let actorId = response.results[0].imdb_id
-		getMovieByActor(actorId)
-		}
+		let actorId = response.results[0].imdb_id;
+		getMovieByActor(actorId);
+		};
 	})
 	.catch(err => console.error(err));
 };
@@ -140,19 +164,18 @@ let getMovieData = (randomId) => {
 		let movieImage = response.results[0].primaryImage.url;
 		let movieTitle = response.results[0].titleText.text;
 		let caption = response.results[0].primaryImage.caption.plainText;
-		let releaseDate = response.results[0].releaseDate;
-		displayMovieInfo(movieImage, movieTitle, caption, releaseDate);
+		displayMovieInfo(movieImage, movieTitle, caption);
 	})
 	.catch(err => console.error(err));
 };
 
-// Function that displays the movie info to the UI
-let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
+// Function that displays the movie info to the modal
+let displayMovieInfo = (movieImage, movieTitle, caption) => {
 	const resultModal = document.querySelector(".data-container");
 	const textContainer = document.querySelector(".container-dos");
 	const moviePoster = document.createElement("img");
 	moviePoster.classList.add('movie-image');
-	moviePoster.setAttribute("id", "modal-image"), ("src", ""), ("alt", "");
+	moviePoster.setAttribute("id", "modal-image");
 	moviePoster.src = movieImage;
 	moviePoster.alt = caption;
 	resultModal.appendChild(moviePoster);
@@ -166,8 +189,15 @@ let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
 	movieCaption.textContent = caption;
 	textContainer.appendChild(movieCaption);
 
-	console.log(movieTitle, caption, releaseDate.month, releaseDate.day, releaseDate.year);
+	console.log(movieTitle, caption);
 };
+
+// Triggers the modal function in modal.js
+const confirmModal = new mainPageModal ({
+	titleText: 'Congrats! We found what you are looking for!',
+	movieDataContainer: 'movie insert',
+	homeText: 'Home',
+});
 
 // Event listener grabbing the dropdown value and selected option value
 dropdownEl.forEach(dropdownEl => {
@@ -190,7 +220,7 @@ dropdownEl.forEach(dropdownEl => {
 });
 
 // Event listener for the search bar
-searchInput.addEventListener('keydown', (event) => {
+searchInput.addEventListener('keypress', (event) => {
 	if(event.key === 'Enter') {
 		// Sets the text entry to a string value in a variable
 		const searchBarEntry = searchInput.value;
@@ -203,95 +233,27 @@ searchInput.addEventListener('keydown', (event) => {
 	};
 });
 
-const genreDropdownEl = document.querySelector('.has-dropdown.genre')
-const genreMenu = genreDropdownEl.querySelector('.dropdown-menu')
+// Toggles the dropdown menus
+const genreDropdownEl = document.querySelector('.has-dropdown.genre');
+const genreMenu = genreDropdownEl.querySelector('.dropdown-menu');
 genreDropdownEl.addEventListener('click', () => {
-	genreDropdownEl.classList.toggle('is-active')
-	genreMenu.classList.toggle('display-toggle')
-})
-
-const yearDropdownEl = document.querySelector('.has-dropdown.year')
-const yearMenu = yearDropdownEl.querySelector('.dropdown-menu')
-yearDropdownEl.addEventListener('click', () => {
-	yearDropdownEl.classList.toggle('is-active')
-	yearMenu.classList.toggle('display-toggle')
-})
-
-
-// Start Jace's work section
-
-
-	
-// End Jace's work section
-
-
-
-
-
-
-// Start Abigail's work section
-
-const confirmModal = new mainPageModal ({
-	titleText: 'Congrats! We found what you are looking for!',
-	movieDataContainer: 'movie insert',
-	homeText: 'Home',
+	genreDropdownEl.classList.toggle('is-active');
+	genreMenu.classList.toggle('display-toggle');
 });
 
-let slideGenres = ['Adventure', 'Family', 'Fantasy', 'Crime', 'Drama', 'Comedy', 'Animation', 'Sci-Fi', 'Sport', 'Action', 'Thriller', 'Mystery', 'Western', 'Romance', 'Biography', 'Horror', 'War', 'Musical', 'History', 'Music', 'Docoumentary'];
+const yearDropdownEl = document.querySelector('.has-dropdown.year');
+const yearMenu = yearDropdownEl.querySelector('.dropdown-menu');
+yearDropdownEl.addEventListener('click', () => {
+	yearDropdownEl.classList.toggle('is-active');
+	yearMenu.classList.toggle('display-toggle');
+});
 
-// carousel work
-for(let i = 0; i <= 20; i++){
-	let createSlide = function(){
-		const swiperContainer = document.querySelector(".slider-container");
-		const sliderLi = document.createElement("li");
-		const popcornImg = document.createElement("img");
-		const genreName = document.createElement('p');
-		genreName.textContent = slideGenres[i];
-		popcornImg.setAttribute("class", "popcorn-slide");
-		popcornImg.setAttribute("onclick", "window.location.href = './movie-selection.html';");
-		popcornImg.src = "./images/NicePng_popcorn-png_169469.png";
-		genreName.classList.add("genre-list-item");
-		swiperContainer.appendChild(sliderLi);
-		sliderLi.appendChild(popcornImg);
-		sliderLi.appendChild(genreName);
-	}
-	createSlide();
-}
-
-// 404 redirect
-
-// var searchEntry = document.querySelector('form[action="/search"]');
-// searchEntry.addEventListener('sumbit', function(event) {
-// 	console.log('form sumbitted');
-// 	var searchQuery = document.quearySelector('input[name="q"]').value;
-// 	if (!searchQuery.trim()) {
-// 		window.location.href = './search-error.html';
-// 		event.preventDefault();
-// 		console.log('redirecting to 404 page bc search request is empty');
-// 	}
-// });
-
-
-
-// End Abigail's work section
-
-
-
-
-
-
-// Start Michael's work section
-
-
-// End Michael's work section
-
-
-
-
-
-
-
-// Start Joey's work section
-
-
-// End Joey's work section
+// Stores the genre selection to be used on the movie-selections page
+const carouselButtons = document.querySelectorAll('.popcorn-slide');
+console.log(carouselButtons);
+carouselButtons.forEach(button => {
+	button.addEventListener('click', function(button) {
+		const buttonValue = button.target.alt;
+		localStorage.setItem('storedGenre', buttonValue);
+	});
+});

@@ -1,10 +1,8 @@
-/* At some point when we combine CSS properties we should consider using CSS variables for the themed color sections  */
-
 * {
     font-family: 'Limelight', cursive;
 }
 
-main{
+main {
     background-color: #460b0b;
 }
 
@@ -28,7 +26,7 @@ footer {
 
 .film-banner {
     height: 72px;
-    background-image: url("./images/image.png");
+    background-image: url("../images/image.png");
     background-repeat: repeat-x;
     background-color: #27383e;
 }
@@ -36,7 +34,7 @@ footer {
 .theater-background {
     height: 32.5rem;
     width: 90%;
-    background-image: url('./images/testsample.jpg');
+    background-image: url('../images/theater-background.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -61,6 +59,7 @@ footer {
     position: absolute;
     top: 0;
     height: 52%;
+    box-shadow: 0 60px 200px 10px white;
 }
 
 #modal-image {
