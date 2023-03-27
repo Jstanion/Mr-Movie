@@ -56,12 +56,14 @@ Now our job is done! So, get that popcorn popping, turn the surround sound on, a
 
 ## Resources
 
-- [Bulma CSS Framework](https://bulma.io/)
-- [Swiffy Slider:](https://swiffyslider.com/) Provided our image carousel.
 - [Basic Modal Knowledge](https://www.w3schools.com/howto/howto_css_modals.asp)
+- [Bulma CSS Framework](https://bulma.io/)
+- [Rapid-API: Movies Mini Database:](https://rapidapi.com/SAdrian/api/moviesminidatabase/)
+- [Rapid-API: Movie Database:](https://rapidapi.com/SAdrian/api/moviesdatabase/)
 - [Stack Overflow:](https://stackoverflow.com/questions/50643302/addeventlistener-on-a-queryselectorall-with-classlist) Help with using nested event listeners for multiple elements with the same class.
-- [W3 Schools:](https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp) Using the 'keydown' trigger for an event listener.
 - [Stack Overflow:](https://stackoverflow.com/questions/18067902/dynamically-add-alternate-text-for-your-image-using-the-image-url-is-it-possible) Dynamically changing the 'src and 'alt' attributes of an element.
+- [Swiffy Slider:](https://swiffyslider.com/) Provided our image carousel.
+- [W3 Schools:](https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp) Using the 'keydown' trigger for an event listener.
 
 ## Acknowledgements
 
