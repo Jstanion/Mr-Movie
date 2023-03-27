@@ -66,6 +66,7 @@ Now our job is done! So, get that popcorn popping, turn the surround sound on, a
 - [Stack Overflow:](https://stackoverflow.com/questions/18067902/dynamically-add-alternate-text-for-your-image-using-the-image-url-is-it-possible) Dynamically changing the 'src and 'alt' attributes of an element.
 - [Swiffy Slider:](https://swiffyslider.com/) Provided our image carousel.
 - [W3 Schools:](https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp) Using the 'keydown' trigger for an event listener.
+- [Duda:](https://blog.duda.co/how-to-add-audio-to-a-website#:~:text=An%20easy%20way%20to%20embed,CMS%20platforms%20and%20website%20builders.) Used to add soundbytes to the page.
 
 ## Acknowledgements
 
