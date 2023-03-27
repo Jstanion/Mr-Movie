@@ -92,9 +92,9 @@ let getMovieByTitle = (searchBarEntry) => {
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/imdb_id/byTitle/${searchBarEntry}/`, moviesMiniDatabase)
 	.then(response => response.json())
 	.then(response => {
+		console.log(response)
 		if(!response.results[0]) {
-		// added redirect to 404 page
-			// window.location.href = "./search-error.html"
+			getActorId(searchBarEntry);
 			return;
 		} else {
 		console.log(response);
@@ -102,7 +102,10 @@ let getMovieByTitle = (searchBarEntry) => {
 		getMovieData(response.results[0].imdb_id);
 		};
 	})
-	.catch(err => console.error(err));
+	.catch(err => {
+		console.error(err)
+		window.location.href = './search-error.html';
+	});
 };
 
 // Function that provides actor ID's based on actor name search
@@ -111,8 +114,7 @@ let getActorId = (searchBarEntry) => {
 	.then(response => response.json())
 	.then(response => {
 		if(!response.results[0] || response.results[0].imdb_id.includes('title')) {
-		// added redirect to 404 page ln 90
-			// window.location.href = "./search-error.html"
+			getMovieByTitle(searchBarEntry);
 			return;
 		} else {
 		console.log(response); 
@@ -121,7 +123,10 @@ let getActorId = (searchBarEntry) => {
 		getMovieByActor(actorId);
 		};
 	})
-	.catch(err => console.error(err));
+	.catch(err => {
+		console.error(err)
+		window.location.href = './search-error.html';
+	});
 };
 
 // Function that provides movie ID's based on an actor ID
@@ -136,7 +141,10 @@ let getMovieByActor = (actorId) => {
 		console.log(randomId)
 		getMovieData(randomId);
 	})
-	.catch(err => console.error(err));
+	.catch(err => {
+		console.error(err)
+		window.location.href = './search-error.html';
+	});
 };
 
 // Function that provides movie ID's based on dropdown selections
@@ -152,7 +160,10 @@ let getMovieByDropdown = (selectedOption, dropdownCategory) => {
 		console.log(randomId);
 		getMovieData(randomId); 
 	})
-	.catch(err => console.error(err));
+	.catch(err => {
+		console.error(err)
+		window.location.href = './search-error.html';
+	});
 };
 
 // Function that provides movie data based on IMDB ID
@@ -166,7 +177,10 @@ let getMovieData = (randomId) => {
 		let caption = response.results[0].primaryImage.caption.plainText;
 		displayMovieInfo(movieImage, movieTitle, caption);
 	})
-	.catch(err => console.error(err));
+	.catch(err => {
+		console.error(err)
+		window.location.href = './search-error.html';
+	});
 };
 
 // Function that displays the movie info to the modal
