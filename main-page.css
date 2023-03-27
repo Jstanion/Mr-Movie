@@ -61,6 +61,7 @@ footer {
     position: absolute;
     top: 0;
     height: 52%;
+    box-shadow: 0 60px 200px 10px white;
 }
 
 #modal-image {

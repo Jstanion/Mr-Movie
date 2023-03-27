@@ -17,10 +17,13 @@ const moviesDatabase = {
 	}
 };
 
-let getMovieByGenre = (searchGenre) => {
+let searchGenre = localStorage.getItem('storedGenre')
+console.log(searchGenre)
+
+let getMovieByGenre = () => {
 
 	// Grabs movie data by selected genre
-    fetch('https://moviesminidatabase.p.rapidapi.com/movie/byGen/Horror/', moviesMiniDatabase)
+    fetch(`https://moviesminidatabase.p.rapidapi.com/movie/byGen/${searchGenre}/`, moviesMiniDatabase)
 	.then(response => response.json())
 	.then(response => {
 		console.log(response);
