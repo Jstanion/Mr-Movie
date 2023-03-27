@@ -94,7 +94,6 @@ let getMovieByTitle = (searchBarEntry) => {
 	.then(response => {
 		console.log(response)
 		if(!response.results[0]) {
-			getActorId(searchBarEntry);
 			return;
 		} else {
 		console.log(response);
@@ -114,7 +113,6 @@ let getActorId = (searchBarEntry) => {
 	.then(response => response.json())
 	.then(response => {
 		if(!response.results[0] || response.results[0].imdb_id.includes('title')) {
-			getMovieByTitle(searchBarEntry);
 			return;
 		} else {
 		console.log(response); 
