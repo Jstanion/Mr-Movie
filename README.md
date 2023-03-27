@@ -41,7 +41,7 @@ Now our job is done! So, get that popcorn popping, turn the surround sound on, a
     Provides a visually striking image displayed at top of page, as well as navigates user to a fun random movie generated page.
 
     Image Carousel:
-    This feature increases user engagement through the popcorn visuals and help to drive conversions, making it an important part of the user interface.
+    This feature increases user engagement through the popcorn visuals and alpahbetized genre selection. Helping to drive conversions, making it an important part of the user interface.
 
 ## Techincal Features
 
