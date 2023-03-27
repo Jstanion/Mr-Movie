@@ -21,9 +21,9 @@ When navigated to the homepage of this website, Mr.Movie, you will see a top nav
 
 When you scroll down to the main section of the page there is a "feeling lucky" paragraph. If you are feeling the luck of the irish go ahead and click on the dancing movie condiments and be surprised by the redirect to the "Single Options Page" where a movie is genrated and provided for you by our completely random movie API generator.
 
-When scrolled all the way down, near the footer of the website, displayed is a popcorn bucket carousel.. have yours popping yet? Listed below are the 21 movie genres from previously. However, this time if clicked upon you will be redirected to our "Multi Option Page" where there will be 3 movie images displayed to choose from based of the genre you have clicked upon. If it is taking some time to load, you will see a short gif display on the page, but don't worry we promise they are coming! Again, if not satisfied with the movie selections, Mr.Movie will be at the top left corner of the page to redirect you back to home and start all over!
+When scrolled all the way down, near the footer of the website, displayed is a popcorn bucket carousel.. have yours popping yet? Listed below are the 21 movie genres from previously. However, this time if clicked upon you will be redirected to our "Multi Option Page" where there will be 3 movie images displayed to choose from based off the genre you have clicked upon. If it is taking some time to load, you will see a short gif display on the page, but don't worry we promise they are coming! Again, if not satisfied with the movie selections, Mr.Movie will be at the top left corner of the page to redirect you back to home and start all over!
 
-Now our job is done! So, get that popcorn popping, turn the surround sound on relax!
+Now our job is done! So, get that popcorn popping, turn the surround sound on, and relax!
 
 ![alt text](./Assets/images/main-page-screenshot.png)
 
@@ -41,7 +41,7 @@ Now our job is done! So, get that popcorn popping, turn the surround sound on re
     Provides a visually striking image displayed at top of page, as well as navigates user to a fun random movie generated page.
 
     Image Carousel:
-    This feature increases user engagement through the popcorn visuals and help to drive conversions, making it an important part of the user interface.
+    This feature increases user engagement through the popcorn visuals and alpahbetized genre selection. Helping to drive conversions, making it an important part of the user interface.
 
 ## Techincal Features
 
@@ -56,12 +56,16 @@ Now our job is done! So, get that popcorn popping, turn the surround sound on re
 
 ## Resources
 
-- [Bulma CSS Framework](https://bulma.io/)
-- [Swiffy Slider:](https://swiffyslider.com/) Provided our image carousel.
-- [Basic Modal Knowledge](https://www.w3schools.com/howto/howto_css_modals.asp)
+- [Basic Modal Knowledge](https://www.w3schools.com/howto/howto_css_modals.asp): Used as guide to create modal pop ups through JavaScript and CSS styling.
+- [Bulma CSS Framework](https://bulma.io/): Used for framework throughout all pages avaliable.
+- [Dead End Font](https://fonts.googleapis.com/css2?family=Creepster&family=Limelight&display=swap): Used on 404 page reading "dead end".
+- [Font Family Limelight](https://fonts.googleapis.com/css2?family=Limelight&display=swap): Used for Majority of the website; Our Default font text.
+- [Rapid-API: Movies Mini Database:](https://rapidapi.com/SAdrian/api/moviesminidatabase/): Pulls actor and movie ID's, as well as genres avaliable.
+- [Rapid-API: Movie Database:](https://rapidapi.com/SAdrian/api/moviesdatabase/): Pulls movie poster images, and mini database passes through to get all movie information displayed on pages/modals.
 - [Stack Overflow:](https://stackoverflow.com/questions/50643302/addeventlistener-on-a-queryselectorall-with-classlist) Help with using nested event listeners for multiple elements with the same class.
-- [W3 Schools:](https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp) Using the 'keydown' trigger for an event listener.
 - [Stack Overflow:](https://stackoverflow.com/questions/18067902/dynamically-add-alternate-text-for-your-image-using-the-image-url-is-it-possible) Dynamically changing the 'src and 'alt' attributes of an element.
+- [Swiffy Slider:](https://swiffyslider.com/) Provided our image carousel.
+- [W3 Schools:](https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp) Using the 'keydown' trigger for an event listener.
 
 ## Acknowledgements
 
