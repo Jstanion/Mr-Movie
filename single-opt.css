@@ -2,6 +2,17 @@
     font-family: "limelight", cursive;
 }
 
+main {
+    background-color: #460b0b;
+    padding-top: 1%;
+    padding-bottom: 5%;
+
+}
+
+footer {
+    transform: scaleY(-1);
+}
+
 .hero-body {
     flex-direction: column;
     justify-content: space-around;
@@ -9,19 +20,107 @@
     color: #fff;
 }
 
-.film-banner , .navbar-end {
+.movie-data-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.movie-frame {
+    background-image: url(./images/poster-frame.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 0 25px 15px black inset, 0 0 20px 2px #ffe08a;
+    width: 25rem;
+    height: 33.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie-image {
+    height: 71%;
+    width: 68.5%;
+    margin: 1.7rem;
+}
+
+.marquee-section {
+    width: 26rem;
+    height: 12rem;
+    background-color: #ffe08a;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    box-shadow: 0 0 20px 2px #ffe08a;
+    border: solid 2px #cb861a
+};
+
+.text-styling {
+    font-family: 'Limelight', cursive;
+}
+
+.film-banner {
     height: 72px;
     background-image: url("./images/image.png");
     background-repeat: repeat-x;
     background-color: #27383e;
 }
 
-  #home-btn {
-    background-color: #ffdb84;
-    color:white;
-    font-family:'limelight', cursive ;
- }
+#movie-image {
+    margin: 12%;
+    box-shadow: 0 0 50px 8px #ffe08a;
+    
+};
 
- footer {
-    transform: scaleY(-1);
+#page-load-gif {
+    margin: 12%;
+    box-shadow: 0 0 50px 8px #ffe08a;
+}
+
+@media screen and (min-width: 375px) and (max-width: 700px) {
+    main {
+        padding-top: 20%;
+        padding-bottom: 50%;
+    }
+
+    .movie-data-container {
+        height: 30rem;
+        width: 15rem;
+    }
+
+    .movie-frame {
+        width: 20rem;
+        height: 30.7rem;
+    }
+
+    .movie-image {
+        height: 81%;
+        width: 68.5%;
+        margin: 1.7rem;
+    }
+
+    .marquee-section {
+        width: 20rem;
+        height: 15rem;
+    }
+}
+
+
+@media screen and (min-width: 700px) and (max-width: 1041px) {
+    main {
+        padding-top: 7%;
+        padding-bottom: 30%;
+    }
+}
+
+@media screen and (min-width: 1042px) and (max-width: 1445px) {
+    main {
+        padding-top: 7%;
+        padding-bottom: 19%;
+    }
 }

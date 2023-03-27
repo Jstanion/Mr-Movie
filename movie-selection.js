@@ -71,7 +71,7 @@ let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
 
 	let moviePoster = document.createElement('img');
 	moviePoster.classList.add('movie-image')
-	moviePoster.setAttribute('class', 'movie-image'), ('src', ''), ('alt', '')
+	moviePoster.setAttribute('class', 'movie-image')
 	moviePoster.src = movieImage;
 	moviePoster.alt = caption;
 	movieFrame.appendChild(moviePoster)
