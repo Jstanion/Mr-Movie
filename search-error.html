@@ -13,8 +13,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Limelight&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="film-banner is-flex is-justify-content-end is-align-items-center p-3">
-    <button onclick="document.location='./mainpage.html'" id="home-btn" class="button">Home</button>
+  <header>
+  <nav class="navbar film-banner is-fixed-top is-flex is-align-items-center" style="background-color: #27383e" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand is-flex is-align-items-center">
+      <a class="navbar-item is-size-3-desktop is-size-6-touch has-text-warning p-3" href="./mainpage.html" >Mr.Movie</a>
+    </div>
+    <div class="navbar-menu is-transparent" id="navMenu">
+      <div class="navbar-start is-flex is-align-items-center is-justify-content-space-between">
+    <!-- <button onclick="document.location='./mainpage.html'" id="home-btn" class="button is-warning mx-2">Home</button> -->
+      </div>
+    </div>
+</nav>
 </header>
     <!-- There wont be much interactivity associatted with this page since it is just an error page, but once we merge everything the home button will take us back to the homepage -->
     <section class="hero has-background-danger-dark is-fullheight has-text-centered ">

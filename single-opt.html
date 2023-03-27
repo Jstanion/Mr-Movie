@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,26 +11,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
 </head>
-
-<body>
-    <header class="film-banner is-flex is-justify-content-end is-align-items-center p-3">
-        <button onclick="document.location='./mainpage.html'" id="home-btn" class="button">Home</button>
+<body class="has-navbar-fixed-top">
+    <header>
+        <nav class="navbar film-banner is-fixed-top is-flex is-align-items-center" style="background-color: #27383e" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand is-flex is-align-items-center">
+              <a class="navbar-item is-size-3-desktop is-size-6-touch has-text-warning p-3" href="./mainpage.html" >Mr.Movie</a>
+            </div>
+            <div class="navbar-menu is-transparent" id="navMenu">
+              <div class="navbar-start is-flex is-align-items-center is-justify-content-space-between">
+              </div>
+            </div>
+        </nav>
     </header>
-    <section class="hero is-danger is-fullheight">
-        <div class="hero-body">
-            <article class="message">
-                <div class="message-header">
-                    <p id="title"></p>
-                </div>
-                <div class="message-body">
-                    <p id="caption"></p>
-                    <p id="release-date"></p>
-                </div>
-            </article>
-            <img id="movie-image" class="m-5" src="./images/placeholderimg.jpeg" alt="place holder image"></img>
-
-        </div>
-    </section>
+    <main class="is-flex is-justify-content-center is-align-items-center">
+        <section id="main-section" class="movie-data-container mt-4 is-flex is-flex-direction-row is-align-items-center is-justify-content-center is-justify-content-space-evenly">
+                <img id="movie-image" class="screen-load-gif" src="https://media3.giphy.com/media/KDKEMEQvCFsUpbckhT/giphy-downsized.gif?cid=6104955e45ud8bw4k5ndpf8c2x465cddq89ry2y0arqu6tjz&rid=giphy-downsized.gif&ct=g" alt="gif of feature presentation loading">
+        </section>
+    </main>
     <footer class="film-banner"></footer>
     <script src="single-opt.js"></script>
 </body>

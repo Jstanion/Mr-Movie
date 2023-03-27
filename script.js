@@ -1,3 +1,4 @@
+
 // API key and URL for MoviesMiniDatabase (first API)
 const moviesMiniDatabase = {
 	method: 'GET',
@@ -30,17 +31,19 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
 .then(response => response.json())
 .then(data => {
 	
-	// convert data to array
 	const genreArray = Array.from(data.results);
-	const filteredArray = [];
-	for (let i = 0; i < 21; i++) {
-		filteredArray.push(genreArray[i])
-
-		// Create and append the dropdown items from the array
-		let genreDropdownItem = document.createElement('a');
-		genreDropdownItem.classList.add('navbar-item', 'genre-item')
-		genreDropdownItem.textContent = filteredArray[i].genre;
-		createGenreList.appendChild(genreDropdownItem);
+    const filteredArray = [];
+    for (let i = 0; i < 21; i++) {
+        filteredArray.push(genreArray[i])
+        // Create and append the dropdown items from the array
+        let genreDropdownItem = document.createElement('a');
+        genreDropdownItem.classList.add('navbar-item', 'genre-item')
+        genreDropdownItem.textContent = filteredArray[i].genre;
+        createGenreList.appendChild(genreDropdownItem);
+		// add genre names to slide buckets
+		const genreName = document.getElementsByTagName(".genre-list-item");
+			genreName.textContent = filteredArray[i].genre;
+		
 	};
 })
 .catch(error => {
@@ -66,6 +69,8 @@ let getMovieByTitle = (searchBarEntry) => {
 	.then(response => response.json())
 	.then(response => {
 		if(!response.results[0]) {
+		// added redirect to 404 page
+			window.location.href = "./search-error.html"
 			return;
 		} else {
 		console.log(response);
@@ -82,48 +87,15 @@ let getActorId = (searchBarEntry) => {
 	.then(response => response.json())
 	.then(response => {
 		if(!response.results[0] || response.results[0].imdb_id.includes('title')) {
-				return;
-			} else {
-			console.log(response); 
-			console.log(response.results[0].imdb_id);
-			let actorId = response.results[0].imdb_id
-			getMovieByActor(actorId)
-			}
-		// console.log(response)
-		// const actorArray = response.results.slice(0,20);
-		// actorArray.sort((a, b) => a.name.localeCompare(b.name));
-		// console.log(actorArray)
-		
-		// Creates and appends each object in a modal
-		// for(let i = 0; i <= 19; i++) {
-		// const actorName = document.createElement('a');
-		// actorName.classList.add('is-size-5', 'has-text-warning')
-		// actorName.textContent = actorArray[i].name
-		// actorName.value = actorArray[i].name
-		// const resultsModal = document.querySelector('.my-content')
-		// resultsModal.appendChild(actorName)
-		// console.log(actorName)
-		// }
-
-		// extra code
-		// for(let i = 0; i <= 98; i++) {
-		// console.log(actorArray[i].name)
-		// }
-			// actorArray[i].name;
-		// const filteredActorArray = []
-
-		// for(let i = 0; i <= 5; i++) {
-		// 	filteredActorArray.push(actorArray[i])
-		// }
-		// console.log (filteredActorArray);
-		// if(!response.results[0] || response.results[0].imdb_id.includes('title')) {
-		// 	return;
-		// } else {
-		// console.log(response); 
-		// console.log(response.results[0].imdb_id);
-		// let actorId = response.results[0].imdb_id
-		// getMovieByActor(actorId)
-		// }
+		// added redirect to 404 page ln 90
+			window.location.href = "./search-error.html"
+			return;
+		} else {
+		console.log(response); 
+		console.log(response.results[0].imdb_id);
+		let actorId = response.results[0].imdb_id
+		getMovieByActor(actorId)
+		}
 	})
 	.catch(err => console.error(err));
 };
@@ -148,7 +120,7 @@ let getMovieByDropdown = (selectedOption, dropdownCategory) => {
 	console.log(selectedOption, dropdownCategory);
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${selectedOption}/`, moviesMiniDatabase)
 	.then(response => response.json())
-	.then(response => { 
+	.then(response => {
 		console.log(response);
 		const myArray = response.results;
 		const randomIndex = Math.floor(Math.random() * myArray.length);
@@ -259,18 +231,46 @@ yearDropdownEl.addEventListener('click', () => {
 
 // Start Abigail's work section
 
-
 const confirmModal = new mainPageModal ({
 	titleText: 'Congrats! We found what you are looking for!',
 	movieDataContainer: 'movie insert',
 	homeText: 'Home',
 });
 
+let slideGenres = ['Adventure', 'Family', 'Fantasy', 'Crime', 'Drama', 'Comedy', 'Animation', 'Sci-Fi', 'Sport', 'Action', 'Thriller', 'Mystery', 'Western', 'Romance', 'Biography', 'Horror', 'War', 'Musical', 'History', 'Music', 'Docoumentary'];
 
-// export {movieImage, getMovieData};
-// export {movieTitle, getMovieData};
-// export {caption, getMovieData};
-// export {releaseDate, getMovieData};
+// carousel work
+for(let i = 0; i <= 20; i++){
+	let createSlide = function(){
+		const swiperContainer = document.querySelector(".slider-container");
+		const sliderLi = document.createElement("li");
+		const popcornImg = document.createElement("img");
+		const genreName = document.createElement('p');
+		genreName.textContent = slideGenres[i];
+		popcornImg.setAttribute("class", "popcorn-slide");
+		popcornImg.setAttribute("onclick", "window.location.href = './movie-selection.html';");
+		popcornImg.src = "./images/NicePng_popcorn-png_169469.png";
+		genreName.classList.add("genre-list-item");
+		swiperContainer.appendChild(sliderLi);
+		sliderLi.appendChild(popcornImg);
+		sliderLi.appendChild(genreName);
+	}
+	createSlide();
+}
+
+// 404 redirect
+
+// var searchEntry = document.querySelector('form[action="/search"]');
+// searchEntry.addEventListener('sumbit', function(event) {
+// 	console.log('form sumbitted');
+// 	var searchQuery = document.quearySelector('input[name="q"]').value;
+// 	if (!searchQuery.trim()) {
+// 		window.location.href = './search-error.html';
+// 		event.preventDefault();
+// 		console.log('redirecting to 404 page bc search request is empty');
+// 	}
+// });
+
 
 
 // End Abigail's work section
