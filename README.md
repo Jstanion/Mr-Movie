@@ -4,13 +4,15 @@
 
 Have you ever been stuck on what to watch? Endlessly navigating through Netflix to find anything to play as background noise. Well with this web application you'll be saying "HASTA LA VISTA!" to netflix surfing, and hello to the hours you will get back on your life! Our team has built this project with the hopes of curating a movie within minutes that you, the user, would enjoy watching based off of the info you input to the site.
 
-## Table of Contents (Optional)
+## Table of Contents: 
 
-If your README is long, add a table of contents to make it easy for users to find what they need.
+ Find what you need down below!
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Features](#features)
 - [Credits](#credits)
+- [Acknowlegements](#acknowledgements)
 - [License](#license)
 
 ## Installation
@@ -27,22 +29,8 @@ When scrolled all the way down, near the footer of the website, displayed is a p
 
 Now our job is done! So, get that popcorn popping, turn the surround sound on relax!
 
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
-
-![alt text](assets/images/screenshot.png)
-
-## Credits
-
-<!-- List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well. -->
-
-## License
-
-MIT
+![alt text](/images/Screenshot%202023-03-27%20at%203.15.31%20AM.png)
+![alt text](/images/Screenshot%202023-03-27%20at%203.16.10%20AM.png)
 
 ## Features
 
@@ -64,7 +52,38 @@ MIT
     Web API: 
     Allows we, as the developers, to interact with project by enabling third-party developers to integrate software into code. Making it fully functional and easier to pull large amounts of data such as the movie info, actor info, and genre info.
 
-## Tests
+    Local Storage: 
+    Allowed us to store data in web browser even after closing, reopening, or refeshing pages; specifically used when loading "Multi Option Page". 
 
-<!-- Go the extra mile and write tests for your application. Then provide examples on how to run them here. -->
+    Responsive Design:
+    Allows users and developers to view webpage on different screen dimensions and it still be fully fuctional.
+
+## Credits
+
+<!-- List your collaborators, if any, with links to their GitHub profiles.
+
+If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
+
+If you followed tutorials, include links to those here as well. -->
+
+
+## Acknowledgements
+
+We would like to acknowledge the contributors of this project: 
+
+- Abigail Garcia
+    - You can find more information about me on my [GitHub](https://github.com/abigailmgarcia) profile.
+- Jace Latzsch
+    - You can find more information about me on my [GitHub](https://github.com/jacelatzsch) profile.
+- Joey Stanion
+    - You can find more information about me on my [GitHub](https://github.com/Jstanion) profile.
+- Michael Sigala
+    - Github: You can find more information about me on my [GitHub](https://github.com/Msigala96) profile.
+
+## License
+
+MIT
+
+
+
 
