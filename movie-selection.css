@@ -8,6 +8,20 @@ footer {
     transform: scaleY(-1);
 }
 
+
+.text-styling,
+.navbar {
+    font-family: 'Limelight', cursive;
+}
+
+
+.film-banner {
+    height: 72px;
+    background-image: url("./images/image.png");
+    background-repeat: repeat-x;
+    background-color: #27383e;
+}
+
 .movie-data-container {
     height: 50rem;
     width: 30rem;
@@ -47,22 +61,6 @@ footer {
     text-align: center;
     box-shadow: 0 0 20px 2px #ffe08a;
     border: solid 2px #cb861a
-}
-
-.text-styling {
-    font-family: 'Limelight', cursive;
-}
-
-.navbar {
-    font-family: 'Limelight', cursive;
-}
-
-
-.film-banner {
-    height: 72px;
-    background-image: url("./images/image.png");
-    background-repeat: repeat-x;
-    background-color: #27383e;
 }
 
 #page-load-gif {
