@@ -119,7 +119,7 @@ let getMovieByDropdown = (selectedOption, dropdownCategory) => {
 	console.log(selectedOption, dropdownCategory);
 	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${selectedOption}/`, moviesMiniDatabase)
 	.then(response => response.json())
-	.then(response => { 
+	.then(response => {
 		console.log(response);
 		const myArray = response.results;
 		const randomIndex = Math.floor(Math.random() * myArray.length);
