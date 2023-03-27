@@ -46,7 +46,23 @@ MIT
 
 ## Features
 
-<!-- If your project has a lot of features, list them here. -->
+### User-Interface Features:
+    Drop-Down Bars: 
+    The drop-down bar feature enables users to quickly select options from a list of choices, improving the user experience and reducing the time required to complete tasks.
+
+    Search Bar:
+    The search bar feature enables users to quickly search an actor/actress or movie title , improving the user experience and reducing the time required to scroll.
+
+    Hero Image Navigation:
+    Provides a visually striking image displayed at top of page, as well as navigates user to a fun random movie generated page.
+
+    Image Carousel:
+    This feature increases user engagement through the popcorn visuals and help to drive conversions, making it an important part of the user interface.
+
+### Techincal Features:
+
+    Web API: 
+    Allows we, as the developers, to interact with project by enabling third-party developers to integrate software into code. Making it fully functional and easier to pull large amounts of data such as the movie info, actor info, and genre info.
 
 ## Tests
 
