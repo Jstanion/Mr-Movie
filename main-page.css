@@ -47,7 +47,14 @@ footer {
     height: auto;
     width: 70%;
     margin-left: 3.7rem;
-    margin-bottom: 2rem;
+    margin-bottom: .2rem;
+}
+
+.genre-list-item {
+    color: #ffe08a;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
 }
 
 #movie-image {
