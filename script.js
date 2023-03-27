@@ -238,6 +238,7 @@ const confirmModal = new mainPageModal ({
 
 // carousel work
 
+
   
 
 // export {movieImage, getMovieData};

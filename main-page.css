@@ -4,6 +4,10 @@
     font-family: 'Limelight', cursive;
 }
 
+main{
+    background-color: #460b0b;
+}
+
 footer {
     transform: scaleY(-1);
 }
@@ -103,3 +107,4 @@ footer {
         background-color: white;
     }
 }
+

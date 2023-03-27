@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./main-page.css">
-    <!-- carousel swiper link css sheet -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
     <script src="./modal.js" defer></script>
   <title>Mr.Movie - Movie Generator</title>
 </head>
@@ -78,36 +78,56 @@
           </div>
         </div>
     </section>
-    <section class="image-carousel is-flex is-direction-row is-justify-content-center is-align-items-center p-5">
-      <!-- button displays the previous list of genre options -->
-      <button class="swiper-button-prev button is-large m-5 is-warning is-rounded">Back</button>
-
-<!-- swiper image carousel code -->
-      <div class="genre-field p-5 is-flex is-justify-content-space-around is-flex-wrap-wrap">
-        <div class="swiper-wrapper">
-          <div class="genre-images m-5" src="./images/NicePng_popcorn-png_169469.png" alt="popcorn bucket img">Slide 1</div>
-          <div class="genre-images m-5" src="./images/NicePng_popcorn-png_169469.png" alt="popcorn bucket img">Slide 2</div>
-          <div class="genre-images m-5" src="./images/NicePng_popcorn-png_169469.png" alt="popcorn bucket img">Slide 3</div>
-        </div>
+    <!-- current working area -->
+    <div class="swiffy-slider slider-item-show3">
+      <ul class="slider-container">
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+          <li><img class="" src="./images/NicePng_popcorn-png_169469.png" alt="place holder image"></li>
+      </ul>
+      <button type="button" class="slider-nav"></button>
+      <button type="button" class="slider-nav slider-nav-next"></button>
+      <div class="slider-indicators">
+          <button class="active"></button>
+          <button></button>
+          <button></button>
       </div>
-    
+  </div>
 
+    <!-- <section class="image-carousel is-flex is-direction-row is-justify-content-center is-align-items-center p-5">  -->
+      <!-- button displays the previous list of genre options -->
+       <!-- <button class=" button is-large m-5 is-warning is-rounded">Back</button> -->
       <!-- <div class="genre-field p-5 is-flex is-justify-content-space-around is-flex-wrap-wrap">
         <img class="genre-images m-5" src="./images/placeholderimg.jpeg" alt="place holder image"></img>
         <img class="genre-images m-5" src="./images/placeholderimg.jpeg" alt="place holder image"></img>
         <img class="genre-images m-5" src="./images/placeholderimg.jpeg" alt="place holder image"></img>
       </div>  -->
-
       <!-- button displays next list of genre options -->
-      <button class="swiper-button-next button is-large m-5 is-warning is-rounded">Next</button>
-    </section>
+      <!-- <button class=" button is-large m-5 is-warning is-rounded">Next</button>
+    </section> -->
 
   <!--needs carousel-->
   </main>
   <footer class="film-banner">
   </footer>
-  <!-- swiper carousel code js -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src= "script.js" defer></script>
 </body>
 </html>
