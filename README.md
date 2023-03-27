@@ -14,6 +14,7 @@ Have you ever been stuck on what to watch? Endlessly navigating through Netflix 
 - [Credits](#credits)
 - [Acknowlegements](#acknowledgements)
 - [License](#license)
+- [Deployed-Version](#deployed-version)
 
 ## Installation
 
@@ -58,13 +59,9 @@ Now our job is done! So, get that popcorn popping, turn the surround sound on re
     Responsive Design:
     Allows users and developers to view webpage on different screen dimensions and it still be fully fuctional.
 
-## Credits
+## Resources
 
-<!-- List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well. -->
+resource will go here
 
 
 ## Acknowledgements
@@ -84,6 +81,8 @@ We would like to acknowledge the contributors of this project:
 
 MIT
 
+## Deployed Version
 
+Visit the deployed version of the project at: "inset link without quotation"
 
 
