@@ -4,6 +4,10 @@
     font-family: 'Limelight', cursive;
 }
 
+main{
+    background-color: #460b0b;
+}
+
 footer {
     transform: scaleY(-1);
 }
@@ -37,6 +41,20 @@ footer {
     background-position: center;
     position: relative;
     box-shadow: 0 0 8px 8px black inset;
+}
+
+.popcorn-slide {
+    height: auto;
+    width: 70%;
+    margin-left: 3.7rem;
+    margin-bottom: .2rem;
+}
+
+.genre-list-item {
+    color: #ffe08a;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
 }
 
 #movie-image {
@@ -103,3 +121,4 @@ footer {
         background-color: white;
     }
 }
+

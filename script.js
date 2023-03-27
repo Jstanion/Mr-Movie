@@ -1,3 +1,4 @@
+
 // API key and URL for MoviesMiniDatabase (first API)
 const moviesMiniDatabase = {
 	method: 'GET',
@@ -30,22 +31,19 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
 .then(response => response.json())
 .then(data => {
 	
-	// convert data to array
 	const genreArray = Array.from(data.results);
-	
-	for (let i = 0; i < 21; i++) {
-		const obj = genreArray[i];
-		for (const key in obj) {
-			if (obj.hasOwnProperty(key)) {
-				const genreName = obj[key];
-				
-				// Create and append the dropdown items from the array
-				let genreDropdownItem = document.createElement('a');
-				genreDropdownItem.classList.add('navbar-item', 'genre-item')
-				genreDropdownItem.textContent = genreName;
-				createGenreList.appendChild(genreDropdownItem);
-			};
-		};
+    const filteredArray = [];
+    for (let i = 0; i < 21; i++) {
+        filteredArray.push(genreArray[i])
+        // Create and append the dropdown items from the array
+        let genreDropdownItem = document.createElement('a');
+        genreDropdownItem.classList.add('navbar-item', 'genre-item')
+        genreDropdownItem.textContent = filteredArray[i].genre;
+        createGenreList.appendChild(genreDropdownItem);
+		// add genre names to slide buckets
+		const genreName = document.getElementsByTagName(".genre-list-item");
+			genreName.textContent = filteredArray[i].genre;
+		
 	};
 })
 .catch(error => {
@@ -228,18 +226,33 @@ yearDropdownEl.addEventListener('click', () => {
 
 // Start Abigail's work section
 
-
 const confirmModal = new mainPageModal ({
 	titleText: 'Congrats! We found what you are looking for!',
 	movieDataContainer: 'movie insert',
 	homeText: 'Home',
 });
 
+let slideGenres = ['Adventure', 'Family', 'Fantasy', 'Crime', 'Drama', 'Comedy', 'Animation', 'Sci-Fi', 'Sport', 'Action', 'Thriller', 'Mystery', 'Western', 'Romance', 'Biography', 'Horror', 'War', 'Musical', 'History', 'Music', 'Docoumentary'];
 
-// export {movieImage, getMovieData};
-// export {movieTitle, getMovieData};
-// export {caption, getMovieData};
-// export {releaseDate, getMovieData};
+// carousel work
+for(let i = 0; i <= 20; i++){
+	let createSlide = function(){
+		const swiperContainer = document.querySelector(".slider-container");
+		const sliderLi = document.createElement("li");
+		const popcornImg = document.createElement("img");
+		const genreName = document.createElement('p');
+		genreName.textContent = slideGenres[i];
+		popcornImg.setAttribute("class", "popcorn-slide");
+		popcornImg.setAttribute("onclick", "window.location.href = './movie-selection.html';");
+		popcornImg.src = "./images/NicePng_popcorn-png_169469.png";
+		genreName.classList.add("genre-list-item");
+		swiperContainer.appendChild(sliderLi);
+		sliderLi.appendChild(popcornImg);
+		sliderLi.appendChild(genreName);
+	}
+	createSlide();
+}
+
 
 
 // End Abigail's work section
