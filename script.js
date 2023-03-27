@@ -229,7 +229,6 @@ yearDropdownEl.addEventListener('click', () => {
 
 // Start Abigail's work section
 
-
 const confirmModal = new mainPageModal ({
 	titleText: 'Congrats! We found what you are looking for!',
 	movieDataContainer: 'movie insert',
@@ -237,15 +236,18 @@ const confirmModal = new mainPageModal ({
 });
 
 // carousel work
+let createSlide = function(){
 
+const swiperContainer = document.querySelector(".slider-container");
+const sliderLi = document.createElement("li");
+const popcornImg = document.createElement("img");
+popcornImg.setAttribute("class", "popcorn-slide"), ("src", ""), ("alt", "popcorn bucket image");
+popcornImg.src = "./images/NicePng_popcorn-png_169469.png"
+swiperContainer.appendChild(sliderLi);
+sliderLi.appendChild(popcornImg);
 
-  
-
-// export {movieImage, getMovieData};
-// export {movieTitle, getMovieData};
-// export {caption, getMovieData};
-// export {releaseDate, getMovieData};
-
+}
+createSlide();
 
 // End Abigail's work section
 
