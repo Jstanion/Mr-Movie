@@ -21,7 +21,7 @@ When navigated to the homepage of this website, Mr.Movie, you will see a top nav
 
 When you scroll down to the main section of the page there is a "feeling lucky" paragraph. If you are feeling the luck of the irish go ahead and click on the dancing movie condiments and be surprised by the redirect to the "Single Options Page" where a movie is genrated and provided for you by our completely random movie API generator.
 
-When scrolled all the way down, near the footer of the website, displayed is a popcorn bucket carousel.. have yours popping yet? Listed below are the 21 movie genres from previously. However, this time if clicked upon you will be redirected to our "Multi Option Page" where there will be 3 movie images displayed to choose from based off the genre you have clicked upon. If it is taking some time to load, you will see a short gif display on the page, but don't worry we promise they are coming! Again, if not satisfied with the movie selections, Mr.Movie will be at the top left corner of the page to redirect you back to home and start all over!
+When scrolled all the way down, near the footer of the website, displayed is a popcorn bucket carousel.. have yours popping yet? Listed below are the 21 movie genres from previously. However, this time when clicked upon you will be redirected to our "Multi Option Page", but not before hearing a short snippet of popcorn shaking in a bucket. When redirected, there will be 3 movie images displayed to choose from based off the genre you have clicked upon. If it is taking some time to load, you will see a short gif display on the page, but don't worry we promise they are coming! Again, if not satisfied with the movie selections, Mr.Movie will be at the top left corner of the page to redirect you back to home and start all over!
 
 Now our job is done! So, get that popcorn popping, turn the surround sound on, and relax!
 
@@ -42,6 +42,9 @@ Now our job is done! So, get that popcorn popping, turn the surround sound on, a
 
     Image Carousel:
     This feature increases user engagement through the popcorn visuals and alpahbetized genre selection. Helping to drive conversions, making it an important part of the user interface.
+
+    Popcorn Sound-Bite:
+    This feature inscreases user engagement and activity with a fun noise element added when clicked upon bucket.
 
 ## Techincal Features
 
