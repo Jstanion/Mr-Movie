@@ -72,12 +72,12 @@ footer {
 }
 
 #movie-image {
-    margin: 12%;
+    margin: 40%;
     box-shadow: 0 0 50px 8px #ffe08a;
     
 };
 
-#page-load-gif {
+#movie-image {
     margin: 12%;
     box-shadow: 0 0 50px 8px #ffe08a;
 }
@@ -123,4 +123,10 @@ footer {
         padding-top: 7%;
         padding-bottom: 19%;
     }
+
+    #movie-image {
+        margin: 12%;
+        box-shadow: 0 0 50px 8px #ffe08a;
+        
+    };
 }
