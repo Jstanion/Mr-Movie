@@ -151,7 +151,7 @@ let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
 	const textContainer = document.querySelector(".container-dos");
 	const moviePoster = document.createElement("img");
 	moviePoster.classList.add('movie-image');
-	moviePoster.setAttribute("id", "modal-image"), ("src", ""), ("alt", "");
+	moviePoster.setAttribute("id", "modal-image");
 	moviePoster.src = movieImage;
 	moviePoster.alt = caption;
 	resultModal.appendChild(moviePoster);
@@ -249,7 +249,7 @@ for(let i = 0; i <= 20; i++){
 		genreName.textContent = slideGenres[i];
 		popcornImg.setAttribute("class", "popcorn-slide");
 		popcornImg.setAttribute("onclick", "window.location.href = './movie-selection.html';");
-		popcornImg.src = "./images/NicePng_popcorn-png_169469.png";
+		popcornImg.src = "./Assets/images/popcorn.png";
 		popcornImg.alt = slideGenres[i];
 		genreName.classList.add("genre-list-item");
 		swiperContainer.appendChild(sliderLi);

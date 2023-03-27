@@ -28,7 +28,7 @@ footer {
 
 .film-banner {
     height: 72px;
-    background-image: url("./images/image.png");
+    background-image: url("../images/image.png");
     background-repeat: repeat-x;
     background-color: #27383e;
 }
@@ -36,7 +36,7 @@ footer {
 .theater-background {
     height: 32.5rem;
     width: 90%;
-    background-image: url('./images/testsample.jpg');
+    background-image: url('../images/theater-background.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
