@@ -1,3 +1,7 @@
+a {
+    font-family: 'Limelight', cursive;
+}
+
 .hero-body {
     background-color: #460b0b;
     display: flex;
@@ -14,21 +18,14 @@
     background-color: #27383e;
 }
 
-#home-btn {
-    background-color: #ffdb84;
-    color:white;
-    font-family:'limelight', cursive ;
-}
-
 #oops {
-    font-size: 200px;
-    
+    font-size: 200px;   
 }
 
 .dead-end {
     font-size: 200px;
     font-family: 'Creepster', cursive;
-    color: red;
+    color: #ffdb84;
 }
 
 
