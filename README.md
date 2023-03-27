@@ -4,6 +4,7 @@
 
 Have you ever been stuck on what to watch? Endlessly navigating through Netflix to find anything to play as background noise. Well with this web application you'll be saying "HASTA LA VISTA!" to netflix surfing, and hello to the hours you will get back on your life! Our team has built this project with the hopes of curating a movie within minutes that you, the user, would enjoy watching based off of the info you input to the site.
 
+
 ## Table of Contents: 
 
  Find what you need down below!
@@ -11,14 +12,17 @@ Have you ever been stuck on what to watch? Endlessly navigating through Netflix 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Features](#features)
+- [Resources](#resources)
 - [Credits](#credits)
 - [Acknowlegements](#acknowledgements)
 - [License](#license)
 - [Deployed-Version](#deployed-version)
 
+
 ## Installation
 
 N/A
+
 
 ## Usage
 
@@ -32,6 +36,7 @@ Now our job is done! So, get that popcorn popping, turn the surround sound on re
 
 ![alt text](/images/Screenshot%202023-03-27%20at%203.15.31%20AM.png)
 ![alt text](/images/Screenshot%202023-03-27%20at%203.16.10%20AM.png)
+
 
 ## Features
 
@@ -50,8 +55,8 @@ Now our job is done! So, get that popcorn popping, turn the surround sound on re
 
 ### Techincal Features:
 
-    Web API: 
-    Allows we, as the developers, to interact with project by enabling third-party developers to integrate software into code. Making it fully functional and easier to pull large amounts of data such as the movie info, actor info, and genre info.
+    Server-Side API: 
+    Allows we, as the developers, to interact with project by enabling third-party developers to integrate software into code. Making it fully functional and easier to pull large amounts of data such as the movie info, actor info, and genre info. We used two API's in the project and ran the first one to grab title and actor id's and then passed that information through a more robust API to get movie posters and other info.
 
     Local Storage: 
     Allowed us to store data in web browser even after closing, reopening, or refeshing pages; specifically used when loading "Multi Option Page". 
@@ -59,9 +64,10 @@ Now our job is done! So, get that popcorn popping, turn the surround sound on re
     Responsive Design:
     Allows users and developers to view webpage on different screen dimensions and it still be fully fuctional.
 
+
 ## Resources
 
-resource will go here
+- [Basic Modal Knowledge](https://www.w3schools.com/howto/howto_css_modals.asp)
 
 
 ## Acknowledgements
@@ -77,9 +83,11 @@ We would like to acknowledge the contributors of this project:
 - Michael Sigala
     - Github: You can find more information about me on my [GitHub](https://github.com/Msigala96) profile.
 
+
 ## License
 
 MIT
+
 
 ## Deployed Version
 
