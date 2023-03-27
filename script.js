@@ -69,6 +69,8 @@ let getMovieByTitle = (searchBarEntry) => {
 	.then(response => response.json())
 	.then(response => {
 		if(!response.results[0]) {
+		// added redirect to 404 page
+			window.location.href = "./search-error.html"
 			return;
 		} else {
 		console.log(response);
@@ -85,6 +87,8 @@ let getActorId = (searchBarEntry) => {
 	.then(response => response.json())
 	.then(response => { 
 		if(!response.results[0] || response.results[0].imdb_id.includes('title')) {
+		// added redirect to 404 page ln 90
+			window.location.href = "./search-error.html"
 			return;
 		} else {
 		console.log(response); 
@@ -252,6 +256,19 @@ for(let i = 0; i <= 20; i++){
 	}
 	createSlide();
 }
+
+// 404 redirect
+
+// var searchEntry = document.querySelector('form[action="/search"]');
+// searchEntry.addEventListener('sumbit', function(event) {
+// 	console.log('form sumbitted');
+// 	var searchQuery = document.quearySelector('input[name="q"]').value;
+// 	if (!searchQuery.trim()) {
+// 		window.location.href = './search-error.html';
+// 		event.preventDefault();
+// 		console.log('redirecting to 404 page bc search request is empty');
+// 	}
+// });
 
 
 
