@@ -13,13 +13,13 @@ a {
 
 .film-banner{
     height: 72px;
-    background-image: url("./images/image.png");
+    background-image: url("../images/image.png");
     background-repeat: repeat-x;
     background-color: #27383e;
 }
 
 #oops {
-    font-size: 200px;   
+    font-size: 150px;   
 }
 
 .dead-end {
@@ -30,7 +30,5 @@ a {
 
 .tenor-gif-embed {
     margin-left: 30%;
-    margin-top: 5%;
+    margin-bottom: 5%;
 }
-
-
