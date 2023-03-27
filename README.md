@@ -58,6 +58,8 @@ Now our job is done! So, get that popcorn popping, turn the surround sound on, a
 
 - [Basic Modal Knowledge](https://www.w3schools.com/howto/howto_css_modals.asp)
 - [Bulma CSS Framework](https://bulma.io/)
+- [Dead End Font](https://fonts.googleapis.com/css2?family=Creepster&family=Limelight&display=swap)
+- [Default Font Family](https://fonts.googleapis.com/css2?family=Limelight&display=swap)
 - [Rapid-API: Movies Mini Database:](https://rapidapi.com/SAdrian/api/moviesminidatabase/)
 - [Rapid-API: Movie Database:](https://rapidapi.com/SAdrian/api/moviesdatabase/)
 - [Stack Overflow:](https://stackoverflow.com/questions/50643302/addeventlistener-on-a-queryselectorall-with-classlist) Help with using nested event listeners for multiple elements with the same class.
