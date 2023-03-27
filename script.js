@@ -41,8 +41,8 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
         genreDropdownItem.textContent = filteredArray[i].genre;
         createGenreList.appendChild(genreDropdownItem);
 		// add genre names to slide buckets
-		// const genreName = document.getElementsByTagName(".genre-list-item");
-		// 	genreName.textContent = filteredArray[i].genre;
+		const genreName = document.getElementsByTagName(".genre-list-item");
+			genreName.textContent = filteredArray[i].genre;
 		
 	};
 })
@@ -242,8 +242,9 @@ for(let i = 0; i <= 20; i++){
 		const popcornImg = document.createElement("img");
 		const genreName = document.createElement('p');
 		genreName.textContent = slideGenres[i];
-		popcornImg.setAttribute("class", "popcorn-slide"), ("src", ""), ("alt", "popcorn bucket image");
-		popcornImg.src = "./images/NicePng_popcorn-png_169469.png"
+		popcornImg.setAttribute("class", "popcorn-slide");
+		popcornImg.setAttribute("onclick", "window.location.href = './movie-selection.html';");
+		popcornImg.src = "./images/NicePng_popcorn-png_169469.png";
 		genreName.classList.add("genre-list-item");
 		swiperContainer.appendChild(sliderLi);
 		sliderLi.appendChild(popcornImg);
