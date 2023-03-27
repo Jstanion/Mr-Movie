@@ -43,6 +43,13 @@ footer {
     box-shadow: 0 0 8px 8px black inset;
 }
 
+.popcorn-slide {
+    height: auto;
+    width: 70%;
+    margin-left: 3.7rem;
+    margin-bottom: 2rem;
+}
+
 #movie-image {
     position: absolute;
     top: 0;
