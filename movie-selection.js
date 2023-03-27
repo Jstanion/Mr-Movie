@@ -19,7 +19,7 @@ const moviesDatabase = {
 
 let getMovieByGenre = (searchGenre) => {
 
-	// Generates 3 random movie ID's based on genre
+	// Grabs movie data by selected genre
     fetch('https://moviesminidatabase.p.rapidapi.com/movie/byGen/Horror/', moviesMiniDatabase)
 	.then(response => response.json())
 	.then(response => {
@@ -31,13 +31,13 @@ let getMovieByGenre = (searchGenre) => {
 		const randomId1 = myArray[randomIndex1].imdb_id;
 		const randomId2 = myArray[randomIndex2].imdb_id;
 		const randomId3 = myArray[randomIndex3].imdb_id;
-        console.log(randomId1, randomId2, randomId3);
-        getMovieData(randomId1);
-		getMovieData(randomId2);
-		getMovieData(randomId3);
+        console.log(randomId1, randomId2, randomId3)
+        getMovieData(randomId1)
+		getMovieData(randomId2)
+		getMovieData(randomId3)
     })
 	.catch(err => console.error(err));
-};
+}
 
 let getMovieData = (randomId) => {
 	fetch(`https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids?idsList=${randomId}`, moviesDatabase)
@@ -47,49 +47,145 @@ let getMovieData = (randomId) => {
 		let movieImage = response.results[0].primaryImage.url;
 		let movieTitle = response.results[0].titleText.text;
 		let caption = response.results[0].primaryImage.caption.plainText;
-		displayMovieInfo(movieImage, movieTitle, caption);
+		let releaseDate = response.results[0].releaseDate;
+		displayMovieInfo(movieImage, movieTitle, caption, releaseDate);
 	})
 	.catch(err => console.error(err));
-};
+}
+// Function that displays the movie info to the UI
+let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
+	console.log(movieTitle, caption, releaseDate.month, releaseDate.day, releaseDate.year);
 
-// Function that creates and appends movie info to the page
-let displayMovieInfo = (movieImage, movieTitle, caption) => {
-	console.log(movieTitle, caption);
-
-	// hides initial page content
+	// Hides initial page content
 	let featurePresentationLoad = document.querySelector('.screen-load-gif');
-	featurePresentationLoad.style.display = "none";
+	featurePresentationLoad.style.display = 'none';
 
-	let mainSection = document.getElementById('main-section');
-	let movieSection = document.createElement('section');
-	movieSection.classList.add('movie-data-container');
-	mainSection.appendChild(movieSection);
+	let mainSection = document.getElementById('main-section')
+	let movieSection = document.createElement('section')
+	movieSection.classList.add('movie-data-container')
+	mainSection.appendChild(movieSection)
 
-	let movieFrame = document.createElement('section');
-	movieFrame.classList.add('movie-frame');
-	movieSection.appendChild(movieFrame);
+	let movieFrame = document.createElement('section')
+	movieFrame.classList.add('movie-frame')
+	movieSection.appendChild(movieFrame)
 
 	let moviePoster = document.createElement('img');
-	moviePoster.classList.add('movie-image');
-	moviePoster.setAttribute('class', 'movie-image'), ('src', ''), ('alt', '');
+	moviePoster.classList.add('movie-image')
+	moviePoster.setAttribute('class', 'movie-image'), ('src', ''), ('alt', '')
 	moviePoster.src = movieImage;
 	moviePoster.alt = caption;
-	movieFrame.appendChild(moviePoster);
+	movieFrame.appendChild(moviePoster)
 
-	let movieInfo = document.createElement('section');
-	movieInfo.classList.add('movie-info-section');
-	movieSection.appendChild(movieInfo);
+	let marqueeInfo = document.createElement('section')
+	marqueeInfo.classList.add('marquee-section')
+	movieSection.appendChild(marqueeInfo)
 
-	let titleName = document.createElement('p');
-	titleName.classList.add('text-styling', 'is-size-4', 'is-size-5-touch');
-	titleName.textContent = movieTitle;
-	movieInfo.appendChild(titleName);
+    let titleName = document.createElement('p')
+	titleName.classList.add('text-styling', 'is-size-4', 'is-size-5-touch')
+    titleName.textContent = movieTitle
+	marqueeInfo.appendChild(titleName)
 
-	let movieCaption = document.createElement('p');
-	movieCaption.classList.add('text-styling', 'is-size-6', 'is-size-7-touch');
-	movieCaption.textContent = caption;
-	movieInfo.appendChild(movieCaption);
+    let movieCaption = document.createElement('p')
+    movieCaption.classList.add('text-styling', 'is-size-6', 'is-size-7-touch')
+	movieCaption.textContent = caption
+	marqueeInfo.appendChild(movieCaption)
 };
 
-	getMovieByGenre()
+getMovieByGenre()
 
+
+
+// Pulls genre data from API
+
+// const practiceButton = document.querySelector("#practice-button");
+// practiceButton.addEventListener("click", function() {
+    
+    // });
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': '7b91725223mshb07bf7162834af7p11e9eajsn13d5d2d4fcee',
+// 		'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
+// 	}
+// };
+
+// fetch('https://moviesdatabase.p.rapidapi.com/titles/utils/genres', options)
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+// 	.catch(err => console.error(err));
+
+
+//   // Make a request to the API
+//   fetch('https://moviesdatabase.p.rapidapi.com/titles/utils/genres')
+//     .then(response => response.json())
+//     .then(data => {
+//       // Parse the data and update the HTML section
+//       let apiData = document.getElementById('api-data');
+//       apiData.innerHTML = `The temperature is ${data.temperature} degrees.`;
+//     });
+
+// // Get the parameter value from the URL
+// const urlParams = new URLSearchParams(window.location.search);
+// const genre = urlParams.get("genre");
+
+// // Fetch the movie recommendations from the web API
+// fetch("https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${selectedOption}/" + encodeURIComponent(genre))
+//   .then(response => response.json())
+//   .then(data => {
+//     // Display the movie recommendations on the page
+//     // ...
+//   })
+//   .catch(error => {
+//     console.error(error);
+//   });
+
+
+
+
+// End Jace's work section
+
+
+
+
+
+
+// Start Abigail's work section 
+
+
+// End Abigail's work section
+
+
+
+
+
+
+
+// Start Michael's work section
+
+
+// End Michael's work section
+
+
+
+
+
+
+
+// Start Joey's work section
+
+
+// End Joey's work section
