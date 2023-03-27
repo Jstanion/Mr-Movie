@@ -57,6 +57,14 @@ createAndOpen(onHome){
         this.close();
     });
 
+    const body = document.querySelector('.hero-body');
+    window.onclick = function(event) {
+        console.log('clicked')
+        if (event.target == body) {
+          location.reload();
+        }
+      }
+
     modalContentElem.appendChild(homeButtonTextElem);
 
 	document.body.appendChild(this.modalElem);

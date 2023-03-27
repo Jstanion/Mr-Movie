@@ -32,20 +32,15 @@ fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
 	
 	// convert data to array
 	const genreArray = Array.from(data.results);
-	
+	const filteredArray = [];
 	for (let i = 0; i < 21; i++) {
-		const obj = genreArray[i];
-		for (const key in obj) {
-			if (obj.hasOwnProperty(key)) {
-				const genreName = obj[key];
-				
-				// Create and append the dropdown items from the array
-				let genreDropdownItem = document.createElement('a');
-				genreDropdownItem.classList.add('navbar-item', 'genre-item')
-				genreDropdownItem.textContent = genreName;
-				createGenreList.appendChild(genreDropdownItem);
-			};
-		};
+		filteredArray.push(genreArray[i])
+
+		// Create and append the dropdown items from the array
+		let genreDropdownItem = document.createElement('a');
+		genreDropdownItem.classList.add('navbar-item', 'genre-item')
+		genreDropdownItem.textContent = filteredArray[i].genre;
+		createGenreList.appendChild(genreDropdownItem);
 	};
 })
 .catch(error => {
@@ -225,8 +220,6 @@ dropdownEl.forEach(dropdownEl => {
 // Event listener for the search bar
 searchInput.addEventListener('keydown', (event) => {
 	if(event.key === 'Enter') {
-
-		
 		// Sets the text entry to a string value in a variable
 		const searchBarEntry = searchInput.value;
 		getMovieByTitle(searchBarEntry);
