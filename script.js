@@ -220,7 +220,8 @@ yearDropdownEl.addEventListener('click', () => {
 // Start Jace's work section
 
 
-	
+
+
 // End Jace's work section
 
 
@@ -240,7 +241,7 @@ let slideGenres = ['Adventure', 'Family', 'Fantasy', 'Crime', 'Drama', 'Comedy',
 
 // carousel work
 for(let i = 0; i <= 20; i++){
-	let createSlide = function(){
+	let createSlide = function() {
 		const swiperContainer = document.querySelector(".slider-container");
 		const sliderLi = document.createElement("li");
 		const popcornImg = document.createElement("img");
@@ -249,6 +250,7 @@ for(let i = 0; i <= 20; i++){
 		popcornImg.setAttribute("class", "popcorn-slide");
 		popcornImg.setAttribute("onclick", "window.location.href = './movie-selection.html';");
 		popcornImg.src = "./images/NicePng_popcorn-png_169469.png";
+		popcornImg.alt = slideGenres[i];
 		genreName.classList.add("genre-list-item");
 		swiperContainer.appendChild(sliderLi);
 		sliderLi.appendChild(popcornImg);
@@ -256,41 +258,12 @@ for(let i = 0; i <= 20; i++){
 	}
 	createSlide();
 }
-
-// 404 redirect
-
-// var searchEntry = document.querySelector('form[action="/search"]');
-// searchEntry.addEventListener('sumbit', function(event) {
-// 	console.log('form sumbitted');
-// 	var searchQuery = document.quearySelector('input[name="q"]').value;
-// 	if (!searchQuery.trim()) {
-// 		window.location.href = './search-error.html';
-// 		event.preventDefault();
-// 		console.log('redirecting to 404 page bc search request is empty');
-// 	}
-// });
-
-
-
 // End Abigail's work section
-
-
-
-
-
-
-// Start Michael's work section
-
-
-// End Michael's work section
-
-
-
-
-
-
-
-// Start Joey's work section
-
-
-// End Joey's work section
+const carouselButtons = document.querySelectorAll('.popcorn-slide');
+console.log(carouselButtons)
+carouselButtons.forEach(button => {
+	button.addEventListener('click', function(button) {
+		const buttonValue = button.target.alt
+		localStorage.setItem('storedGenre', buttonValue)
+	})
+})
