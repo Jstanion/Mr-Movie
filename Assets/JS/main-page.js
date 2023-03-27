@@ -219,7 +219,7 @@ dropdownEl.forEach(dropdownEl => {
 });
 
 // Event listener for the search bar
-searchInput.addEventListener('keydown', (event) => {
+searchInput.addEventListener('keypress', (event) => {
 	if(event.key === 'Enter') {
 		// Sets the text entry to a string value in a variable
 		const searchBarEntry = searchInput.value;
