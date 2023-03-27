@@ -57,11 +57,11 @@ Now our job is done! So, get that popcorn popping, turn the surround sound on, a
 ## Resources
 
 - [Basic Modal Knowledge](https://www.w3schools.com/howto/howto_css_modals.asp): Used as guide to create modal pop ups through JavaScript and CSS styling.
-- [Bulma CSS Framework](https://bulma.io/): Used for framework throughout all pages avaliable.
-- [Dead End Font](https://fonts.googleapis.com/css2?family=Creepster&family=Limelight&display=swap): Used on 404 page reading "dead end".
-- [Font Family Limelight](https://fonts.googleapis.com/css2?family=Limelight&display=swap): Used for Majority of the website; Our Default font text.
-- [Rapid-API: Movies Mini Database:](https://rapidapi.com/SAdrian/api/moviesminidatabase/): Pulls actor and movie ID's, as well as genres avaliable.
-- [Rapid-API: Movie Database:](https://rapidapi.com/SAdrian/api/moviesdatabase/): Pulls movie poster images, and mini database passes through to get all movie information displayed on pages/modals.
+- [Bulma CSS Framework:](https://bulma.io/) Used for framework throughout all pages avaliable.
+- [Dead End Font:](https://fonts.googleapis.com/css2?family=Creepster&family=Limelight&display=swap) Used on 404 page reading "dead end".
+- [Font Family Limelight:](https://fonts.googleapis.com/css2?family=Limelight&display=swap) Used for Majority of the website; Our Default font text.
+- [Rapid-API: Movies Mini Database:](https://rapidapi.com/SAdrian/api/moviesminidatabase/) Pulls actor and movie ID's, as well as genres avaliable.
+- [Rapid-API: Movie Database:](https://rapidapi.com/SAdrian/api/moviesdatabase/) Pulls movie poster images, and mini database passes through to get all movie information displayed on pages/modals.
 - [Stack Overflow:](https://stackoverflow.com/questions/50643302/addeventlistener-on-a-queryselectorall-with-classlist) Help with using nested event listeners for multiple elements with the same class.
 - [Stack Overflow:](https://stackoverflow.com/questions/18067902/dynamically-add-alternate-text-for-your-image-using-the-image-url-is-it-possible) Dynamically changing the 'src and 'alt' attributes of an element.
 - [Swiffy Slider:](https://swiffyslider.com/) Provided our image carousel.
