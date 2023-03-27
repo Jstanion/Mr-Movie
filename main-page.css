@@ -117,8 +117,13 @@ footer {
     .display-toggle {
         display: block;
     }
+
     .dropdown-menu {
         background-color: white;
+    }
+
+    .popcorn-slide {
+        margin-left: 15%;
     }
 }
 
