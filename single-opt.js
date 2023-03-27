@@ -63,15 +63,14 @@ let getMovieData = (titleId) => {
             let movieImage = response.results[0].primaryImage.url;
             let movieTitle = response.results[0].titleText.text;
             let caption = response.results[0].primaryImage.caption.plainText;
-            let releaseDate = response.results[0].releaseDate;
-            displayMovieInfo(movieImage, movieTitle, caption, releaseDate);
+            displayMovieInfo(movieImage, movieTitle, caption);
         })
         .catch(err => console.error(err));
 };
 
 // Function that displays the movie info to the UI
 let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
-    console.log(movieTitle, caption, releaseDate.month, releaseDate.day, releaseDate.year);
+    console.log(movieTitle, caption);
 	let moviePoster = document.querySelector('#movie-image');
 	moviePoster.src = movieImage;
 	moviePoster.alt = caption;
@@ -80,5 +79,4 @@ let displayMovieInfo = (movieImage, movieTitle, caption, releaseDate) => {
     let captionInfo = document.querySelector('#caption');
     captionInfo.textContent = caption;
     let movieDate = document.querySelector('#release-date');
-    movieDate.textContent = 'Release Date: ' + releaseDate.month + '/' + releaseDate.day + '/' + releaseDate.year; 
 };
