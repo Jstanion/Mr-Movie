@@ -25,8 +25,7 @@ When scrolled all the way down, near the footer of the website, displayed is a p
 
 Now our job is done! So, get that popcorn popping, turn the surround sound on relax!
 
-![alt text](/images/Screenshot%202023-03-27%20at%203.15.31%20AM.png)
-![alt text](/images/Screenshot%202023-03-27%20at%203.16.10%20AM.png)
+![alt text](./Assets/images/main-page-screenshot.png)
 
 ## Features
 
