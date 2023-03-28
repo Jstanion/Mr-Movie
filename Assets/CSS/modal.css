@@ -1,24 +1,14 @@
 .home-modal {
-
-    height: 100vh; overflow: visible;
-    width: 100vw;
+    height: 100%; overflow: visible;
+    width: 100%;
     position: absolute;
     top: 0;
-    /* left: 20%; */
-    /* right: 20%; */
-    transition: opacity 0.4s;
-}
-
-.home-modal.year-dropdown.genre-dropdown.search-input{
-    opacity: 1;
-    display: block;
+    z-index: 1;
+    background-color: rgba(27, 13, 13, 0.7);
 }
  
 .my-content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: fit-content;
+    width: 50%;
     background-color: #27383e;
     border-radius: 6px;
     text-align: center;
