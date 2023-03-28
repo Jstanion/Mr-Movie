@@ -20,6 +20,14 @@ const moviesDatabase = {
 let searchGenre = localStorage.getItem('storedGenre');
 console.log(searchGenre);
 
+let displayHeader = (searchGenre) => {
+	let genreTitle = document.querySelector('.genre-title');
+	genreTitle.textContent = searchGenre;
+	console.log(searchGenre)
+};
+
+displayHeader(searchGenre);
+
 let getMovieByGenre = () => {
 
 	// Generates 3 random indices to pass through the displayMovieInfo function
