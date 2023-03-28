@@ -13,12 +13,12 @@ class mainPageModal {
 
 // creating modal that opens 
 createAndOpen(onHome){
-    // Working on a debug here
-    // if (document.querySelector('.data-container')) {
-    //     console.log('works')
-    //     let previousContent = document.querySelector('.data-container');
-    //     previousContent.remove();
-    // };
+ 
+    if (document.querySelector('.data-container')) {
+        console.log('works')
+        let previousContent = document.querySelector('.data-container');
+        previousContent.remove();
+    };
 
 	this.modalElem = document.createElement('div');
 	this.modalElem.classList.add('home-modal');

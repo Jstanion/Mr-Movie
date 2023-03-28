@@ -221,11 +221,6 @@ dropdownEl.forEach(dropdownEl => {
 				const selectedOption = event.target.textContent;
 				getMovieByDropdown(selectedOption, dropdownCategory);
 				console.log('modal button click');
-				if (document.querySelector('.home-modal')) {
-					console.log('works')
-					let previousContent = document.querySelector('.home-modal');
-					previousContent.remove();
-				};
 				confirmModal
 				.open()
 			//taking further action
@@ -234,6 +229,9 @@ dropdownEl.forEach(dropdownEl => {
 		});
 	});
 });
+
+// const genreDropdown = getElementById()
+
 
 // Event listener for the search bar
 searchInput.addEventListener('keypress', (event) => {
