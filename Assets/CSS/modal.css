@@ -1,9 +1,11 @@
 .home-modal {
+
+    height: 100vh; overflow: visible;
+    width: 100vw;
     position: absolute;
-    top: 8rem;
-    height: fit-content;
-    left: 20%;
-    right: 20%;
+    top: 0;
+    /* left: 20%; */
+    /* right: 20%; */
     transition: opacity 0.4s;
 }
 

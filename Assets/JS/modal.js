@@ -23,7 +23,7 @@ createAndOpen(onHome){
     
     // Modal element
 	this.modalElem = document.createElement('div');
-	this.modalElem.classList.add('home-modal', 'year-dropdown', 'genre-dropdown', 'search-input');
+	this.modalElem.classList.add('home-modal', 'year-dropdown', 'genre-dropdown', 'search-input', 'is-flex', 'is-justify-content-center', 'is-align-items-center');
     document.body.appendChild(this.modalElem);
 
     // Content container
@@ -54,7 +54,7 @@ createAndOpen(onHome){
 
     const modalElem = document.querySelector('.home-modal')
     modalElem.addEventListener('click', (event) => {
-        if (event.target == homeButtonTextElem || event.target != modalContentElem) {
+        if (event.target == homeButtonTextElem || event.target == modalElem) {
             this.close();
         };
     });
