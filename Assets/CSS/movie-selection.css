@@ -9,7 +9,7 @@ footer {
 }
 
 .genre-title {
-    margin-right: 13%
+    margin-right: 10.5%
 }
 
 .movie-data-container {
@@ -38,7 +38,6 @@ footer {
 .movie-image {
     height: 71%;
     width: 68.5%;
-    margin: 1.7rem;
 }
 
 .marquee-section {
