@@ -13,73 +13,54 @@ class mainPageModal {
 
 // creating modal that opens 
 createAndOpen(onHome){
-    // Working on a debug here
-    // if (document.querySelector('.data-container')) {
-    //     console.log('works')
-    //     let previousContent = document.querySelector('.data-container');
-    //     previousContent.remove();
-    // };
-
+ 
+    // Removes the data container from previous search if it exists
+    if (document.querySelector('.data-container')) {
+        console.log('works')
+        let previousContent = document.querySelector('.data-container');
+        previousContent.remove();
+    };
+    
+    // Modal element
 	this.modalElem = document.createElement('div');
-	this.modalElem.classList.add('home-modal');
-    setTimeout(() => {
-        this.modalElem.classList.add('year-dropdown');
-        //new modal
-        this.modalElem.classList.add('genre-dropdown');
-        // new modal search input
-        this.modalElem.classList.add('search-input');
-    }, 10);
+	this.modalElem.classList.add('home-modal', 'year-dropdown', 'genre-dropdown', 'search-input', 'is-flex', 'is-justify-content-center', 'is-align-items-center');
+    document.body.appendChild(this.modalElem);
 
+    // Content container
     const modalContentElem = document.createElement('div');
     modalContentElem.classList.add('my-content');
-
     this.modalElem.appendChild(modalContentElem);
 
-    //heading
-    modalContentElem.innerHTML = '';
+    // Heading
     const titleTextElem = document.createElement('p');
     titleTextElem.classList.add('titleText');
     titleTextElem.textContent = this.titleText;
-
     modalContentElem.appendChild(titleTextElem);
 
+    // Movie information
     const movieDataElem = document.createElement('p');
     movieDataElem.classList.add('data-container');
+    modalContentElem.appendChild(movieDataElem);
+    
     const movieInfoElem = document.createElement('p');
     movieInfoElem.classList.add('container-dos');
-    
     movieDataElem.appendChild(movieInfoElem);
-    modalContentElem.appendChild(movieDataElem);
-
-    //home button
+    
+    // Home button
     const homeButtonTextElem = document.createElement('button');
     homeButtonTextElem.classList.add('homeButtonText');
-    //refresh homepage
-    homeButtonTextElem.setAttribute("onclick", "document.location='./index.html'");
     homeButtonTextElem.textContent = this.homeText;
-
-    console.log('class', this)
-    homeButtonTextElem.addEventListener('click', () => {
-        onHome('Success');
-        this.close();
-    });
-
-    const body = document.querySelector('.hero-body');
-    window.onclick = function(event) {
-        console.log('clicked')
-        console.log('Eleement clicked', event.target.className)
-        if (event.target == body || event.target.className == 'theater-background') {
-          location.reload();
-        }
-    };
-
     modalContentElem.appendChild(homeButtonTextElem);
 
-	document.body.appendChild(this.modalElem);
+    const modalElem = document.querySelector('.home-modal')
+    modalElem.addEventListener('click', (event) => {
+        if (event.target == homeButtonTextElem || event.target == modalElem) {
+            this.close();
+        };
+    });
 };
 
 open(){
-    console.log('It is open');
     return new Promise((resolve, reject)=>{
         console.log(this)
         this.createAndOpen(resolve, reject);
@@ -88,7 +69,6 @@ open(){
 
 close(){
     this.modalElem.classList.remove('open');
-    setTimeout(()=>{
-        document.body.removeChild(this.modalElem); }, 400);
+        document.body.removeChild(this.modalElem);
     };
 };

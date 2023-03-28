@@ -21,8 +21,8 @@ const moviesDatabase = {
 const createGenreList = document.querySelector('#genre-dropdown');
 const createYearList = document.querySelector('#year-dropdown');
 const searchInput = document.getElementById('search-input');
-const dropdownEl = document.querySelectorAll('.search-element');
-const dropdownSelection = document.querySelectorAll('.genre-item');
+// const dropdownEl = document.querySelectorAll('.search-element');
+// const dropdownSelection = document.querySelectorAll('.genre-item');
 
 // Pulls genre data from API
 fetch('https://moviesminidatabase.p.rapidapi.com/genres/', moviesMiniDatabase)
@@ -145,9 +145,9 @@ let getMovieByActor = (actorId) => {
 };
 
 // Function that provides movie ID's based on dropdown selections
-let getMovieByDropdown = (selectedOption, dropdownCategory) => {
-	console.log(selectedOption, dropdownCategory);
-	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${selectedOption}/`, moviesMiniDatabase)
+let getMovieByDropdown = (dropdownCategory, dropdownSelection) => {
+	console.log(dropdownCategory, dropdownSelection);
+	fetch(`https://moviesminidatabase.p.rapidapi.com/movie/${dropdownCategory}/${dropdownSelection}/`, moviesMiniDatabase)
 	.then(response => response.json())
 	.then(response => {
 		console.log(response);
@@ -176,7 +176,7 @@ let getMovieData = (randomId) => {
 	})
 	.catch(err => {
 		console.error(err)
-		window.location.href = './search-error.html';
+		// window.location.href = './search-error.html';
 	});
 };
 
@@ -210,29 +210,30 @@ const confirmModal = new mainPageModal ({
 	homeText: 'Home',
 });
 
-// Event listener grabbing the dropdown value and selected option value
-dropdownEl.forEach(dropdownEl => {
-	dropdownEl.addEventListener('click', (event) => {
-		const dropdownCategory = event.target.dataset.myParam;
-		const dropdownSelection = document.querySelectorAll('.genre-item');
-		
-		dropdownSelection.forEach(dropdownSelection => {
-			dropdownSelection.addEventListener('click', (event) => {
-				const selectedOption = event.target.textContent;
-				getMovieByDropdown(selectedOption, dropdownCategory);
-				console.log('modal button click');
-				if (document.querySelector('.home-modal')) {
-					console.log('works')
-					let previousContent = document.querySelector('.home-modal');
-					previousContent.remove();
-				};
-				confirmModal
-				.open()
-			//taking further action
-			.then(value => console.log('User clicked Home: ', value));	
-			});
-		});
-	});
+let genreDropdown = document.getElementById('genre-dropdown')
+genreDropdown.addEventListener('click', (event) => {
+	let dropdownSelection = document.querySelectorAll('.genre-item')
+	let dropdownCategory = genreDropdown;
+	dropdownCategory = 'byGen';
+	dropdownSelection = event.target.textContent;
+	getMovieByDropdown(dropdownCategory, dropdownSelection)
+	confirmModal
+	.open()
+	//taking further action
+	.then(value => console.log('User clicked Home: ', value));
+});
+
+let yearDropdown = document.getElementById('year-dropdown')
+yearDropdown.addEventListener('click', (event) => {
+	let dropdownSelection = document.querySelectorAll('.year-item')
+	let dropdownCategory = yearDropdown;
+	dropdownCategory = 'byYear';
+	dropdownSelection = event.target.textContent;
+	getMovieByDropdown(dropdownCategory, dropdownSelection)
+	confirmModal
+	.open()
+	//taking further action
+	.then(value => console.log('User clicked Home: ', value));
 });
 
 // Event listener for the search bar
@@ -277,7 +278,16 @@ carouselButtons.forEach(button => {
 	});
 });
 
+// Delays the multi-options redirect to allow time for soundbyte to play
 const delayRedirect = function() {
 	setTimeout(function() {
 	window.location.href ='./movie-selection.html';
 	}, 2000);};
+
+const modalElem = document.querySelector('.home-modal')
+modalElem.addEventListener('click', (event) => {
+	const modalHomeButton = document.querySelector('homeButtonText');
+	if (event.target == modalHomeButton || event.target == modalElem) {
+		this.close();
+	};
+});
