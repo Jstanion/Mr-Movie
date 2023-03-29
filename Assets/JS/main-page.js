@@ -283,11 +283,3 @@ const delayRedirect = function() {
 	setTimeout(function() {
 	window.location.href ='./movie-selection.html';
 	}, 2000);};
-
-const modalElem = document.querySelector('.home-modal')
-modalElem.addEventListener('click', (event) => {
-	const modalHomeButton = document.querySelector('homeButtonText');
-	if (event.target == modalHomeButton || event.target == modalElem) {
-		this.close();
-	};
-});

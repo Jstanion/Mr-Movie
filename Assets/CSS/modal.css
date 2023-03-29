@@ -1,14 +1,15 @@
 .home-modal {
     height: 100%; overflow: visible;
-    width: 100%;
+    width: 100%; overflow: visible;
     position: absolute;
     top: 0;
+    margin-bottom: -100%;
     z-index: 1;
     background-color: rgba(27, 13, 13, 0.7);
 }
  
 .my-content{
-    width: 50%;
+    width: 70%;
     background-color: #27383e;
     border-radius: 6px;
     text-align: center;
@@ -46,7 +47,7 @@
     justify-content: center;
     align-items: center;
     justify-content: space-evenly;
-    height: 20rem; overflow: auto;
+    height: fit-content;
 }
 
 .container-dos {
@@ -62,9 +63,15 @@
     margin: 1rem;
 }
 
-@media screen and (max-width: 768px) {
-    .home-modal {
-        left: 5%;
-        right: 5%;
+@media screen and (min-width: 360px) and (max-width: 600px) {
+    .home-modal,
+    .titleText {
+    font-weight: 500;
+    font-size: 1rem;
+    color: white;
+    }
+
+    .data-container {
+        flex-direction: column;
     }
 }
