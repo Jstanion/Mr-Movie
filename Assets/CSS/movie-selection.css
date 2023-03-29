@@ -107,14 +107,11 @@ footer {
         padding-top: 20%;
         padding-bottom: 30%;
     }
-}
 
-/* @media screen and (min-width: 1042px) and (max-width: 1445px) {
-    main {
-        padding-top: 5%;
-        padding-bottom: 19%;
+    #page-load-gif {
+        margin: 13%;
     }
-} */
+}
 
 @media screen and (max-width: 1023px) {
     #bulma-custom .navbar-menu {

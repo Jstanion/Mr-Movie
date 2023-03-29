@@ -47,7 +47,7 @@
     justify-content: center;
     align-items: center;
     justify-content: space-evenly;
-    height: fit-content;
+    height: 20rem; overflow: auto;
 }
 
 .container-dos {
@@ -68,10 +68,19 @@
     .titleText {
     font-weight: 500;
     font-size: 1rem;
-    color: white;
     }
 
     .data-container {
         flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .my-content {
+        width: 70%;
+    }
+
+    .data-container {
+        height: 25rem; overflow: auto;
     }
 }
