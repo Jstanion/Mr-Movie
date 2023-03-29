@@ -282,4 +282,4 @@ carouselButtons.forEach(button => {
 const delayRedirect = function() {
 	setTimeout(function() {
 	window.location.href ='./movie-selection.html';
-	}, 2000);};
+	}, 1500);};
